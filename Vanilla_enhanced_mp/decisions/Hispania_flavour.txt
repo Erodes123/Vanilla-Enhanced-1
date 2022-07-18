@@ -12,6 +12,7 @@ the_hispanic_question = {
 			add_country_modifier = { name = monthly_timer duration = 600 }
 			any_country = { limit = { AND = { neighbour = THIS OR = {
 						tag = ACN
+						tag = MEE
 						tag = GCO
 						tag = AGE
 						tag = VNZ
