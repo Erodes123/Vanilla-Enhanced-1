@@ -26,3 +26,143 @@ country_event = {
 		}
 	}
 }
+
+#Wallonian revolution
+country_event = {
+
+	id = 1028000
+	title = "French at schools"
+	desc = ""
+	picture = ""
+	
+	trigger = {
+		tag = NET
+		year = 1840
+		NOT = { year = 1850 
+			has_country_flag = wallons_angwy
+		}
+		owns = 392
+	}
+
+	mean_time_to_happen =  {
+		days = 25
+	}
+
+	
+	option = {
+		name = "Allow them to speak French in schools"
+	}
+	
+	option = {
+		name = "French must be banned"
+		set_country_flag = wallons_angwy
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+	}
+}
+#Wallonian revolution
+country_event = {
+
+	id = 1028001
+	title = "EVTNAME102800"
+	desc = "EVTDESC102800"
+	picture = "hungarian_revolution"
+	
+	trigger = {
+		tag = NET
+		year = 1848
+			has_country_flag = wallons_angwy
+		NOT = { year = 1850 
+			has_country_flag = walloon_revolution_has_happened
+		}
+		owns = 392
+	}
+
+	mean_time_to_happen =  {
+		days = 25
+	}
+
+	
+	option = {
+		name = "EVTOPTA102800"
+		any_pop = {
+			consciousness = 1
+			militancy = -1
+		}
+		any_owned = {
+			limit = {
+				is_core = WLL
+			}
+			secede_province = WLL
+		}
+		WLL = {
+			leadership = 80
+		}
+		set_country_flag = walloon_revolution_has_happened
+		create_vassal = WLL
+	}
+	
+	option = {
+		name = "EVTOPTB102800"
+		set_country_flag = walloon_revolution_has_happened
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = WLL
+			}
+			secede_province = WLL
+		}
+		WLL = {
+			leadership = 80
+		}
+		AUS = {
+			capital = 619
+		}
+		create_vassal = WLL
+		change_tag_no_core_switch = WLL
+	}
+}
+#Walloon war of independence
+country_event = {
+
+	id = 1028010
+	title = "Walloon war of independence"
+	desc = ""
+	picture = "revolutionnn"
+	major = yes 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = NET
+		has_country_flag = walloon_revolution_has_happened
+		NOT = {
+			has_global_flag = wall_wants_independence
+		}
+	}
+ 
+	mean_time_to_happen =  {
+		months = 1
+	}
+
+	option = {
+		name = "EVTOPTA102801"
+		release_vassal = WLL
+		set_global_flag = wall_wants_independence
+		war = {
+			target = WLL
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}	
+		}
+	}
+}
