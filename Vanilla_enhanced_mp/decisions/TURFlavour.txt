@@ -1,0 +1,295 @@
+#Venga el gran imperio
+political_decisions = {
+   The_great_comeback = {
+        potential = {
+		    tag = TUR
+			has_country_flag = The_Ottoman_Empire_annexes_Egypt
+			TUR = {
+			    owns = 1747
+				owns = 1761
+				}
+		    NOT = {
+			    has_country_flag = viva_el_gran_imperio
+			}
+        }
+
+		allow = {
+		    TUR = {
+			    owns = 1708
+				owns = 1725
+				owns = 1701
+				owns = 1707
+				}
+			is_greater_power = yes
+		}
+		
+		effect = { 
+		    set_country_flag = viva_el_gran_imperio
+			
+        	MOR_1696 = { add_core = TUR } #moroco
+			MOR_1693 = { add_core = TUR } 
+			MOR_1686 = { add_core = TUR } 
+			MOR_1688 = { add_core = TUR } 
+			MOR_1683 = { add_core = TUR }#moroco
+			TUN_1726 = { add_core = TUR }#tunis
+			ALD_1704 = { add_core = TUR }#argelia
+			ALD_1714 = { add_core = TUR } 
+			ALD_1718 = { add_core = TUR } 
+			FRA_1700 = { add_core = TUR }
+			ALD_1708 = { add_core = TUR }#argelia
+			TRI_1743 = { add_core = TUR }#tripoli
+			EGY_1754 = { add_core = TUR }#egyp
+			EGY_1753 = { add_core = TUR }
+			EGY_1758 = { add_core = TUR }
+			EGY_1762 = { add_core = TUR }
+			EGY_1755 = { add_core = TUR }
+			EGY_1771 = { add_core = TUR }
+			prestige = 1
+			badboy = -5
+		}
+    }
+#Viva el gran imperio otomano
+    long_live_the_great_empire = {
+	    potential = {
+		    tag = TUR 
+			has_country_flag = viva_el_gran_imperio
+			NOT = { 
+			    has_country_flag = por_el_imperio
+		    }
+        }
+		
+        allow = {
+		    SER = { 
+			in_sphere = TUR
+			}
+			MON = { 
+			in_sphere = TUR 
+			}
+            TUR = {
+			    owns = 826
+				owns = 834
+				owns = 836
+				owns = 827
+			}
+        is_greater_power = yes
+		}
+		
+		effect = { 
+		    set_country_flag = por_el_imperio
+        	GRE = { all_core = { add_core = TUR } }
+		CRO = { all_core = { add_core = TUR } }
+		HUN = { all_core = { add_core = TUR } }
+		SER = { all_core = { add_core = TUR } }
+		MON = { all_core = { add_core = TUR } }
+
+		inherit = SER
+		inherit = MON
+		prestige = 11
+		badboy = -5
+		}
+	}
+#El Mar negro es otomano
+    to_the_black_sea = {
+	    potential = { 
+		    tag = TUR 
+			has_country_flag = por_el_imperio
+            NOT = { 
+                has_country_flag = ganamos_el_mar_negro
+			    has_country_flag = ganamos_el_caucaso
+			}
+	    }
+		
+		allow = {
+		    is_greater_power = yes
+			revolution_n_counterrevolution = 1
+		} 
+		
+		effect = { 
+		    RUS_676 = { add_core = TUR }
+		    RUS_965 = { add_core = TUR }
+		    RUS_964 = { add_core = TUR }
+		    RUS_980 = { add_core = TUR }
+		    RUS_1048 = { add_core = TUR }
+		    RUS_979 = { add_core = TUR }
+		    set_country_flag = ganamos_el_mar_negro
+			prestige = 11
+			badboy = -5
+			TUR = { all_core = { add_core = OTO } }
+			all_core = { remove_core = TUR }
+			change_tag = OTO
+		}
+	}
+#El caucaso es otomano
+    the_caucasus_was_always_ours = {
+	    potential = {
+	        tag = TUR 
+		    has_country_flag = por_el_imperio
+		    NOT = { 
+                has_country_flag = ganamos_el_mar_negro
+	            has_country_flag = ganamos_el_caucaso
+	        }  
+	    }
+		
+		allow = {
+		    is_greater_power = yes
+			revolution_n_counterrevolution = 1
+	    }
+		
+		effect = { 
+		    set_country_flag = ganamos_el_caucaso
+		    RUS_1090 = { add_core = TUR }
+			RUS_1102 = { add_core = TUR }
+			RUS_1098  = { add_core = TUR }
+			prestige = 11
+			badboy = -5
+			TUR = { all_core = { add_core = OTO } }
+			all_core = { remove_core = TUR }
+			change_tag = OTO
+		}
+	}
+	Rename_Constantinople = {
+		potential = {
+			OR = { tag = TUR
+				tag = OTO }
+			owns = 860
+			NOT = {
+				has_country_flag = istanbul_renamed
+			}
+		}
+		
+		allow = {
+			mass_culture_n_the_avant_garde = 1
+		}
+		
+		effect = {
+			prestige = 5
+			860 = {
+				change_province_name = "Istanbul"
+			}
+			set_country_flag = istanbul_renamed
+		}
+	}
+#AUSTRIA
+	enact_dual_monarchy_2 = {
+		potential = {
+			tag = AUS
+			war = no
+			OR = {
+				government = absolute_monarchy
+				government = hms_government
+				government = prussian_constitutionalism
+			}
+			any_owned_province = {
+				is_core = HUN
+			}
+			NOT = {
+				has_country_flag = dual_monarchy_done
+			}
+		}
+	
+		allow = {
+			OR = { AND = { 
+			has_global_flag = hungary_wants_independence
+			is_greater_power = no }
+			AND = { prestige = 200
+					is_greater_power = yes	} }
+			NOT = {
+				OR = {
+					exists = HUN
+					exists = KUK
+					average_militancy = 5
+				}
+			}
+		}
+	
+		effect = {
+		    	HUN = { all_core = { add_core = KUK } }
+			GLO = { all_core = { add_core = KUK } }
+			CRO = { all_core = { add_core = KUK } }
+			KRA = { all_core = { add_core = KUK } }
+		    	SER = { all_core = { remove_core = AUS } }
+		    	CRO = { all_core = { remove_core = AUS } }
+		    	BOS = { all_core = { remove_core = AUS } }
+		    	BOH = { all_core = { remove_core = AUS } }
+			any_pop = {
+				limit = {
+					culture = hungarian
+				}
+				militancy = -2
+			}
+			any_pop = {
+				limit = {
+					NOT = {
+						OR = {
+							culture = hungarian
+							culture = south_german
+						}
+					}
+				}
+				militancy = 2
+			}
+						
+			add_accepted_culture = hungarian
+			change_tag = KUK
+			set_country_flag = dual_monarchy_done
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+#Italy#
+	annex_San_Marco = {
+		potential = {
+			tag = SAR
+			has_country_flag = italian_war_of_independence
+			RSM = { has_country_flag = san_marco_wants_independence }
+			NOT = { has_country_flag = smannexed }
+			RSM = { exists = yes
+				war = no }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			inherit = RSM
+			set_country_flag = smannexed
+		}
+	}
+
+	Accept_arabs = {
+		potential = {
+			tag = TUR
+				NOT = { has_country_flag = alonosi }
+		}
+		
+		allow = {
+			ideological_thought = 1
+		}
+		
+		effect = {
+			add_accepted_culture = maghrebi
+			add_accepted_culture = mashriqi
+			set_country_flag = alonosi
+		}
+	}
+	Accept_arabs_2 = {
+		potential = {
+			tag = TUR
+				NOT = { has_country_flag = alonosi2 }
+			RSM = { exists = yes
+				war = no }
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			add_accepted_culture = misri
+			add_accepted_culture = bedouin	
+			set_country_flag = alonosi2
+		}
+	}
+}

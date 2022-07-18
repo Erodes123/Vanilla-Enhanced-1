@@ -1,0 +1,7 @@
+owner = ACO
+controller = ACO
+add_core = ACO
+
+add_core = ACN
+trade_goods = iron
+life_rating = 35

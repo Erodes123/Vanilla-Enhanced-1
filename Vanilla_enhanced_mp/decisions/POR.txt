@@ -1,0 +1,130 @@
+political_decisions = {
+#Angola	
+	angola_is_ours = {
+		potential = {
+			THIS = {
+				owns = 2001
+				owns = 2004
+				}
+			NOT = {
+				has_global_flag = angola_is_ours
+			}
+		}
+		
+		allow = {
+			year = 1870
+			THIS = {
+				owns = 2001
+				owns = 2004
+			}
+		}
+		
+		effect = {
+			set_global_flag = angola_is_ours
+			2000 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			2002 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2009 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2010 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2011 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			2006 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2007 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2005 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2008 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			prestige = 5
+		}
+	}
+	#Mozambique
+	mozambique = {
+		potential = {
+			THIS = {
+				owns = 2060
+				}
+			NOT = {
+				has_global_flag = moza_is_ours
+			}
+			year = 1860
+		}
+		
+		allow = {
+			year = 1870
+		}
+		
+		effect = {
+			set_global_flag = moza_is_ours
+			2065 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			2064 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2581 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			prestige = 5
+		}
+	}
+	#Lorenzo Marques
+	Lorenzo_marques = {
+		potential = {
+			THIS = {
+				owns = 2056
+				}
+			NOT = {
+				has_global_flag = lorenzo_is_ours
+			}
+			year = 1860
+		}
+		
+		allow = {
+			year = 1870
+		}
+		
+		effect = {
+			set_global_flag = lorenzo_is_ours
+			2052 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2050 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2054 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			2053 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			prestige = 5
+		}
+	}
+#Guinea_bissau
+	guinea_is_ours = {
+		potential = {
+			THIS = {
+				owns = 1877
+				}
+			NOT = {
+				has_global_flag = guinea_is_ours
+			}
+		}
+		
+		allow = {
+			year = 1870
+			THIS = {
+				owns = 1877
+			}
+		}
+		
+		effect = {
+			set_global_flag = guinea_is_ours
+			1878 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			prestige = 5
+		}
+	}
+	#Guinea_bissau
+	Galicia = {
+		potential = {
+		tag = POR
+			NOT = {
+				has_country_flag = galicia
+			}
+		}
+		
+		allow = {
+				owns = 474
+		}
+		
+		effect = {
+			set_country_flag = galicia
+			476 = { add_core = THIS }	
+			474 = { add_core = THIS }
+			add_accepted_culture = galician
+			prestige = 5
+		}
+	}
+}

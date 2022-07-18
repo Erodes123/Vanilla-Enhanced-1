@@ -1,0 +1,274 @@
+political_decisions = {
+	rename_the_congo = {
+		potential = {
+			tag = BEL
+			exists = CNG
+			CNG = {
+				vassal_of = THIS
+			}
+			NOT = {
+				has_global_flag = congo_renamed
+			}
+		}
+		
+		allow = {
+			invention = mission_to_civilize
+		}
+		
+		effect = {
+			1987 = {
+				change_province_name = "Elisabethville"
+			}		
+			1982 = {
+				change_province_name = "Leopoldville"
+			}
+			1996 = {
+				change_province_name = "Stanleyville"
+			}
+			prestige = 10
+			set_global_flag = congo_renamed
+		}
+	}
+	#Anexation of Congo
+    international_african_association_for_Belgium = {
+        picture = the_congo_conference
+        potential = {
+            year = 1870
+	    tag = BEL
+            any_owned_province = { port = yes }
+            NOT = {
+                is_vassal = yes
+                has_global_flag = called_congo_conference
+            }
+            1982 = { empty = yes }
+        }
+
+        allow = {
+            slavery = no_slavery
+            war = no
+            total_pops = 800000
+            nationalism_n_imperliasm = 1
+            OR = {
+                AND = {
+                    is_secondary_power = yes
+                    is_greater_power = no
+                }
+            }
+            OR = {
+                AND = {
+                    NOT = { badboy = 0.4 }
+                    NOT = { any_owned_province = { is_colonial = yes } }
+                    nationalism_n_imperliasm = 1
+                }
+            }
+        }
+
+        effect = {
+            set_global_flag = called_congo_conference
+            any_country = {
+                limit = { is_greater_power = yes capital_scope = {continent = europe } NOT = { tag = TUR tag = RUS } }
+                country_event = 955182
+            }
+            set_variable = { which = no_to_congo value = 0 }
+            set_variable = { which = yes_to_congo value = 0 }
+            set_variable = { which = abstained_to_congo value = 0 }
+        }
+        ai_will_do = { factor = 1 }
+    }
+	#Anexation of Congo
+    international_african_association = {
+        picture = the_congo_conference
+        potential = {
+            year = 1871
+            capital_scope = { continent = europe }
+            NOT = {
+                tag = TUR
+                tag = RUS
+                is_vassal = yes
+                has_global_flag = called_congo_conference
+            }
+            1984 = { empty = yes }
+            any_owned_province = { has_building = naval_base }
+            num_of_cities = 6
+            number_of_states = 2
+        }
+
+        allow = {
+            slavery = no_slavery
+            war = no
+            total_pops = 800000
+            OR = {
+                AND = {
+                    is_secondary_power = yes
+                    is_greater_power = no
+                }
+                tag = BEL
+            }
+            OR = {
+                AND = {
+                     is_secondary_power = yes
+		}
+
+            }
+            OR = {
+                AND = {
+                    NOT = { badboy = 0.4 }
+                    NOT = { any_owned_province = { is_colonial = yes } }
+                    nationalism_n_imperliasm = 1
+                }
+                AND = {
+                    NOT = { badboy = 0.2 }
+                    NOT = { num_of_vassals = 1 }
+                    NOT = { any_owned_province = { is_colonial = yes } }
+                    nationalism_n_imperliasm = 1
+                }
+                AND = {
+                    NOT = { badboy = 0.1 }
+                    NOT = { any_owned_province = { continent = africa } }
+                    naval_logistics = 1
+                    year = 1872
+                }
+                AND = {
+                    NOT = { badboy = 0.01 }
+                    NOT = { any_owned_province = { continent = africa } }
+                    NOT = { any_owned_province = { is_colonial = yes } }
+                    raider_group_doctrine = 1
+                    year = 1872
+                }
+                AND = {
+                    NOT = { badboy = 0.3 }
+                    NOT = { any_owned_province = { continent = africa } }
+                    tech_school = naval_tech_school
+                    raider_group_doctrine = 1
+                }
+                AND = {
+                    NOT = { badboy = 0.5 }
+                    NOT = { any_owned_province = { continent = africa } }
+                    tag = BEL
+                    year = 1885
+                    raider_group_doctrine = 1
+                }
+            }
+        }
+
+        effect = {
+            set_global_flag = called_congo_conference
+            any_country = {
+                limit = { is_greater_power = yes capital_scope = {continent = europe } NOT = { tag = TUR tag = RUS } }
+                country_event = 955182
+            }
+            set_variable = { which = no_to_congo value = 0 }
+            set_variable = { which = yes_to_congo value = 0 }
+            set_variable = { which = abstained_to_congo value = 0 }
+        }
+        ai_will_do = { factor = 1 }
+    }
+	Belgian_picardie = {
+		picture = pasdecalais 
+		potential = {
+			tag = BEL
+			is_greater_power = yes
+			NOT = {
+				has_country_flag = 
+belgium_gets_its_final_form
+			}
+            		government = fascist_dictatorship
+
+		}
+		
+		allow = {
+			mass_politics = 1
+			owns = 396			
+			owns = 387
+			owns = 395
+		}
+		
+		effect = {
+			set_country_flag = belgium_gets_its_final_form
+			FRA_399 = { 
+				add_core = BEL
+			}
+			prestige = -20
+			badboy = 10
+			}
+		}
+	claims_on_Eupen = {
+		picture = eupen
+		potential = {
+			tag = BEL
+			NOT = {
+				has_country_flag = 
+belgian_eupen
+			}
+
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			owns = 387
+			owns = 395
+		}
+		
+		effect = {
+			set_country_flag = belgian_eupen
+			396 = { 
+				add_core = BEL
+			}
+			prestige = 5
+		}
+	}
+##BNX##
+	beneluxian_picardie = {
+		picture = pasdecalais 
+		potential = {
+			tag = BNX
+			is_greater_power = yes
+			NOT = {
+				has_country_flag = 
+belgium_gets_its_final_form
+			}
+            		government = fascist_dictatorship
+
+		}
+		
+		allow = {
+			mass_politics = 1
+			owns = 387
+			owns = 395
+		}
+		
+		effect = {
+			set_country_flag = belgium_gets_its_final_form
+			FRA_399 = { 
+				add_core = BNX
+			}
+			prestige = -20
+			badboy = 10
+			}
+		}
+	claims_on_Eupenbnx = {
+		picture = eupen
+		potential = {
+			tag = BNX
+			NOT = {
+				has_country_flag = 
+belgian_eupen
+			}
+
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			owns = 387
+			owns = 395
+		}
+		
+		effect = {
+			set_country_flag = belgian_eupen
+			396 = { 
+				add_core = BNX
+			}
+			prestige = 5
+		}
+	}
+}

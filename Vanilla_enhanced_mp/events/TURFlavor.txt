@@ -1,0 +1,396 @@
+country_event = {
+
+	id = 31100
+
+	trigger = {
+		tag = TUR
+		year = 1872
+		owns = 865 #Canakkale, where Troy is located
+		NOT = {
+			year = 1875
+		}	
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1873
+		}
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1874
+		}
+	}
+
+	title = "EVTNAME31100"
+	desc = "EVTDESC31100"
+	picture = "troy"
+
+	option = {
+		name = "EVTOPTA31100" 
+		prestige = 15
+	}
+}
+
+country_event = {
+	id = 31101 #setup by GER33005
+	trigger = {
+		tag = TUR 
+		war = no
+		year = 1903
+		owns = 926 #Baghdad
+		is_vassal = no
+		has_global_flag = BerlinBaghdadRail
+		OR = {
+			government = absolute_monarchy
+			government = hms_government
+			}
+		NOT = {
+			year = 1910
+			alliance_with = ENG
+			alliance_with = FRA
+			alliance_with = RUS
+			alliance_with = GER
+			has_country_flag = BerlinBaghdadRail
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1904
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1908
+		}
+	}
+
+	title = "EVTNAME33005"
+	desc = "EVTDESC33005"
+	picture = "bagdadrailway"
+
+	option = {
+		name = "EVTOPTA31101" 
+		prestige = 10
+		set_country_flag = BerlinBaghdadRail
+		relation = { who = GER value = 100 }
+		relation = { who = ENG value = -75 }
+		relation = { who = RUS value = -75 }
+	}
+}
+
+country_event = {
+		
+	id = 31102 # Flight to Ankara
+	
+	trigger = {
+		tag = TUR
+		NOT = { is_greater_power = yes }
+		capital = 860
+		NOT = { owns = 817 }
+		NOT = { owns = 816 }
+		NOT = { owns = 830 }
+		owns = 876
+
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	title = "EVTNAME31102" #Flight from Istanbul
+	desc = "EVTDESC31102" #Our position in Istanbul is no longer secure. We should move our government to a safer place.
+	picture = "administration"
+		
+	option = {
+		name = "EVTOPTA31102" #We have been ultimately driven from Europe...
+		prestige = -10
+		capital = 876
+	}
+}
+
+#Oriental crisis
+country_event = {
+
+	id = 103100
+	title = "EVTNAME103100"
+	desc = "EVTDESC103100"
+	major = yes
+	
+	trigger = {
+		tag = TUR
+		year = 1839
+		NOT = { 
+			has_global_flag = oriental_crisis
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA103100"
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		release_vassal = EGY
+
+        casus_belli = {
+            target = EGY
+            type = make_puppet
+            months = 12
+        }
+		war = {
+			target = EGY
+			attacker_goal = {
+				casus_belli = make_puppet
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		set_global_flag = oriental_crisis
+	}
+	
+	option = {
+		name = "EVTOPTB103100"
+		realease_puppet = EGY
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		release_vassal = EGY
+		change_tag_no_core_switch = EGY
+		TUR = {
+			war = {
+				target = EGY
+				attacker_goal = {
+					casus_belli = make_puppet
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+		set_global_flag = oriental_crisis
+	}
+}
+country_event = {
+		
+	id = 311020 
+	
+	trigger = {
+		tag = TUR
+		NOT = { is_greater_power = yes }
+		OR = {
+		government = democracy
+		government = proletarian_dictatorship }
+
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	fire_only_once = yes
+
+	title = "EVTNAME311020" #Flight from Istanbul
+	desc = "EVTDESC311020" #Our position in Istanbul is no longer secure. We should move our government to a safer place.
+	picture = "administration"
+		
+	option = {
+		name = "EVTOPTA311020" #We have been ultimately driven from Europe...
+		prestige = -10
+        	TUR_788 = { remove_core = TUR }
+        	TUR_810 = { remove_core = TUR }
+        	TUR_803 = { remove_core = TUR }
+        	MON_2582 = { remove_core = TUR }
+        	TUR_853 = { remove_core = TUR }
+        	TUR_832 = { remove_core = TUR }
+		TUR_808 = { remove_core = TUR }
+		TUR_806 = { remove_core = TUR }
+		TUR_832 = { remove_core = TUR }
+		TUR_819 = { remove_core = TUR }
+		TUR_805 = { remove_core = TUR }
+		EGY_897 = { remove_core = TUR }
+		EGY_903 = { remove_core = TUR }
+		EGY_915 = { remove_core = TUR }
+		EGY_921 = { remove_core = TUR }
+		EGY_910 = { remove_core = TUR }
+		TUR_923 = { remove_core = TUR }
+		TUR_931 = { remove_core = TUR }
+		TUR_935 = { remove_core = TUR }
+	}
+}
+#Epirus revolution
+country_event = {
+
+	id = 113010
+	title = "EVTNAME113010"
+	desc = "EVTDESC113010"
+	picture = "revolutionnn"
+	major = yes
+	
+	trigger = {
+		tag = TUR
+		year = 1854
+		NOT = { 
+			has_global_flag = epirus_revolution_has_happened
+		}
+		owns = 853
+	}
+
+	
+	option = {
+		name = "EVTOPTA113010"
+		any_pop = {
+			consciousness = -2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = EPI
+			}
+			secede_province = EPI
+		}
+		EPI = {
+			capital = 853
+			leadership = 80
+		}
+		war = {
+			target = EPI
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		set_global_flag = epirus_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB113010"
+		any_pop = {
+			consciousness = -2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = EPI
+			}
+			secede_province = EPI
+		}
+		EPI = {
+			capital = 853
+			leadership = 80
+		}
+
+		set_global_flag = epirus_revolution_has_happened			
+		change_tag_no_core_switch = EPI
+		TUR = {
+			war = {
+				target = EPI
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+	}
+}
+#Albanian revolution
+country_event = {
+
+	id = 113011
+	title = "EVTNAME113011"
+	desc = "EVTDESC113011"
+	picture = "revolutionnn"
+	major = yes
+	
+	trigger = {
+		tag = TUR
+		year = 1847
+		NOT = { 
+			has_global_flag = albanian_revolution_has_happened
+		}
+		owns = 849
+	}
+
+	
+	option = {
+		name = "EVTOPTA113011"
+		any_pop = {
+			consciousness = -2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = ALB
+			}
+			secede_province = ALB
+		}
+		ALB = {
+			capital = 849
+			leadership = 80
+		}
+		war = {
+			target = ALB
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		set_global_flag = albanian_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB113011"
+		any_pop = {
+			consciousness = -2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = ALB
+			}
+			secede_province = ALB
+		}
+		ALB = {
+			capital = 849
+			leadership = 80
+		}
+
+		set_global_flag = albanian_revolution_has_happened			
+		change_tag_no_core_switch = ALB
+		TUR = {
+			war = {
+				target = ALB
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+	}
+}

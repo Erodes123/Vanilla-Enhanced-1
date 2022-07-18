@@ -1,0 +1,29 @@
+political_decisions = {
+	dismantlement_final = {
+		potential = {
+			war = no
+			THIS = {
+			has_country_flag = dismantling_power } }
+	
+		allow = {
+			war = no
+		NOT = { has_country_flag = dismantlement_done }
+		}
+	
+		effect = {
+			any_country = {	limit = { 
+				has_country_flag = dismantlement_accepted }
+					country_event = 112955 }
+
+			clr_country_flag = dismantling_power
+			any_country = {	limit = { 
+				has_country_flag = dismantlement_accepted }
+					clr_country_flag = dismantlement_accepted }
+			any_country = {	remove_country_modifier = great_war }
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

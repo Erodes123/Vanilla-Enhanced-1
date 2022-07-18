@@ -1,0 +1,48 @@
+political_decisions = {
+	become_guatemala = {
+		potential = {
+			tag = UCA
+			NOT = {
+				exists = GUA
+			}
+		} 
+
+		allow = {
+			NOT = {
+				any_owned_province = {
+					NOT = {
+						is_core = GUA
+					}
+				}
+			}
+			war = no
+		}
+
+		effect = {
+			prestige = 3
+			change_tag = GUA
+			remove_core = 2191
+			remove_core = 2192
+			remove_core = 2194
+			remove_core = 2195
+			remove_core = 2196
+			remove_core = 2193
+			remove_core = 2197
+			remove_core = 2198
+			remove_core = 2199
+			remove_core = 2200
+			remove_core = 2201
+			remove_core = 2202
+			remove_core = 2203
+		UCA_2196 = { remove_core = UCA } 
+        	UCA_2192 = { remove_core = UCA } 
+        	UCA_2186 = { remove_core = UCA } 
+        	UCA_2197 = { remove_core = UCA }
+        	UCA_2201 = { remove_core = UCA } 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}	
+

@@ -1,0 +1,75 @@
+political_decisions = {
+the_hispanic_question = {
+		potential = {
+			tag = HIS }
+		allow = {
+			romanticism = 1
+			prestige = 50
+			year = 1865
+			NOT = { has_country_modifier = monthly_timer duration = 365 }
+					}
+		effect = {
+			add_country_modifier = { name = monthly_timer duration = 600 }
+			any_country = { limit = { AND = { neighbour = THIS OR = {
+						tag = ACN
+						tag = GCO
+						tag = AGE
+						tag = VNZ
+						tag = CLM
+						tag = ECU
+						tag = CHL
+						tag = BOL
+						tag = PEU
+						tag = BIG
+						tag = ARG
+						tag = ACO
+						tag = ERI
+						tag = COR
+						tag = URU
+						tag = PRG
+						tag = SPA
+						tag = MEX
+						tag = NIC
+						tag = UCA
+						tag = ELS
+						tag = COS
+						tag = GUA
+						tag = HON } in_sphere = THIS} } country_event = 117000 days = 40 }
+		}
+	}
+	claim_luisianaHIS = {
+		picture = louisiana
+		potential = { 
+			tag = HIS 
+			revolution_n_counterrevolution = 1
+			owns = 133
+			owns = 2172
+			owns = 89
+			owns = 96
+			owns = 97
+			owns = 100
+			NOT = { has_country_flag = HISlouisiana	}
+		}
+		allow = { 
+			NOT = { has_country_flag = HISlouisiana	} }
+		effect = { 
+				USA_78 = { add_core = THIS }
+				USA_91 = { add_core = THIS }
+				USA_111 = { add_core = THIS }
+				USA_116 = { add_core = THIS }
+				USA_118 = { add_core = THIS }
+				USA_121 = { add_core = THIS }
+				USA_126	= { add_core = THIS }
+				USA_124	= { add_core = THIS }
+				USA_148	= { add_core = THIS }
+				USA_151 = { add_core = THIS }
+				USA_158	= { add_core = THIS }
+				USA_81 = { add_core = THIS }
+				USA_106	= { add_core = THIS }
+				USA_129	= { add_core = THIS }
+				USA_144	= { add_core = THIS }
+				USA_139	= { add_core = THIS }
+				set_country_flag = HISlouisiana	
+		}
+	}
+}	

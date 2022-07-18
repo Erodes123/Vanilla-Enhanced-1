@@ -1,0 +1,328 @@
+political_decisions = {
+	found_league_of_nations = {
+		potential = {
+			mass_politics = 1
+			NOT = {
+				has_global_flag = league_of_nations
+			}
+		}
+		allow = {
+			mass_politics = 1
+			NOT = {
+				has_global_flag = league_of_nations
+			} }
+		
+		effect = {
+			prestige = 15
+			set_global_flag = league_of_nations
+		FRA_1775 = { add_core = NAM }
+		FRA_1780 = { add_core = NAM }
+		FRA_1783 = { add_core = NAM }
+		FRA_1783 = { add_core = NAM }
+		FRA_1788 = { add_core = NAM }
+		FRA_1879 = { add_core = NAM }
+		FRA_1884 = { add_core = NAM }
+		FRA_1893 = { add_core = NAM }
+		FRA_1892 = { add_core = NAM }
+		FRA_1799 = { add_core = NAM }
+		FRA_1803 = { add_core = NAM }
+		FRA_1901 = { add_core = NAM }
+		FRA_1907 = { add_core = NAM }
+		FRA_1914 = { add_core = NAM }
+		FRA_1919 = { add_core = NAM }
+		FRA_1808 = { add_core = NAM }
+		FRA_1813 = { add_core = NAM }
+		ENG_1818 = { add_core = NAM }
+		ENG_1825 = { add_core = NAM }
+		FRA_1923 = { add_core = NAM }
+		FRA_1930 = { add_core = NAM }
+		FRA_1931 = { add_core = NAM }
+		FRA_1937 = { add_core = NAM }
+		FRA_1939 = { add_core = NAM }
+		FRA_1927 = { add_core = NAM }
+		FRA_1816 = { add_core = NAM }
+		ENG_1960 = { add_core = NAM }
+		ENG_1956 = { add_core = NAM }
+		FRA_1965 = { add_core = NAM }
+		SPA_1955 = { add_core = NAM }
+		FRA_1972 = { add_core = NAM }
+		FRA_1978 = { add_core = NAM }
+		ENG_1848 = { add_core = SAM }
+		ENG_1868 = { add_core = SAM }
+		ENG_2024 = { add_core = SAM }
+		ENG_2026 = { add_core = SAM }
+		ENG_2019 = { add_core = SAM }
+		ENG_2034 = { add_core = SAM }
+		ENG_2029 = { add_core = SAM }
+		ENG_2039 = { add_core = SAM }
+		ENG_2066 = { add_core = SAM }
+		POR_2060 = { add_core = SAM }
+		POR_2053 = { add_core = SAM }
+		ENG_2016 = { add_core = SAM }
+		ENG_2014 = { add_core = SAM }
+		ENG_2074 = { add_core = SAM }
+		ENG_2068 = { add_core = SAM }
+		ENG_2078 = { add_core = SAM }
+		ENG_2083 = { add_core = SAM }
+		ENG_2083 = { add_core = SAM }
+		POR_1999 = { add_core = SAM }
+		POR_2006 = { add_core = SAM }
+		POR_2003 = { add_core = SAM }
+		ENG_2132 = { add_core = SAM }
+		MAD_2121 = { add_core = SAM }
+		MAD_2117 = { add_core = SAM }
+		ENG_2125 = { add_core = SAM }
+		POR_2049 = { add_core = SAM }
+		KAL_1221 = { add_core = INM }
+		PAN_1224 = { add_core = INM }
+		ATJ_1405 = { add_core = ICM }
+		NET_1398 = { add_core = ICM }
+		NET_1413 = { add_core = ICM }
+		NET_1423 = { add_core = ICM }
+		BRU_1394 = { add_core = ICM }
+		BAL_1438 = { add_core = ICM }
+		NET_1449 = { add_core = ICM }
+		NET_1451 = { add_core = ICM }
+		GER_2530 = { add_core = OCM }
+		AST_2528 = { add_core = OCM }
+		FRA_1097 = { add_core = OCM }
+		AST_2454 = { add_core = OCM }
+		SPA_2517 = { add_core = OCM }
+		JAP_1654 = { add_core = OCM }
+		ENG_203 = { add_core = OCM }
+		ENG_2224 = { add_core = OCM }
+		JAP_1654 = { add_core = OCM }
+		ENG_2228 = { add_core = OCM }
+		EGY_921 = { add_core = MAM }
+		EGY_910 = { add_core = MAM }
+		HDJ_1151 = { add_core = MAM }
+		NEJ_1156 = { add_core = MAM }
+		NEJ_1157 = { add_core = MAM }
+		YEM_1173 = { add_core = MAM }
+		YEM_1412 = { add_core = MAM }
+		YEM_1178 = { add_core = MAM }
+		ABU_1162 = { add_core = MAM }
+		OMA_1166 = { add_core = MAM }
+		573 = { add_core = SRL }
+
+			BUR = { all_core = { add_core = INM } }
+			HND = { all_core = { add_core = INM } }
+			SIA = { all_core = { add_core = ICM } }
+			LUA = { all_core = { add_core = ICM } }
+			CAM = { all_core = { add_core = ICM } }
+			DAI = { all_core = { add_core = ICM } }
+			JOH = { all_core = { add_core = ICM } }
+			NAM = { set_country_flag = mandate }
+
+			SAM = { add_country_modifier = {
+                name = neutrality_modifier
+                duration = -1
+            } }
+
+			INM = {             add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } }
+
+			OCM = {             add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } }
+
+			MAM = {             add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } }
+
+			ICM = {             add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	West_african_mandate = {
+        picture = west_africa
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				NAM = { has_country_flag = dismantlement_mandate }
+				NOT = { has_country_flag = chupalo }
+		}
+		allow = {
+				has_country_flag = dismantling_mandate_god
+				NAM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+		set_country_flag = chupalo
+			prestige = 15
+		NAM = { country_event = 114000 }
+				clr_country_flag = dismantling_mandate_god
+				NAM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	central_sahara_mandate = {
+        picture = central_sahara
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				NAM = { has_country_flag = dismantlement_mandate }
+
+				NOT = { has_country_flag = chupaloo }
+		}
+		allow = {
+				has_country_flag = dismantling_mandate_god
+				NAM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+			prestige = 15
+		set_country_flag = chupaloo
+		NAM = { country_event = 114001 }
+				clr_country_flag = dismantling_mandate_god
+				NAM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	central_east_africa_mandate = {
+        picture = central_west
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				NAM = { has_country_flag = dismantlement_mandate }
+
+				NOT = { has_country_flag = chupalooo }
+		}	
+		allow = {
+				THIS = { has_country_flag = dismantling_mandate_god }
+				NAM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+			prestige = 15
+		set_country_flag = chupalooo
+		NAM = { country_event = 114002 }
+				clr_country_flag = dismantling_mandate_god
+				NAM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	horn_of_africa_mandate = {
+        picture = horn_of_africa
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				SAM = { has_country_flag = dismantlement_mandate }
+
+				NOT = { has_country_flag = chupaloooo }
+		}	
+		allow = {
+				has_country_flag = dismantling_mandate_god
+				SAM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+			prestige = 15
+		set_country_flag = chupaloooo
+		SAM = { country_event = 114003 }
+				clr_country_flag = dismantling_mandate_god
+				SAM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	central_subsahara_mandate = {
+        picture = central_sub_sahara
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				SAM = { has_country_flag = dismantlement_mandate }
+
+				NOT = { has_country_flag = chupalooooo }
+		}
+		allow = {
+				has_country_flag = dismantling_mandate_god
+				SAM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+			prestige = 15
+		set_country_flag = chupalooooo
+		SAM = { country_event = 114004 }
+				clr_country_flag = dismantling_mandate_god
+				SAM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	southern_mandate = {
+        picture = southern_mandate
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				SAM = { has_country_flag = dismantlement_mandate }
+
+				NOT = { has_country_flag = chupaloooooo }
+		}	
+		allow = {
+				has_country_flag = dismantling_mandate_god
+				SAM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+			prestige = 15
+		set_country_flag = chupaloooooo
+		SAM = { country_event = 114005 }
+				clr_country_flag = dismantling_mandate_god
+				SAM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	IndoChina = {
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				ICM = { has_country_flag = dismantlement_mandate }
+
+				NOT = { has_country_flag = chupalooooooo }
+		}	
+		allow = {
+				has_country_flag = dismantling_mandate_god
+				ICM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+			prestige = 15
+
+		set_country_flag = chupalooooooo
+		ICM = { country_event = 114006 }
+				clr_country_flag = dismantling_mandate_god
+				ICM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	Caribbean_islands = {
+		potential = {
+				has_country_flag = dismantling_mandate_god
+				OCM = { has_country_flag = dismantlement_mandate }
+
+				NOT = { has_country_flag = chupaloooooooo }
+		}	
+		allow = {
+				THIS = { has_country_flag = dismantling_mandate_god }
+				OCM = { has_country_flag = dismantlement_mandate }
+		}
+		
+		effect = {
+			prestige = 15
+		set_country_flag = chupaloooooooo
+		OCM = { country_event = 114007 }
+				clr_country_flag = dismantling_mandate_god
+				OCM = { clr_country_flag = dismantlement_mandate } }
+		ai_will_do = {
+			factor = 1 
+		}
+	}	
+}

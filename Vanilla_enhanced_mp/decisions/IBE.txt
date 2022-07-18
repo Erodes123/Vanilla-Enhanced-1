@@ -1,0 +1,149 @@
+political_decisions = {
+	form_Iberia = {
+		picture = iberia
+		potential = {
+			is_greater_power = yes
+			has_country_flag = european_expansion
+			NOT = { has_country_flag = regain_our_colonies }
+			OR = {
+				tag = SPA
+				tag = POR
+			}
+			NOT = {
+				exists = IBE
+			}
+		}	
+		allow = {
+			NOT = { has_country_flag = regain_our_colonies }
+			war = no
+			SPA = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			POR = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = SPA
+						tag = POR 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			SPA = { all_core = { add_core = IBE } }	
+			POR = { all_core = { add_core = IBE } }				
+			change_tag = IBE
+			add_accepted_culture = portuguese
+			add_accepted_culture = spanish
+			add_accepted_culture = catalan
+			add_accepted_culture = basque
+			add_accepted_culture = galician
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	iberian_gibraltar = {
+		potential = {
+			is_greater_power = yes
+			tag = IBE
+			ENG = {
+				owns = 517
+			}
+			NOT = { has_country_flag = iberian_gibraltar }
+		}	
+		allow = {
+			has_country_flag = european_expansion
+			war = no }
+					
+		effect = {
+			set_country_flag = iberian_gibraltar
+			prestige = 5
+			517 = { add_core = IBE } }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	iberian_lands_in_italy = {
+		potential = {
+			is_greater_power = yes
+			tag = IBE
+			has_country_flag = european_expansion
+			NOT = { has_country_flag = iberian_italy }
+		}	
+		allow = {
+			has_country_flag = european_expansion
+			war = no
+			owns = 766 }
+					
+		effect = {
+			set_country_flag = iberian_italy
+			prestige = 5
+			766 = { add_core = IBE }
+			765 = { add_core = IBE }
+			762 = { add_core = IBE }
+			763 = { add_core = IBE }
+			764 = { add_core = IBE }
+			759 = { add_core = IBE }
+			760 = { add_core = IBE }
+			761 = { add_core = IBE }
+			755 = { add_core = IBE }
+			754 = { add_core = IBE }
+			2567 = { add_core = IBE }
+			758 = { add_core = IBE }
+			756 = { add_core = IBE }
+			757 = { add_core = IBE }
+			753 = { add_core = IBE }
+		ai_will_do = {
+			factor = 1 }
+		}
+	}
+	accept_south_italian = {
+		potential = {
+			tag = IBE
+			has_country_flag = european_expansion
+			NOT = { has_country_flag = iberian_italy }
+		}	
+		allow = {
+			has_country_flag = european_expansion
+			war = no
+			owns = 760
+			owns = 766
+			owns = 2567			}
+					
+		effect = {
+			set_country_flag = iberian_italy
+			prestige = 5
+			add_accepted_culture = south_italian
+		ai_will_do = {
+			factor = 1 }
+		}
+	}	
+}

@@ -1,0 +1,5 @@
+owner = ACN
+controller = ACN
+add_core = ACN
+trade_goods = tropical_wood
+life_rating = 30

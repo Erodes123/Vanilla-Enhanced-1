@@ -1,0 +1,115 @@
+#Do we really need to take back Belgium?
+country_event = {
+	id = 1080000
+	title = "EVTNAME1080000" 
+	desc = "EVTDESC1080000"
+	major = yes
+
+	mean_time_to_happen = { months = 2 }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = NET
+		year = 1839
+		NOT = { war_with = BEL }
+		exists = BEL
+	}
+	option = {
+		name = "EVT1080000OPTA"
+		BEL = { country_event = 1080001 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT1080000OPTB"
+		war = {
+			target = BEL
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		
+		ai_chance = {
+			factor = 0 }
+	}
+}
+country_event = {
+	id = 1080001
+	title = "EVTNAME1080001"
+	desc = "EVTDESC1080001"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1080001"
+		381 = {
+			secede_province = NET
+		}
+		397 = {
+			secede_province = LUX
+		}
+		relation = { who = NET value = 200 }
+		ai_chance = {
+			factor = 100
+		}
+		BEL_394 = { remove_core = NET }
+		BEL_387 = { remove_core = NET }
+
+		397 = { remove_core = NET }
+		397 = { remove_core = BEL }
+		381 = { remove_core = BEL }
+	}
+	
+	option = {
+		name = "EVTOPTB1080001"
+		NET = {
+			country_event = { id=1080002 days=0 }
+		}
+		add_casus_belli = {
+				target = ENG
+				type = liberate_country
+				months = 100
+		}
+		add_casus_belli = {
+				target = FRA
+				type = liberate_country
+				months = 100
+		}		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 1080002
+	title = "EVTNAME1080002" 
+	desc = "EVTDESC1080002"
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 0
+		}
+	option = {
+		name = "EVT1080002OPT"
+		war = {
+			target = BEL
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	}
+}

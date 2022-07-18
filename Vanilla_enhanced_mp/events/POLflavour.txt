@@ -1,0 +1,119 @@
+#Lands to the west
+country_event = {
+
+	id = 110020
+	title = "EVTNAME110020"
+	desc = "EVTDESC110020"
+	major = yes
+	
+	trigger = {
+			tag = POL
+			exists = POL
+			war = no
+			nationalism_n_imperialism = 1
+			NOT = {
+				has_country_flag = lands_to_the_wast }
+					}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months =  6 }
+
+	
+	option = {
+		name = "EVTOPT110020"
+				set_country_flag = lands_to_the_wast
+			685 = {
+				add_core = POL
+			}
+			701 = {
+				add_core = POL
+			}
+			699 = {
+				add_core = POL
+			}
+			700 = {
+				add_core = POL
+			}
+			691 = {
+				add_core = POL
+			}
+			690 = {
+				add_core = POL
+			}
+			694 = {
+				add_core = POL
+			}
+
+	}
+}
+#Germany loses our cores
+country_event = {
+	id = 110021
+	title = "EVTNAME110021"
+	desc = "EVTDESC110021"
+	major = yes
+	
+	trigger = {
+			tag = GER
+			exists = GER
+			POL = {
+				owns = 685
+				owns = 690
+				owns = 717
+					}
+		}
+
+	mean_time_to_happen = { months =  6 }
+
+	
+	option = {
+		name = "EVTOPT110021"
+
+			685 = { remove_core = GER }
+			701 = { remove_core = GER }
+			699 = { remove_core = GER }
+			700 = { remove_core = GER }
+			691 = { remove_core = GER }
+			690 = { remove_core = GER }
+			694 = { remove_core = GER }
+
+	}
+}
+#Support Poland or Lithuania
+country_event = {
+	id = 114030
+	title = "EVTNAME114030"
+	desc = "EVTDESC114030"
+	major = yes
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA114030" #Support Poland
+		diplomatic_influence = {
+			who = CPL
+			value = 300
+		}
+		CPL = { treasury = 100000 }
+		treasury = -100000
+			ai_chance = {
+			factor = 10 } }
+	option = {
+		name = "EVTOPTB114030" #Support Lithuania
+		diplomatic_influence = {
+			who = LIT
+			value = 300
+		}
+		LIT = { treasury = 100000 }
+		treasury = -100000
+ 		ai_chance = {
+			factor = 0 }
+	}
+	option = {
+		name = "EVTOPTC114030" #Support None
+					ai_chance = {
+			factor = 90 }
+	}
+}

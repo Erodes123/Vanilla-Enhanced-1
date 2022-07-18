@@ -1,0 +1,17 @@
+army = {
+	name = "Army of the Sultan of Sokoto"
+	location = 1948
+	regiment = {
+		name= "1.Fulbe"
+		type = cavalry
+		home = 1883
+	}
+
+	regiment = {
+		name= "2.Fulbe"
+		type = irregular
+		home = 1880
+	}
+
+}
+

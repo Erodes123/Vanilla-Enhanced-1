@@ -1,0 +1,160 @@
+political_decisions = {
+	form_the_andine_confederation = {
+	
+        picture = peru_bolivia
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = PEU
+				tag = BOL
+			}
+			NOT = {
+				exists = ACN
+			}
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			PEU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BOL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			PEU = { all_core = { add_core = ACN } }
+			BOL = { all_core = { add_core = ACN } }			
+			change_tag = ACN
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	form_the_andine_confederation_for_chile = {
+        picture = peru_bolivia
+		potential = {
+			is_greater_power = yes
+			tag = CHL
+
+			NOT = {
+				exists = ACN
+			}
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			PEU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BOL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			CHL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			PEU = { all_core = { add_core = ACN } }
+			BOL = { all_core = { add_core = ACN } }	
+			CHL = { all_core = { add_core = ACN } }			
+			change_tag = ACN
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	demand_Chile = {
+        picture = capchile
+		potential = {
+			is_greater_power = yes
+				tag = ACN
+				CHL = { exists = yes
+					NOT = { vassal_of = ACN } }
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			CHL = {
+			in_sphere = THIS
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			CHL = { all_core = { add_core = THIS } }
+			inherit = CHL
+			badboy = 5	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,906 @@
+country_event = {
+
+	id = 31507 #see 35400 for LOM parallel event
+
+	trigger = {
+		tag = AUS
+		year = 1842
+		NOT = {
+			year = 1845
+			exists = LOM
+			has_global_flag = Nabucco
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5 
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1843
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1844
+		}
+	}
+
+	title = "EVTNAME35400"
+	desc = "EVTDESC35400"
+	picture = "Verdi"
+
+	option = {
+		name = "EVTOPTA35400" 
+		prestige = 3
+		any_pop = { 
+			limit = { 
+				has_pop_culture = north_italian 
+			} 
+			consciousness = 1 
+		}
+		set_global_flag = Nabucco
+	}
+}
+
+country_event = {
+
+	id = 31508 #see PRU34610 and RUS32501 for parallel events
+
+	trigger = {
+		OR = {
+			owns = 699 # Posen - PRU
+			owns = 706 # Warsaw - RUS
+			owns = 714 # Tarnow - AUS
+		}
+		year = 1846
+		war = no
+		NOT = {
+			year = 1849
+			exists = POL
+		}	
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1847
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1848
+		}
+	}
+
+	title = "EVTNAME32501"
+	desc = "EVTDESC32501"
+	picture = "PopeLeo"
+
+	option = {
+		name = "EVTOPTA32501" 
+		any_pop = {
+			limit = { has_pop_culture = polish }
+			militancy = 5
+		}	
+	}
+}
+#Hungarian revolution
+country_event = {
+
+	id = 102800
+	title = "EVTNAME102800"
+	desc = "EVTDESC102800"
+	picture = "hungarian_revolution"
+	
+	trigger = {
+		tag = AUS
+		year = 1848
+		NOT = { year = 1850 
+			has_country_flag = hungarian_revolution_has_happened
+		}
+		owns = 641
+	}
+
+	mean_time_to_happen =  {
+		days = 25
+	}
+
+	
+	option = {
+		name = "EVTOPTA102800"
+		create_vassal = HUN
+		any_pop = {
+			consciousness = 1
+			militancy = -1
+		}
+		any_owned = {
+			limit = {
+				is_core = HUN
+				NOT = {
+					province_id = 774
+					province_id = 773
+					province_id = 772
+					province_id = 775
+					province_id = 771
+					province_id = 775
+					province_id = 776
+					province_id = 777
+					province_id = 791
+					province_id = 793
+				}
+			}
+			secede_province = HUN
+		}
+		HUN = {
+			capital = 641
+			leadership = 80
+		}
+		set_country_flag = hungarian_revolution_has_happened
+		create_vassal = HUN
+	}
+	
+	option = {
+		name = "EVTOPTB102800"
+		set_country_flag = hungarian_revolution_has_happened
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = HUN
+				NOT = {
+					province_id = 774
+					province_id = 773
+					province_id = 772
+					province_id = 775
+					province_id = 771
+					province_id = 775
+					province_id = 776
+					province_id = 777
+					province_id = 791
+					province_id = 793
+				}
+			}
+			secede_province = HUN
+		}
+		HUN = {
+			capital = 641
+			leadership = 80
+		}
+		AUS = {
+			capital = 619
+		}
+		create_vassal = HUN
+		change_tag_no_core_switch = HUN
+	}
+}
+#Venetian revolution
+country_event = {
+
+	id = 102900
+	title = "EVTNAME102900"
+	desc = "EVTDESC102900"
+	picture = "revolutionnn"
+	major = yes
+	
+	trigger = {
+		tag = AUS
+		year = 1848
+		NOT = { year = 1850 
+			has_country_flag = venetian_revolution_has_happened
+		}
+		owns = 729
+	}
+
+	
+	option = {
+		name = "EVTOPTA102900"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = VEN
+				NOT = {
+					province_id = 737
+				}
+			}
+			secede_province = VEN
+		}
+		VEN = {
+			capital = 729
+			leadership = 80
+		}
+		capital = 729
+		AUS = {
+			capital = 619
+		}
+		war = {
+			target = VEN
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		set_country_flag = venetian_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB102900"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = VEN
+				NOT = {
+					province_id = 737
+				}
+			}
+			secede_province = VEN
+		}
+		VEN = {
+			capital = 729
+			leadership = 80
+		}
+		capital = 729
+		AUS = {
+			capital = 619
+		}
+		change_tag_no_core_switch = VEN
+		AUS = {
+			war = {
+				target = VEN
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+			
+		set_country_flag = venetian_revolution_has_happened
+		}
+	}
+}
+#Lombard revolution
+country_event = {
+
+	id = 103000
+	title = "EVTNAME103000"
+	desc = "EVTDESC103000"
+	picture = "revolutionnn"
+	major = yes
+	
+	trigger = {
+		tag = AUS
+		year = 1848
+		NOT = { year = 1850 
+			has_country_flag = lombard_revolution_has_happened
+		}
+		owns = 726
+	}
+
+	
+	option = {
+		name = "EVTOPTA103000"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = LOM
+			}
+			secede_province = LOM
+		}
+		LOM = {
+			capital = 726
+			leadership = 80
+		}
+		capital = 726
+		AUS = {
+			capital = 619
+		}
+		war = {
+			target = LOM
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		set_country_flag = lombard_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB103000"
+		set_country_flag = lombard_revolution_has_happened
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = LOM
+			}
+			secede_province = LOM
+		}
+		LOM = {
+			capital = 726
+			leadership = 80
+		}
+		capital = 726
+		AUS = {
+			capital = 619
+		}
+		change_tag_no_core_switch = LOM
+		AUS = {
+			war = {
+				target = LOM
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+	}
+}
+#The Krakowian question
+country_event = {
+	id = 109000
+	title = "EVTNAME109000" #Krakow
+	desc = "EVTDESC109000"
+	picture = "expansion"
+
+	fire_only_once = yes
+
+	is_triggered_only = yes 
+	
+	option = {
+		name = "EVT109000OPTA"
+		PRU = { country_event = 109001 }
+		RUS = { country_event = 109002 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT109000OPTB"
+		war = {
+			target = KRA
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 109001
+	title = "EVTNAME109001"
+	desc = "EVTDESC109001"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA109001"
+		set_country_flag = i_accept
+		PRU = {
+		diplomatic_influence = {
+			who = KRA
+			value = -400
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB109001"
+		set_country_flag = i_refuse
+		PRU = {
+		diplomatic_influence = {
+			who = KRA
+			value = 300
+			}
+		}		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 109002
+	title = "EVTNAME109002"
+	desc = "EVTDESC109002"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA109002"
+		set_country_flag = i_accept
+		RUS = {
+		diplomatic_influence = {
+			who = KRA
+			value = -400
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB109002"
+		set_country_flag = i_refuse
+		RUS = {
+		diplomatic_influence = {
+			who = KRA
+			value = 300
+			}
+		}		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 109003
+	title = "EVTNAME109003"
+	desc = "EVTDESC109003"
+	picture = "expansion"
+	
+fire_only_once = yes
+	
+	trigger = {	
+			tag = AUS
+
+			PRU = {
+				has_country_flag = i_accept
+				}
+			RUS = {
+				has_country_flag = i_accept
+				}
+			}
+
+	mean_time_to_happen = { months = 2 }
+	
+	option = {
+		name = "EVTOPTA109003"
+		KRA = {
+		add_casus_belli = {
+				target = AUS
+				type = conquest
+				months = 15 }
+		}
+		war = {
+			target = KRA
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	}
+}
+#Hungarian war of independence
+country_event = {
+
+	id = 102801
+	title = "EVTNAME102801"
+	desc = "EVTDESC102801"
+	picture = "revolutionnn"
+	major = yes 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = AUS
+		has_country_flag = hungarian_revolution_has_happened
+		NOT = {
+			has_global_flag = hungary_wants_independence
+		}
+	}
+ 
+	mean_time_to_happen =  {
+		months = 1
+	}
+
+	option = {
+		name = "EVTOPTA102801"
+		release_vassal = HUN
+
+		AUS = {
+			capital = 619
+		}
+		set_global_flag = hungary_wants_independence
+		war = {
+			target = HUN
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}	
+		}
+	}
+}
+country_event = {
+
+	id = 102901
+	title = "EVTNAME102901"
+	desc = "EVTDESC102901"
+	picture = "revolutionnn"
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = VEN
+		AUS = {
+		has_country_flag = venetian_revolution_has_happened }
+		NOT = {
+			has_country_flag = san_marco_wants_independence
+		}
+	}
+ 
+	mean_time_to_happen =  {
+		months = 1
+	}
+
+	option = {
+		name = "EVTOPTA102901"
+		set_country_flag = san_marco_wants_independence
+		inherit = LOM
+		change_tag = RSM
+		RSM = { set_country_flag = san_marco_wants_independence }
+	}
+}
+country_event = {
+
+    id = 32512
+    title = "EVTNAME32512" #Intervention in Hungary?
+    desc = "EVTDESC32512"
+    picture = "deliberation"
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = RUS
+        war = no
+        has_global_flag = hungary_wants_independence
+        exists = HUN
+        NOT = { truce_with = HUN }
+        AUS = {
+            NOT = { truce_with = RUS }
+            war_with = HUN
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+        modifier = {
+            factor = 3
+            num_of_revolts = 1
+        }
+        modifier = {
+            factor = 0.5
+            AUS = {
+                any_owned_province = { controlled_by = HUN }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT32512OPTA"
+        prestige = 5
+        casus_belli = {
+            target = HUN
+            type = cut_down_to_size
+            months = 12
+        }
+        war = {
+            target = HUN
+            attacker_goal = {
+                casus_belli = cut_down_to_size
+            }
+        }
+        military_access = AUS
+        random_owned = {
+            limit = {
+                owner = { ai = yes }
+                AUS = { ai = yes }
+            }
+            owner = {
+                relation = {
+                    who = AUS
+                    value = 300
+                }
+            }
+        }
+        random_owned = {
+            limit = {
+                OR = {
+                    owner = { ai = no }
+                    AUS = { ai = no }
+                }
+            }
+            owner = {
+                relation = {
+                    who = AUS
+                    value = 100
+                }
+            }
+        }
+        ai_chance = {
+            factor = 80
+            modifier = {
+                factor = 0.5
+                HUN = { national_provinces_occupied = .25 }
+            }
+            modifier = {
+                factor = 0.5
+                NOT = {
+                    relation = { who = AUS value = 0 }
+                }
+            }
+        }
+    }
+	    option = {
+        name = "EVT32512OPTA"
+    }
+}
+country_event = {
+
+    id = 116010
+    title = "Ukrainian or Polish?" #Intervention in Hungary?
+    desc = "With more openess, we must accept other minorities for them to have rights in us."
+    picture = "deliberation"
+
+    fire_only_once = yes
+
+    is_triggered_only = yes
+
+    option = {
+        name = "Ukrainian"
+        prestige = 5
+		add_accepted_culture = ukrainian }
+		
+		ai_chance = {
+            factor = 50
+        }
+		
+	option = {
+        name = "Polish"
+        prestige = 5
+		add_accepted_culture = polish }
+		
+        ai_chance = {
+            factor = 50
+    }
+}
+# The Südtirol Compromise
+country_event = {
+    id = 110089
+    title = "EVTNAME110089"
+    desc = "EVTDESC110089"
+    picture = "map_trentin"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT110089OPTA" #There will be no compromise
+        badboy = 1
+        FROM = { country_event = 110090 }
+        ai_chance = {
+            factor = 35
+        }
+    }
+
+    option = {
+        name = "EVT110089OPTB" #We should split it equally
+        FROM = { country_event = 110091 }
+
+        ai_chance = { factor = 50 }
+    }
+
+    option = {
+        name = "EVT110089OPTC" #Let's exchange populations
+        FROM = { country_event = 110092 }
+
+        ai_chance = { factor = 15 }
+    }
+}
+
+# The South Tirol Compromise - FROMCOUTNRY Refuses
+country_event = {
+    id = 110090
+    title = "EVTNAME110090"
+    desc = "EVTDESC110090"
+    picture = "map_trentin"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT110090OPTA" #How dare they!
+        relation = { who = FROM value = -50 }
+    }
+}
+
+# The South Tirol Compromise - splitting states
+country_event = {
+    id = 110091
+    title = "EVTNAME110091"
+    desc = "EVTDESC110091"
+    picture = "map_trentin"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT110091OPTA" #We accept
+        random_owned = {
+            limit = {
+                province_id = 735
+                owner = { is_culture_group = italian }
+            }
+            secede_province = FROM
+            remove_core = THIS
+            remove_core = VEN
+        }
+        random_owned = {
+            limit = {
+                province_id = 734
+                owner = { is_culture_group = italian }
+            }
+            remove_core = GER
+            remove_core = AUS
+            remove_core = KUK
+            remove_core = VEN
+            change_province_name = "Trentino"
+        }
+        random_owned = {
+            limit = {
+                province_id = 734
+                owner = { is_culture_group = germanic }
+            }
+            secede_province = FROM
+            remove_core = THIS
+            remove_core = GER
+            remove_core = AUS
+            remove_core = KUK
+            change_province_name = "Trentino"
+        }
+        random_owned = {
+            limit = {
+                province_id = 735
+                owner = { is_culture_group = germanic }
+            }
+            remove_core = ITA
+            remove_core = VEN
+        }
+        relation = { who = FROM value = 100 }
+        ai_chance = {
+            factor = 30
+        }
+    }
+
+    option = {
+        name = "EVT110091OPTB" #We refuse
+        badboy = 1
+        relation = { who = FROM value = -50 }
+        FROM = { country_event = 110090 }
+        ai_chance = {
+            factor = 70
+        }
+    }
+}
+
+# The South Tirol Compromise - Population and province exchanges
+country_event = {
+    id = 110092
+    title = "EVTNAME110092"
+    desc = "EVTDESC110092"
+    picture = "map_trentin"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT110091OPTA" #We accept
+        735 = {
+            any_pop = {
+                limit = { is_culture_group = italian }
+                move_pop = 734
+            }
+        }
+        734 = {
+            any_pop = {
+                limit = { is_culture_group = germanic }
+                move_pop = 735
+            }
+        }
+        random_owned = {
+            limit = {
+                province_id = 735
+                owner = { is_culture_group = italian }
+            }
+            secede_province = FROM
+            remove_core = THIS
+            remove_core = VEN
+        }
+        random_owned = {
+            limit = {
+                province_id = 734
+                owner = { is_culture_group = italian }
+            }
+            remove_core = GER
+            remove_core = AUS
+            remove_core = KUK
+            remove_core = VEN
+            change_province_name = "Trentino"
+        }
+        random_owned = {
+            limit = {
+                province_id = 734
+                owner = { is_culture_group = germanic }
+            }
+            secede_province = FROM
+            remove_core = THIS
+            remove_core = GER
+            remove_core = AUS
+            remove_core = KUK
+            change_province_name = "Trentino"
+        }
+        random_owned = {
+            limit = {
+                province_id = 735
+                owner = { is_culture_group = germanic }
+            }
+            remove_core = ITA
+            remove_core = VEN
+        }
+        relation = { who = FROM value = 100 }
+        ai_chance = {
+            factor = 20
+        }
+    }
+
+    option = {
+        name = "EVT110091OPTB" #We refuse
+        badboy = 1
+        relation = { who = FROM value = -50 }
+        FROM = { country_event = 110090 }
+        ai_chance = {
+            factor = 80
+        }
+    }
+}

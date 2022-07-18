@@ -1,0 +1,396 @@
+# Convention of Constantinople - everyone agrees
+country_event = {
+	id = 100008
+	title = "EVTNAME100008"
+	desc = "EVTDESC100008"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100008"
+		release_vassal = MOL
+		release_vassal = WAL
+		release_vassal = ROM
+		any_owned = {
+			limit = {
+					owned_by = TUR }
+		TUR_810 = {
+			secede_province = BUL
+		}
+		798 = {
+			secede_province = SER
+		}
+		818 = {
+			secede_province = BUL
+		}
+		799 = {
+			secede_province = SER
+		}
+		674 = {
+			secede_province = ROM
+		}
+		675 = {
+			secede_province = ROM
+		}
+		800 = {
+			secede_province = MON
+		}
+		804 = {
+			secede_province = BOS
+		}
+		2577 = {
+			secede_province = BOS
+		}
+		885 = {
+			secede_province = RUS
+		}
+		886 = {
+			secede_province = RUS
+		}
+		1096 = {
+			secede_province = RUS
+		}
+		2569 = {
+			secede_province = MON
+		}
+		TUR_832 = {
+			secede_province = GRE
+		}
+		TUR_788 = {
+			secede_province = BOS
+		}
+		CYP = { all_core = { secede_province = FROM
+					remove_core = TUR } }
+		TUR_674 = { remove_core = TUR } # Dobrudja
+        	TUR_788 = { remove_core = TUR } # Bosnia
+        	TUR_810 = { remove_core = TUR } # Bulgaria
+        	TUR_803 = { remove_core = TUR } # S.Serbia
+        	MON_2582 = { remove_core = TUR } # Montenegro
+        	TUR_853 = { remove_core = TUR } # Albania
+        	TUR_832 = { remove_core = TUR } # Thessalia
+        	847 = { remove_core = TUR } #Chania
+        	848 = { remove_core = TUR } #Iraklion
+        	1096 = { remove_core = TUR } } #Iraklion
+		create_vassal = BUL
+		AUS = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400
+				}
+			}
+		KUK = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 100
+	}
+	
+	option = {
+		name = "EVTOPTB100008"
+		RUS = {
+			country_event = { id=100009 days=0 }
+		}
+		add_casus_belli = {
+				target = RUS
+				type = liberate_country
+				months = 60
+		}	
+		add_casus_belli = {
+				target = FRA
+				type = liberate_country
+				months = 60
+		}
+		add_casus_belli = {
+				target = ENG
+				type = liberate_country
+				months = 60
+		}	
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+# The Ottoman Empire refuses
+country_event = {
+	id = 100009
+	title = "EVTNAME100009"
+	desc = "EVTDESC100009"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100009"
+		relation = { who = TUR value = -200 }
+		release_vassal = TUR
+		diplomatic_influence = {
+			who = TUR
+			value = -200
+		}
+		add_casus_belli = {
+				target = RUS
+				type = balkan_liberation
+				months = 60
+		}
+		
+		war = {
+			target = TUR
+			attacker_goal = {
+				casus_belli = balkan_liberation
+			}
+		}
+	}
+}
+#Bulgarian Rumelia
+country_event = {
+
+	id = 103200
+	title = "EVTNAME103200"
+	desc = "EVTDESC103200"
+	picture = "rumelia"
+	
+	trigger = {
+		tag = BUL
+		year = 1885
+		exists = BUL
+		NOT = { 
+			has_global_flag = bulgarian_rumelia
+		}
+	}
+
+	fire_only_once = yes 
+	
+	option = {
+		name = "EVTOPTA103200"
+		any_pop = {
+			consciousness = 2
+			militancy = -2
+		}
+		diplomatic_influence = {
+			who = TUR
+			value = -400
+		}
+		relation = {
+			who = TUR
+			value = -200
+			}
+		TUR_808 = {
+			secede_province = BUL
+		}
+		TUR_808 = { remove_core = TUR }
+	set_global_flag = bulgarian_rumelia
+	}
+}
+#Bulgarian independence
+country_event = {
+
+	id = 103201
+	title = "EVTNAME103201"
+	desc = "EVTDESC103201"
+	major = yes
+	
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = BUL
+		exists = BUL
+		NOT = { 
+			has_global_flag = bulgaria_independent
+			}
+		OR = {
+		AUS = {
+			has_country_flag = austria_gains_bosnia
+		}
+		KUK = {
+			has_country_flag = austria_gains_bosnia }
+		year = 1890
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA103201"
+		TUR = {
+			release_vassal = BUL
+		}
+	set_global_flag = bulgaria_independent
+	}
+}
+#England decides the fate of the Balkans
+country_event = {
+	id = 100003
+	title = "EVTNAME100003"
+	desc = "EVTDESC100003"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100003"
+			TUR = {
+				country_event = { id=100008 days = 5 }
+			}
+
+		ai_chance = {
+			factor = 0.60 }
+	}
+	
+	option = {
+		name = "EVTOPTB100003"
+		TUR = {
+			country_event = { id=100004 days = 5 }
+		}
+		ai_chance = {
+			factor = 0.40
+		}
+	}
+}
+country_event = {
+	id = 100004
+	title = "EVTNAME100004"
+	desc = "EVTDESC100004"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100008"
+		release_vassal = MOL
+		release_vassal = WAL
+		release_vassal = ROM
+		any_owned = {
+			limit = {
+					owned_by = TUR }
+			BOS = { all_core = { secede_province = BOS
+						remove_core = TUR } }
+			SER = { all_core = { secede_province = SER
+						remove_core = TUR } }
+			BUL = { all_core = { secede_province = BUL
+						remove_core = TUR } }
+			BUL = { capital = 809 }
+
+			ALB = { all_core = { secede_province = ALB
+						remove_core = TUR } }
+			ALB = { capital = 849 }
+			MON = { all_core = { secede_province = MON
+						remove_core = TUR } }
+			GRE = { all_core = { secede_province = GRE
+						remove_core = TUR } }
+			ROM = { all_core = { secede_province = ROM 
+						remove_core = TUR } } }
+		AUS = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400
+				}
+			}
+		KUK = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 100
+	}
+	
+	option = {
+		name = "EVTOPTB100008"
+		RUS = {
+			country_event = { id=100009 days=0 }
+		}	
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#Russia decides the fate of the Balkans
+country_event = {
+	id = 100001
+	title = "EVTNAME100001"
+	desc = "EVTDESC100001"
+	picture = "constantinople_conference"
+	
+	fire_only_once = yes 
+	
+	trigger = { tag = RUS
+			TUR = { NOT = { is_greater_power = yes } } 
+			OR = { AND = { TUR = { in_sphere = RUS } year = 1855 }
+					year = 1878 } }		
+	option = {
+		name = "EVTOPTB100001"
+			any_country = { limit = {  rank = 1 } 
+				country_event = { id=100003 days = 5 }
+			}
+	}
+}
+country_event = {
+	id = 118001
+	title = "EVTNAME100004"
+	desc = "EVTDESC100004"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100008"
+		release_vassal = MOL
+		release_vassal = WAL
+		release_vassal = ROM
+		any_owned = {
+			limit = {
+					owned_by = TUR }
+			BUL = { all_core = { secede_province = BUL
+						remove_core = TUR } }
+			858 = { secede_province = BUL  }
+			859 = { secede_province = BUL  }
+			828 = { secede_province = BUL }
+			807 = { secede_province = BUL  }
+			806 = { secede_province = BUL  }
+			805 = { secede_province = BUL  }
+			BOS = { all_core = { secede_province = BOS
+						remove_core = TUR } }
+			SER = { all_core = { secede_province = SER
+						remove_core = TUR } }
+			BUL = { all_core = { secede_province = BUL
+						remove_core = TUR } }
+			BUL = { capital = 809 }
+
+			ALB = { all_core = { secede_province = ALB
+						remove_core = TUR } }
+			ALB = { capital = 849 }
+			MON = { all_core = { secede_province = MON
+						remove_core = TUR } }
+			GRE = { all_core = { secede_province = GRE
+						remove_core = TUR } }
+			ROM = { all_core = { secede_province = ROM 
+						remove_core = TUR } }
+			860 = { secede_province = RUS  }
+			861 = { secede_province = RUS  } }	
+		AUS = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400
+				}
+			}
+		KUK = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 100
+	}
+}

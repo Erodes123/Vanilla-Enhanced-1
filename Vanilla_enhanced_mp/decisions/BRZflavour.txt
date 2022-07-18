@@ -1,0 +1,191 @@
+        #Chilean pascua island
+political_decisions = {
+	Colombo-Brazilian_border_dispute = {
+		potential = {
+			tag = BRZ
+			NOT = {
+				has_country_flag = mara_is_ours
+			}
+		}
+		
+		allow = {
+			year = 1870
+			revolution_n_counterrevolution = 1
+		}
+		
+		effect = {
+			set_country_flag = mara_is_ours
+			any_country = { limit = { owns = 2401 } country_event = 112950 }			
+			prestige = 2
+		}
+	}
+	Venezuelan_boder_dispute = {
+		potential = {
+			tag = BRZ
+			NOT = {
+				has_country_flag = forte_is_ours
+			}
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			set_country_flag = forte_is_ours
+			any_country = { limit = { owns = 2532 } country_event = 1129500 }			
+			prestige = 2
+		}
+	}
+	golden_law = {
+        picture = golden_law
+        potential = {
+            tag = BRZ
+            NOT = { has_country_flag = golden_law_passed }
+            OR = {
+                government = hms_government
+                government = prussian_constitutionalism
+                government = absolute_monarchy
+            }
+            NOT = { slavery = no_slavery }
+        }
+
+        allow = {
+            NOT = { month = 5 }
+            invention = national_fraternity
+            realism = 1
+            OR = {
+                upper_house = { ideology = liberal value = 0.2 }
+                upper_house = { ideology = socialist value = 0.2 }
+            }
+        }
+
+        effect = {
+            set_country_flag = golden_law_passed
+            badboy = -1
+            add_accepted_culture = afro_brazilian
+            political_reform = no_slavery
+            any_pop = { limit = { type = slaves } consciousness = -5 militancy = -6 }
+            any_pop = { limit = { type = aristocrats } militancy = 3 consciousness = 5 }
+        }
+    }
+	fatherland_volunteers = {
+        potential = {
+            tag = BRZ
+            government = hms_government
+            NOT = {
+                has_country_flag = pedro_said_it_best
+            }
+        }
+        allow = {
+            army_decision_making = 1
+            war = yes
+        }
+        effect = {
+            war_exhaustion = -1
+            prestige = 10
+            set_country_flag = pedro_said_it_best
+        }
+    }
+    Rename_Desterro = {
+        picture = build_teresina
+        potential = {
+            tag = BRZ
+            owns = 2461
+            NOT = { has_country_flag = teresina_built2 }
+        }
+        allow = {
+            owns = 2461
+			money = 5000
+        }
+        effect = {
+            set_country_flag = teresina_built2
+            treasury = -5000
+            2461 = { change_province_name = "Florianopolis" }
+        }
+    }
+	build_belo_horizonte = {
+        picture = build_belo_horizonte
+        potential = {
+            tag = BRZ
+            year = 1870
+            NOT = { has_country_flag = bh_built }
+        }
+        allow = {
+            money = 5000
+			owns = 2442
+        }
+        effect = {
+            set_country_flag = bh_built
+            treasury = -5000
+            2442 = { change_province_name = "Belo Horizonte" }
+            2442 = {
+                life_rating = 4
+                trade_goods = iron
+            }
+        }
+    }
+	Cisplatina = {
+		picture = bandaoriental
+        potential = {
+            tag = BRZ
+            owns = 2344
+            NOT = { has_country_flag = cisplatina }
+        }
+        allow = {
+            owns = 2344
+        }
+        effect = {
+            set_country_flag = cisplatina
+			2344 = {
+				state_scope = {
+					change_region_name = "Cisplatina"
+				}
+			}
+			2344 = { add_cores = THIS
+			}
+			2346 = { add_cores = THIS
+			}
+			2347 = { add_cores = THIS
+			}
+			2345 = { add_cores = THIS
+			}
+        }
+    }
+	Uruguay = {
+		picture = bandaoriental
+        potential = {
+            tag = ARG
+            owns = 2344
+            BRZ = { has_country_flag = cisplatina }
+        }
+        allow = {
+            owns = 2344
+        }
+        effect = {
+            BRZ = { clr_country_flag = cisplatina }
+			2344 = {
+				state_scope = {
+					change_region_name = "Uruguay"
+				}
+			}
+        }
+    }
+    build_teresina = {
+        picture = build_teresina
+        potential = {
+            tag = BRZ
+            year = 1852
+            NOT = { has_country_flag = teresina_built }
+        }
+        allow = {
+            money = 5000
+			owns = 2426
+        }
+        effect = {
+            set_country_flag = teresina_built
+            treasury = -5000
+            2426 = { change_province_name = "Teresina" }
+        }
+    }
+}

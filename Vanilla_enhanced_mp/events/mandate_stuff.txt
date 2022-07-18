@@ -1,0 +1,208 @@
+country_event = {
+
+	id = 112965
+	news = yes
+	news_desc_long = "EVTDESC44000_NEWS_LONG"
+	news_desc_medium = "EVTDESC44000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44000_NEWS_SHORT"
+
+	trigger = {
+		tag = NAM 
+		exists = yes 
+		NOT = {
+			has_country_flag = mandate_stuff
+			}
+		}
+ 
+	mean_time_to_happen =  {
+		months = 1
+	}
+
+	title = "EVTNAME44000"
+	desc = "EVTDESC44000"
+	picture = "leper"
+	
+	
+
+	option = {
+		name = "EVTOPTA44000" 
+		set_country_flag = mandate_stuff
+		add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } 
+	}
+}
+country_event = {
+
+	id = 112966
+	news = yes
+	news_desc_long = "EVTDESC44000_NEWS_LONG"
+	news_desc_medium = "EVTDESC44000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44000_NEWS_SHORT"
+
+	trigger = {
+		tag = SAM 
+		exists = yes 
+		NOT = {
+			has_country_flag = mandate_stuff
+			}
+		}
+ 
+	mean_time_to_happen =  {
+		days = 0
+	}
+
+	title = "EVTNAME44000"
+	desc = "EVTDESC44000"
+	picture = "leper"
+	
+	option = {
+		name = "EVTOPTA44000" 
+		set_country_flag = mandate_stuff
+		add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } 
+	}
+}
+country_event = {
+
+	id = 112967
+	news = yes
+	news_desc_long = "EVTDESC44000_NEWS_LONG"
+	news_desc_medium = "EVTDESC44000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44000_NEWS_SHORT"
+
+	trigger = {
+		tag = INM 
+		exists = yes 
+		NOT = {
+			has_country_flag = mandate_stuff
+			}
+		}
+ 
+	mean_time_to_happen =  {
+		days = 0
+	}
+
+	title = "EVTNAME44000"
+	desc = "EVTDESC44000"
+	picture = "leper"
+	
+	
+
+	option = {
+		name = "EVTOPTA44000" 
+		set_country_flag = mandate_stuff
+		add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } 
+	}
+}
+country_event = {
+
+	id = 112968
+	news = yes
+	news_desc_long = "EVTDESC44000_NEWS_LONG"
+	news_desc_medium = "EVTDESC44000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44000_NEWS_SHORT"
+
+	trigger = {
+		tag = OCM 
+		exists = yes 
+		NOT = {
+			has_country_flag = mandate_stuff
+			}
+		}
+ 
+	mean_time_to_happen =  {
+		days = 0
+	}
+
+	title = "EVTNAME44000"
+	desc = "EVTDESC44000"
+	picture = "leper"
+	
+	
+
+	option = {
+		name = "EVTOPTA44000" 
+		set_country_flag = mandate_stuff
+		add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } 
+	}
+}
+country_event = {
+
+	id = 112969
+	news = yes
+	news_desc_long = "EVTDESC44000_NEWS_LONG"
+	news_desc_medium = "EVTDESC44000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44000_NEWS_SHORT"
+
+	trigger = {
+		tag = MAM 
+		exists = yes 
+		NOT = {
+			has_country_flag = mandate_stuff
+			}
+		}
+ 
+	mean_time_to_happen =  {
+		days = 0
+	}
+
+	title = "EVTNAME44000"
+	desc = "EVTDESC44000"
+	picture = "leper"
+	
+	
+
+	option = {
+		name = "EVTOPTA44000" 
+		set_country_flag = mandate_stuff
+		add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } 
+	}
+}
+country_event = {
+
+	id = 112970
+	news = yes
+	news_desc_long = "EVTDESC44000_NEWS_LONG"
+	news_desc_medium = "EVTDESC44000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44000_NEWS_SHORT"
+
+	trigger = {
+		tag = ICM 
+		exists = yes 
+		NOT = {
+			has_country_flag = mandate_stuff
+			}
+		}
+ 
+	mean_time_to_happen =  {
+		days = 0
+	}
+
+	title = "EVTNAME44000"
+	desc = "EVTDESC44000"
+	picture = "leper"
+	
+	
+
+	option = {
+		name = "EVTOPTA44000" 
+		set_country_flag = mandate_stuff
+		add_country_modifier = {
+                name = mandate_modifier
+                duration = -1
+            } 
+	}
+}

@@ -1,0 +1,103 @@
+political_decisions = {
+	form_banda_oriental = {
+		picture = bandaoriental
+		potential = {
+			OR = {
+				tag = URU
+				tag = JUR
+				tag = RGS
+			}
+			ai = no
+			NOT = {
+				exists = BIG
+			}
+		}	
+		allow = {
+			year = 1850
+			ai = no
+			war = no
+			URU = {
+				exists = yes
+			}
+			RGS = {
+				exists = yes
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			any_country = {
+				limit = {
+					OR = {
+						tag = URU
+						tag = RGS
+						tag = JUR
+ 
+					}
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			JUR = { all_core = { add_core = BIG } }	
+			RGS = { all_core = { add_core = BIG } }	
+			URU = { all_core = { add_core = BIG } }			
+			change_tag = BIG
+			add_accepted_culture = brazilian
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_banda_oriental_2 = {
+		picture = bandaoriental
+		potential = {
+			OR = {
+				tag = URU
+				tag = JUR
+				tag = RGS
+			}
+			NOT = {
+				exists = BIG
+			}
+		}	
+		allow = {
+			year = 1850
+			nationalism_n_imperialism = 1
+			war = no
+			URU = {
+				exists = yes
+			}
+			RGS = {
+				exists = yes
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			any_country = {
+				limit = {
+					OR = {
+						tag = URU
+						tag = RGS
+						tag = JUR
+ 
+					}
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			JUR = { all_core = { add_core = BIG } }	
+			RGS = { all_core = { add_core = BIG } }	
+			URU = { all_core = { add_core = BIG } }			
+			change_tag = BIG
+			add_accepted_culture = brazilian
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}		
+}

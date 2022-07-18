@@ -1,0 +1,243 @@
+political_decisions = {
+    qingdao_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1566 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1566 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+	}
+    hainan_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1499 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1499 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+    hong-kong_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1496 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1496 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+    Ningbo_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1608 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1608 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+    Shanghai_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1538 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1538 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+    Weihaiwei_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1569 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1569 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+    Port_Arthur_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1481 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1481 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+    Okinawa_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1678 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1678 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+    Cheju_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1637 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1637 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+	Zanzibar_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            2048 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            2048 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+	Formosa_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1485 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            2562 = { secede_province = THIS change_controller = THIS }
+            1485 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+	Jiangxing_treaty_port = {
+        picture = qingdao_china
+        potential = {
+            has_country_modifier = negotiating_treaty
+            1606 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+            NOT = { has_country_modifier = chinese_treaty_port }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            remove_country_modifier = negotiating_treaty
+            1606 = { secede_province = THIS change_controller = THIS }
+            add_country_modifier = { name = chinese_treaty_port duration = 1095 }
+        }
+        ai_will_do = {
+            factor = 1
+            }
+    }
+}

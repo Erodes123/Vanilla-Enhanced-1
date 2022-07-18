@@ -1,0 +1,566 @@
+country_event = {
+
+	id = 37700
+	news = yes
+	news_desc_long = "EVTDESC37700_NEWS_LONG"
+	news_desc_medium = "EVTDESC37700_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC37700_NEWS_SHORT"
+
+	trigger = {
+		tag = SPA
+		year = 1837
+		NOT = {
+			year = 1840
+			}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1838
+		}
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1839
+		}
+	}
+
+	title = "EVTNAME37700"
+	desc = "EVTDESC37700"
+	picture = "Upperhouse"
+
+	option = {
+		name = "EVTOPTA37700"
+		clergymen = {
+			scaled_militancy = {
+				factor = -2
+				ideology = conservative
+			}
+		}
+		clergymen = {
+			scaled_militancy = {
+				factor = -3
+				ideology = reactionary
+			}
+		}
+		aristocrats = {
+			scaled_militancy = {
+				factor = -2
+				ideology = conservative
+			}
+		}
+		aristocrats = {
+			scaled_militancy = {
+				factor = -3
+				ideology = reactionary
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB37700"
+		clergymen = {
+			scaled_militancy = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		clergymen = {
+			scaled_militancy = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+		clergymen = {
+			scaled_consciousness = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		clergymen = {
+			scaled_consciousness = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+		aristocrats = {
+			scaled_militancy = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		aristocrats = {
+			scaled_militancy = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+		aristocrats = {
+			scaled_consciousness = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		aristocrats = {
+			scaled_consciousness = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+	}
+}
+
+country_event = {
+
+	id = 37701
+	news = yes
+	news_desc_long = "EVTDESC37701_NEWS_LONG"
+	news_desc_medium = "EVTDESC37701_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC37701_NEWS_SHORT"
+
+	trigger = {
+		tag = SPA
+		year = 1851
+		owns = 2209 #Havana
+		NOT = {
+			year = 1854
+			war_with = USA
+			}
+		}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1852
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1853
+		}
+	}
+
+	title = "EVTNAME37701"
+	desc = "EVTDESC37701"
+	picture = "Execution"
+
+	option = {
+		name = "EVTOPTA37701"
+		relation = { who = USA value = -50 }
+	}
+
+}
+
+country_event = {
+
+	id = 37702
+
+	trigger = {
+		tag = SPA
+		year = 1851
+		owns = 2209 #Havana
+		NOT = {
+			year = 1885
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1886
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1887
+		}
+	}
+
+	title = "EVTNAME37702"
+	desc = "EVTDESC37702"
+	picture = "Cubanrebels"
+
+	option = {
+		name = "EVTOPTA37702"
+		relation = { who = USA value = -75 }
+		SPA_2209 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = caribeno
+					}
+				militancy = 3
+				}
+			any_pop = {
+				limit = {
+					has_pop_culture = afro_caribeno
+					}
+				militancy = 3
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = caribeno
+					}
+				consciousness = 3
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = afro_caribeno
+					}
+				consciousness = 3
+			}
+		}
+	}
+}
+
+country_event = {
+
+	id = 37706
+	news = yes
+	news_desc_long = "EVTDESC37706_NEWS_LONG"
+	news_desc_medium = "EVTDESC37706_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC37706_NEWS_SHORT"
+
+	trigger = {
+		tag = SPA
+		year = 1907
+		expressionism = 1
+		NOT = {
+			year = 1915
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1908
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1910
+		}
+	}
+
+	title = "EVTNAME37706"
+	desc = "EVTDESC37706"
+	picture = "picaso"
+
+	option = {
+		name = "EVTOPTA37706" 
+		prestige = 10
+	}
+
+}
+
+country_event = {
+
+	id = 37707
+
+	trigger = {
+		tag = SPA
+		year = 1854
+		government = hms_government
+		NOT = {
+			year = 1858
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5 }
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1855
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1856
+		}
+	}
+
+	title = "EVTNAME37707"
+	desc = "EVTDESC37707"
+	picture = "Administration"
+
+	option = {
+		name = "EVTOPTA37707"
+		farmers = {
+			militancy = 2
+			consciousness = 2
+		}
+	}
+
+	option = {
+		name = "EVTOPTB37707"
+		clergymen = {
+			scaled_militancy = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		clergymen = {
+			scaled_militancy = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+		clergymen = {
+			scaled_consciousness = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		clergymen = {
+			scaled_consciousness = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTC37707"
+		clergymen = {
+			scaled_consciousness = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		clergymen = {
+			scaled_consciousness = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+		aristocrats = {
+			scaled_consciousness = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		aristocrats = {
+			scaled_consciousness = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+		capitalists = {
+			scaled_consciousness = {
+				factor = 2
+				ideology = conservative
+			}
+		}
+		capitalists = {
+			scaled_consciousness = {
+				factor = 3
+				ideology = reactionary
+			}
+		}
+	}
+}
+
+#Madoz's Deamortisation
+country_event = {
+
+	id = 37708
+
+	trigger = {
+		tag = SPA
+		year = 1842
+		NOT = {
+			year = 1846
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1855
+		}
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1856
+		}
+	}
+
+	title = "EVTNAME37708"
+	desc = "EVTDESC37708"
+	picture = "Administration"
+
+	option = {
+		name = "EVTOPTA37708"
+		officers = {
+			militancy = 1
+			consciousness = 1
+		}
+		soldiers = {
+			militancy = 1
+			consciousness = 1
+		}
+		artisans = {
+			militancy = -1
+			consciousness = -1
+		}
+		craftsmen = {
+			militancy = -1
+			consciousness = -1
+		}
+	}
+
+	option = {
+		name = "EVTOPTB37708"
+		officers = {
+			militancy = -1
+			consciousness = -1
+		}
+		soldiers = {
+			militancy = -1
+			consciousness = -1
+		}
+		artisans = {
+			militancy = 1
+			consciousness = 1
+		}
+		craftsmen = {
+			militancy = 1
+			consciousness = 1
+		}
+	}
+}
+#Gadsden purcharse
+country_event = {
+	
+	id = 114020
+	title = "EVTNAME114020" #The Treaty of Guadalupe Hidalgo
+	desc = "EVTDESC114020"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		set_country_flag = treaty_of_palau
+		prestige = 5
+		treasury = 100000
+		2518 = { secede_province = GER }
+		GER = { country_event = 114021 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		name = "We refuse!"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+
+	id = 114021
+	title = "EVTNAME114021" #Mexico Agrees
+	desc = "EVTDESC114021"
+	news = yes
+	news_title = "EVTNAME44825"
+	news_desc_long = "EVTDESC44826_NEWS_LONG"
+	news_desc_medium = "EVTDESC44826_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44826_NEWS_SHORT"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "A wise move."
+		prestige = 20
+		treasury = -100000
+		relation = {
+			who = FROM
+			value = 200
+		}
+		set_country_flag = treaty_of_palau
+	}
+}
+country_event = {
+
+	id = 114080
+	news = yes
+	news_desc_long = "EVTDESC37706_NEWS_LONG"
+	news_desc_medium = "EVTDESC37706_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC37706_NEWS_SHORT"
+
+	trigger = {
+		tag = HIS
+		exists = HIS
+		owns = 487
+		owns = 2172
+		owns = 2264
+		owns = 2348
+		owns = 2324
+		owns = 2295
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 1 }
+
+	title = "What capital?"
+	desc = "Now, with a greater empire, we must choose a cappital to fit our might"
+	picture = "picaso"
+
+	option = {
+		name = "Madrid" 
+		capital = 487
+	}
+	option = {
+		name = "Ciudad de Mexico" 
+		capital = 2172
+	}	
+	option = {
+		name = "Caracas" 
+		capital = 2264
+	}	
+	option = {
+		name = "Buenos Aires" 
+		capital = 2348
+	}	
+	option = {
+		name = "Santiago" 
+		capital = 2324
+	}
+	option = {
+		name = "Lima" 
+		capital = 2295
+	}
+
+}

@@ -1,0 +1,93 @@
+#Ethiopia
+country_event = {
+	id = 108000
+	title = "EVTNAME106000"
+	desc = "EVTDESC106000"
+	
+	trigger = {
+		owns = 1861
+		year = 1870
+		NOT = {
+			year = 1871
+			has_global_flag = ethiopia_is_united
+		}
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_global_flag = ethiopia_is_united
+			1864 = { secede_province = ETH any_pop = { literacy = -0.99 } life_rating = 10 }	
+			1866 = { secede_province = ETH any_pop = { literacy = -0.99 } life_rating = 10 }
+			1867 = { secede_province = ETH any_pop = { literacy = -0.99 } life_rating = 10 }	
+			1863 = { secede_province = ETH any_pop = { literacy = -0.99 } life_rating = 10 }
+			1865 = { secede_province = ETH any_pop = { literacy = -0.99 } life_rating = 10 }	
+	}
+}
+#Nejd
+country_event = {
+	id = 10800000
+	title = "EVTNAME106000"
+	desc = "EVTDESC106000"
+	
+	trigger = {
+		owns = 1160
+		year = 1870
+		NOT = {
+			year = 1871
+			has_country_flag = nejd_is_united
+		}
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_country_flag = nejd_is_united
+			1156 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }	
+	}
+}
+country_event = {
+	id = 128000
+	title = "EVTNAME106000"
+	desc = "EVTDESC106000"
+	
+	trigger = {
+		tag = SOK
+		year = 1870
+		NOT = {
+			year = 1871
+			has_global_flag = sok_is_united
+		}
+		1923 = { owner = { civilized = yes } }
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_global_flag = sok_is_united
+			1935 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 10 }
+			1933 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 10 }	
+			1934 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 10 }	
+			1930 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 10 }	
+			1936 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 10 }			
+	}
+}
+country_event = {
+	id = 1280000
+	title = "EVTNAME106000"
+	desc = "EVTDESC106000"
+	
+	trigger = {
+		year = 1870
+		NOT = {
+			year = 1871
+			has_global_flag = sok_is_united2
+		}
+		SOK = { has_global_flag = sok_is_united }
+		owns = 1923
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_global_flag = sok_is_united2
+		clr_global_flag = sok_is_united
+			1935 = { secede_province = THIS }
+			1933 = { secede_province = THIS }	
+			1934 = { secede_province = THIS }	
+			1930 = { secede_province = THIS }	
+			1936 = { secede_province = THIS }			
+	}
+}

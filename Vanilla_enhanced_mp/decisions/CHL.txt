@@ -1,0 +1,21 @@
+        #Chilean pascua island
+political_decisions = {
+	chilean_pascua_island = {
+		potential = {
+			tag = CHL
+			NOT = {
+				has_country_flag = pascua_is_ours
+			}
+		}
+		
+		allow = {
+			year = 1870
+		}
+		
+		effect = {
+			set_country_flag = pascua_is_ours
+			2336 = { secede_province = CHL any_pop = { literacy = -0.99 } life_rating = 5 }			
+			prestige = 2
+		}
+	}
+}

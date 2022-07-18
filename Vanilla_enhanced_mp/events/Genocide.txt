@@ -1,0 +1,18 @@
+# We have done the worse to minorities
+country_event = {
+	id = 116000
+	title = "EVTNAME116000"
+	desc = "EVTDESC116000"
+	news = yes
+	major = yes
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "EVTOPTA116000"
+		badboy = 1
+		prestige = -20
+		set_country_flag = a_minute_of_silence_for_all_those_innocent_lives
+	}
+}

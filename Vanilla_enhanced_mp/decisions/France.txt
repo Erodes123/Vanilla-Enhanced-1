@@ -1,0 +1,1160 @@
+political_decisions = {
+	liberty_enlightening_the_world = {
+		potential = {
+			NOT = {
+				has_global_flag = statue_of_liberty_has_been_built
+			}
+			tag = FRA
+			exists = FRA
+			exists = USA
+			USA = {
+				government = democracy
+				owns = 232
+			}
+			FRA = {
+				OR = {
+					government = hms_government
+					government = democracy
+				}
+			}	
+			year = 1850
+		}
+	
+		allow = {
+			cheap_steel = 1
+		}
+	
+		effect = {
+			set_global_flag = statue_of_liberty_has_been_built
+			any_pop = {
+				militancy = -0.5
+			}
+			USA = {
+				country_event = { id=19300 days=0 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					relation = {
+						who = USA
+						value = 50
+					}
+				}
+			}
+		}
+	}
+	support_french_foreign_legion = {
+		potential = {
+			tag = FRA
+			owns = 1700
+			NOT = {
+				has_country_flag = french_foreign_legion_supported
+			}
+		}
+		allow = {
+			army_professionalism = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = the_french_foreign_legion
+				duration = -1
+			}
+			set_country_flag = french_foreign_legion_supported
+		}
+	}
+	
+	french_military_mission_to_japan = {
+		potential = {
+			tag = FRA
+			exists = JAP
+			JAP = {
+				civilized = no
+			}
+			NOT = {
+				has_country_flag = military_mission_in_japan
+			}
+		}
+		
+		allow = {
+			naval_statistics = 1
+			relation = {
+				who = JAP
+				value = 120
+			}
+		}
+		
+		effect = {
+			relation = {
+				who = JAP
+				value = 40
+			}
+			JAP = {
+				years_of_research = 0.1
+			}
+			prestige = 20
+			set_country_flag = military_mission_in_japan
+		}
+	}
+	
+	palais_garnier = {
+		potential = {
+			NOT = {
+				has_country_flag = palais_garnier_built
+			}
+			tag = FRA
+			owns = 425
+		}
+		
+		allow = {
+			expressionism = 1
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = palais_garnier_built
+		}
+	}
+	
+	the_lambert_charter = {
+		potential = {
+			NOT = {
+				has_country_flag = lambert_has_been_chartered
+			}
+			tag = FRA
+			exists = MAD
+		}
+		
+		allow = {
+			is_greater_power = yes
+			ideological_thought = 1
+			MAD = {
+				civilized = no
+				OR = {
+					in_sphere = FRA
+					NOT = { part_of_sphere = yes }
+				}
+			}
+		}
+		
+		effect = {
+			diplomatic_influence = {
+				who = MAD
+				value = 150
+			}
+			set_country_flag = lambert_has_been_chartered
+		}
+	}
+	
+	end_the_merina_monarchy = {
+		potential = {
+			OR = {
+				has_country_flag = lambert_has_been_chartered
+				MAD = {
+					in_sphere = FRA
+					civilized = no
+			}
+				}
+			NOT = {
+				has_country_flag = merina_monarchy_is_over
+			}
+			exists = MAD
+			MAD = {AI = yes}
+			tag = FRA
+		}
+		
+		allow = {
+			MAD = {
+				in_sphere = FRA
+				civilized = no
+				war = no
+			}
+			invention = mission_to_civilize
+			invention = expansionism
+			war = no
+		}
+		
+		effect = {
+			inherit = MAD
+			set_country_flag = merina_monarchy_is_over
+		}
+	}
+	
+	brazzas_expedition = {
+		potential = {
+			tag = FRA
+			owns = 1977
+			NOT = {
+				has_global_flag = brazzaville_formed
+			}
+		}
+		
+		allow = {
+			invention = mission_to_civilize
+		}
+		
+		effect = {
+			1977 = {
+				change_province_name = "Brazzaville"
+			}
+			prestige = 5
+			set_global_flag = brazzaville_formed
+		}
+	}
+	
+	the_rhine_crisis = {
+		potential = {
+			tag = FRA
+			exists = PRU
+			PRU = {
+				owns = 572
+				owns = 575
+			}
+			NOT = {
+				has_country_flag = crisis_on_the_rhine
+			}
+		}
+		
+		allow = {
+			ideological_thought = 1
+		}
+		
+		effect = {
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = north_german
+						primary_culture = south_german
+					}
+				}
+				relation = {
+					who = THIS
+					value = -100
+				}
+			}
+			casus_belli = {
+				target = PRU
+				type = acquire_state
+				months = 1
+			}
+			casus_belli = {
+				target = NGF
+				type = acquire_state
+				months = 1
+			}
+			prestige = 10
+			badboy = 4
+			set_country_flag = crisis_on_the_rhine
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					badboy = 0.5
+				}
+			}
+		}
+	}
+        #French argelia
+	Argelia_is_ours = {
+		picture = african_land
+		potential = {
+			THIS = {
+				owns = 1700
+				owns = 1705
+				owns = 1715
+				owns = 1711
+
+				}
+			NOT = {
+				has_global_flag = argelia_is_ours_forever
+			}
+		}
+		
+		allow = {
+			year = 1870
+			THIS = {
+				owns = 1700
+				owns = 1705
+				owns = 1715
+				owns = 1711
+			}
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			set_global_flag = argelia_is_ours_forever
+			1716 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			1717 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1714 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1720 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1722 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			1718 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1724 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			1724 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1719 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1721 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			prestige = 5
+		}
+	}
+
+        #French caledonia
+French_caledonia = {
+		picture = caledonia
+		potential = {
+			tag = FRA
+			NOT = {
+				has_country_flag = caledonia_is_ours
+			}
+		}
+		
+		allow = {
+			year = 1870
+		}
+		
+		effect = {
+			set_country_flag = caledonia_is_ours
+			1097 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }			
+			prestige = 2
+		}
+	}
+	
+	build_the_eiffel_tower = {
+		potential = {
+			tag = FRA
+			NOT = {
+				has_country_flag = the_eiffel_tower_was_built
+			}
+			has_country_flag = world_fair_planner
+		}
+		
+		allow = {
+			cheap_steel = 1
+		}
+		
+		effect = {
+			425 = {
+				add_province_modifier = {
+					name = the_eiffel_tower
+					duration = -1
+				}
+			}
+			prestige = 20
+			set_country_flag = the_eiffel_tower_was_built
+		}
+	}
+#French anexation of vietnam
+	anexation_of_vietnam = {
+		picture = indochina
+		potential = {
+			tag = FRA
+			owns = 1380
+			has_country_flag = cochinchina_is_french_now
+			exists = DAI
+			}
+		
+		allow = {
+			year = 1870
+		}
+		
+		effect = {
+			inherit = DAI			
+			prestige = 10
+			badboy = 7
+			clr_country_flag = cochinchina_is_french_now
+		}
+	}
+#French anexation of cambodia
+	anexation_of_cambodia = {
+		picture = indochina
+		potential = {
+			tag = FRA
+			nationalism_n_imperialism = 1
+			owns = 1380
+			exists = CAM
+			NOT = {
+			has_country_flag = cambodia_is_french_now
+				}
+			}
+		
+		allow = {
+			year = 1865
+		}
+		
+		effect = {
+			DAI = {
+				release_vassal = CAM
+			}
+			inherit = CAM
+			set_country_flag = cambodia_is_french_now			
+			prestige = 5
+			badboy = 4
+		}
+	}
+#French anexation of luang
+	anexation_of_laos = {
+		picture = indochina
+		potential = {
+			nationalism_n_imperialism = 1
+			owns = 1380
+			owns = 1369
+			owns = 1375
+			exists = LUA
+			NOT = {
+			has_country_flag = laos_is_french_now
+				}
+			}
+		
+		allow = {
+			year = 1865
+			nationalism_n_imperialism = 1
+			owns = 1380
+			owns = 1369
+			owns = 1375
+		}
+		
+		effect = {
+			inherit = LUA
+			set_country_flag = laos_is_french_now			
+			prestige = 5
+			badboy = 4
+		}
+	}
+	haussmanns_renovations = {
+		potential = {
+			tag = FRA
+			owns = 425
+			NOT = {
+				has_country_flag = extreme_home_makeover
+			}
+			OR = {
+				realism = 1
+				early_railroad = 1
+			}
+		}
+		
+		allow = {
+			impressionism = 1
+			iron_railroad = 1
+			business_banks = 1
+		}
+		
+		effect = {
+			425 = {
+				life_rating = 5
+			}
+			prestige = 10
+			set_country_flag = extreme_home_makeover
+		}
+	}
+	unrecognise_the_congress_of_vienna_fra = {
+		potential = {
+			tag = FRA
+			NOT = {
+				has_country_flag = 
+congress_of_vienna
+			}
+           ai = no
+			has_country_flag = crisis_on_the_rhine
+			owns = 572
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			owns = 572
+		}
+		
+		effect = {
+			set_country_flag = congress_of_vienna
+			any_country = {
+                limit = { is_greater_power = yes capital_scope = {continent = europe } }
+                        casus_belli = {
+            target = FRA
+            type = cut_down_to_size
+            months = 60
+        }
+            }
+			prestige = -10
+			badboy = 20
+		}
+	}
+	
+		french_speaking_lands = {
+		potential = {
+			tag = FRA
+			NOT = {
+				has_country_flag = french_speaking
+			}
+           ai = no
+			has_country_flag = crisis_on_the_rhine
+			has_country_flag = congress_of_vienna
+		}
+		
+		allow = {
+			has_country_flag = congress_of_vienna
+		}
+		
+		effect = {
+			set_country_flag = french_speaking
+			BEL_394 = { 
+				add_core = FRA
+			}
+			721 = { 
+				add_core = FRA
+			}
+			607 = { 
+				add_core = FRA
+			}
+			608 = { 
+				add_core = FRA
+			}
+			609 = { 
+				add_core = FRA
+			}
+			396 = { 
+				add_core = FRA
+			}
+			PRU_572 = { 
+				add_core = FRA
+			}
+			
+			SAR_465 = { 
+				add_core = FRA
+			}
+			prestige = 10
+			badboy = 10
+		}
+	}
+	
+	OUR_LANDS_BACK = {
+		potential = {
+			tag = FRA
+			NOT = {
+				has_country_flag = 
+france_gets_its_final_form
+			}
+			has_country_flag = crisis_on_the_rhine
+			has_country_flag = congress_of_vienna
+			has_country_flag = french_speaking
+		}
+		
+		allow = {
+			owns = 387
+			owns = 395
+			owns = 721
+		}
+		
+		effect = {
+			set_country_flag = france_gets_its_final_form
+			BEL_394 = { 
+				add_core = FRA
+			}
+			BEL_387 = { 
+				add_core = FRA
+			}
+			NET_381 = { 
+				add_core = FRA
+			}
+			PRU_575 = { 
+				add_core = FRA
+			}
+			PRU_572 = { 
+				add_core = FRA
+			}
+			SAR_720 = { 
+				add_core = FRA
+			}
+						any_country = {
+                limit = { is_greater_power = yes capital_scope = {continent = europe } }
+                        casus_belli = {
+            target = FRA
+            type = cut_down_to_size
+            months = 60
+        }
+            }
+			prestige = 20
+			badboy = 20
+		}
+	}
+	
+	napoleonic_lands = {
+		potential = {
+			tag = FRA
+			has_country_flag = france_gets_its_final_form
+			has_country_flag = crisis_on_the_rhine
+			has_country_flag = congress_of_vienna
+			has_country_flag = french_speaking
+			NOT = {
+				has_country_flag = france_napo
+			}
+		}
+		
+		allow = {
+			revolution_n_counterrevolution = 1
+			owns = 387
+			owns = 395
+			owns = 608
+			owns = 721
+			owns = 498
+			owns = 380
+			owns = 576
+		}
+		
+		effect = {
+			set_country_flag = france_napo
+			NET_375 = { 
+				add_core = FRA
+			}
+			NET_385 = { 
+				add_core = FRA
+			}
+			NET_381 = { 
+				add_core = FRA
+			}
+			TUS_744 = { 
+				add_core = FRA
+			}
+			746 = { 
+				add_core = FRA
+			}
+			749 = { 
+				add_core = FRA
+			}
+			750 = { 
+				add_core = FRA
+			}
+			751 = { 
+				add_core = FRA
+			}
+			738 = { 
+				add_core = FRA
+			}
+						any_country = {
+                limit = { is_greater_power = yes capital_scope = {continent = europe } }
+                        casus_belli = {
+            target = FRA
+            type = cut_down_to_size
+            months = 60
+        }
+            }
+			prestige = 20
+			badboy = 20
+		}
+	}
+	
+	french_savoy = {
+		potential = {
+			tag = FRA
+			NOT = {
+				has_country_flag = 
+france_gets_savoy
+			}
+			NOT = { OR = { ITA = { has_country_flag = cavour_has_done_his } 
+			SAR = { has_country_flag = cavour_has_done_his } } }
+		}
+		
+		allow = {
+			revolution_n_counterrevolution = 1
+		}
+		
+		effect = {
+			set_country_flag = france_gets_savoy
+			SAR_465 = { 
+				add_core = FRA
+			}
+			prestige = 10
+			badboy = 3
+		}
+	}
+	
+	OUR_LANDS_BACK_2 = {
+		potential = {
+			tag = FRA
+			NOT = {
+				has_country_flag = 
+france_gets_its_final_form
+				has_country_flag = 
+congress_of_vienna
+			}
+           ai = no
+            		government = fascist_dictatorship
+		}
+		
+		allow = {
+			revolution_n_counterrevolution = 1
+			owns = 387
+			owns = 395
+		}
+		
+		effect = {
+			set_country_flag = france_gets_its_final_form
+			BEL_394 = { 
+				add_core = FRA
+			}
+			BEL_387 = { 
+				add_core = FRA
+			}
+			NET_381 = { 
+				add_core = FRA
+			}
+			PRU_575 = { 
+				add_core = FRA
+			}
+			PRU_572 = { 
+				add_core = FRA
+			}
+			inherit = LUX
+			prestige = 20
+			badboy = 20
+		}
+	}
+	annexation_of_saarland = {
+		potential = {
+			tag = FRA
+			exists = SRL
+			NOT = {
+				has_country_flag = 
+france_gets_its_final_form_2
+			}
+
+		}
+		
+		allow = {
+			mass_politics = 1
+			SRL = { in_sphere_of = FRA }
+		}
+		
+		effect = {
+			set_country_flag = frace_gets_its_final_form_2
+			inherit = SRL
+			prestige = 5
+			badboy = 2
+		}
+	}
+	accept_wallonians = {
+		potential = {
+			tag = FRA
+			NOT = { exists = BEL }
+			NOT = {
+				has_country_flag = france_walloon
+			}
+			has_country_flag = congress_of_vienna
+
+		}
+		
+		allow = {
+			revolution_n_counterrevolution = 1
+			owns = 387
+			owns = 392
+			owns = 396
+			NOT = { exists = BEL } 
+		}
+		
+		effect = {
+			set_country_flag = france_walloon
+			add_accepted_culture = wallonian
+			prestige = 5
+			}
+		}
+        #Dual Monarchy
+	annex_england = {
+		potential = {
+			tag = FRA
+			owns = 300
+			NOT = {
+				has_country_flag = dual_monarchy_f
+			}
+			NOT = { exists = DUM }
+		}
+		
+		allow = {
+			year = 1870
+			owns = 300
+			owns = 299
+			owns = 292
+		}
+		
+		effect = {
+			set_country_flag = dual_monarchy_f
+
+        casus_belli = {
+            target = ENG
+            type = conquest
+            months = 12
+        }	
+		war = {
+			target = ENG
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}	
+			prestige = 2
+			badboy = 3
+		}
+	}
+	annex_france = {
+		potential = {
+			tag = ENG
+			owns = 425
+			NOT = {
+				has_country_flag = dual_monarchy_e
+			}
+			DUM = { exists = no }
+		}
+		
+		allow = {
+			year = 1870
+			owns = 425
+			owns = 415
+			owns = 400
+		}
+		
+		effect = {
+			set_country_flag = dual_monarchy_e
+
+        casus_belli = {
+            target = FRA
+            type = conquest
+            months = 12
+        }	
+		war = {
+			target = FRA
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}	
+			prestige = 2
+			badboy = 3
+		}
+	}
+	form_dual_monarchy = {
+		picture = dualmonarchy
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+			NOT = {
+				exists = DUM
+			}
+			revolution_n_counterrevolution = 1
+			ENG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			FRA = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}	
+		allow = {
+			is_greater_power = yes
+			war = no
+			ENG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			FRA = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = ENG
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			FRA = { all_core = { add_core = DUM } }	
+			ENG = { all_core = { add_core = DUM } }				
+			change_tag = DUM
+
+		FRA_458 = {
+			secede_province = OCC
+		}
+		FRA_448 = {
+			secede_province = OCC
+		}
+		FRA_455 = {
+			secede_province = OCC
+		}
+		FRA_461 = {
+			secede_province = OCC
+		}
+		FRA_467 = {
+			secede_province = OCC
+		}
+		FRA_451 = {
+			secede_province = OCC
+		}
+		442 = {
+			secede_province = OCC
+		}
+		444 = {
+			secede_province = OCC
+		}
+		447 = {
+			secede_province = OCC
+		}
+		473 = {
+			secede_province = OCC
+		}
+		SAR_465 = {
+			secede_province = OCC
+		}
+		LOR = { all_core = { secede_province = LOR
+					remove_core = DUM } }
+		SCO = { all_core = { secede_province = SCO
+					remove_core = DUM } }
+		IRE = { all_core = { secede_province = IRE
+					remove_core = DUM } }
+		OCC = { any_owned = { add_core = OCC remove_core = DUM } }
+			add_accepted_culture = british
+			add_accepted_culture = french
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_frankish_empire = {
+		picture = dualmonarchy
+		potential = { OR = {
+			tag = FRA
+			tag = PRU }
+			NOT = {
+				exists = IFR
+			}
+			owns = 571
+			owns = 570
+			owns = 412
+			owns = 413
+			owns = 577
+		}	
+		allow = {
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+			war = no
+			FRA = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			OR = { 
+			GER = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			PRU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			NGF = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			} }
+			BEL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			LUX = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			NET = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = AUS
+						primary_culture = north_german
+						primary_culture = south_german
+						primary_culture = french
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+		any_owned = {
+			limit = {
+				is_core = HUN
+				NOT = {
+					province_id = 774
+					province_id = 773
+					province_id = 772
+					province_id = 775
+					province_id = 771
+					province_id = 775
+					province_id = 776
+					province_id = 777
+					province_id = 779
+					province_id = 793
+				}
+			}
+			secede_province = HUN
+		}
+		any_owned = {
+			limit = {
+				is_core = GLO
+				NOT = {
+					province_id = 2584
+				}
+			}
+			secede_province = GLO
+		}
+		any_owned = {
+			limit = {
+				is_core = BKN
+			}
+			secede_province = BKN
+		}
+		any_owned = {
+			limit = {
+				is_core = RSM
+			}
+			secede_province = RSM
+		}
+		any_owned = {
+			limit = {
+				is_core = CRO
+			}
+			secede_province = CRO
+		}
+		any_owned = {
+			limit = {
+				is_core = MON
+			}
+			secede_province = MON
+		}
+			AUS = { all_core = { add_core = IFR } }	
+			GER = { all_core = { add_core = IFR } }	
+			FRA = { all_core = { add_core = IFR } }
+			SWI = { all_core = { add_core = IFR } }	
+			SAR = { all_core = { add_core = IFR } }
+			RSM = { all_core = { add_core = IFR } }
+			PAR = { all_core = { add_core = IFR } }						
+			change_tag = IFR
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}

@@ -1,0 +1,6 @@
+owner = KAA
+controller = KAA
+add_core = KAA
+add_core = FTO
+trade_goods = timber
+life_rating = 15

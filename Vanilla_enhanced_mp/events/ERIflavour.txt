@@ -1,0 +1,395 @@
+####La guerra grande####
+country_event = {
+
+	id = 112820 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ERI
+		NOT = {
+			has_country_flag = eri_is_ready_to_fight
+		}
+		year = 1851
+	}
+
+
+	title = "EVTNAME112820"
+	desc = "EVTDESC112820"
+	picture = "coalitionanti"
+
+	option = {
+		name = "EVTOPTA112820"
+		ACO = {
+		release_vassal = ERI
+		2361 = {
+			secede_province = ERI
+			add_core = ERI
+			remove_core = ACO
+		}
+		}
+		inherit = COR
+		any_owned = { limit = {
+			is_core = COR }
+			add_core = ERI }
+			remove_core = ACO
+		set_country_flag = eri_is_ready_to_fight
+	}
+}
+
+#Eri gana
+country_event = {
+
+	id = 112822 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ERI
+		exists = ERI
+		ACO = {
+		has_global_flag = eri_wants_independence
+		}
+		NOT = {
+			has_country_flag = we_won
+		}
+		war = no
+		year = 1852
+	}
+		mean_time_to_happen = {
+
+		days = 0
+		}
+
+
+	title = "EVTNAME112822"
+	desc = "EVTDESC112822"
+	picture = "coalitionanti"
+
+	option = {
+		name = "EVTOPTA112822"
+		set_country_flag = we_won
+		inherit = ACO
+		2349 = {
+			secede_province = BUE
+		}
+        	2349 = { add_core = BUE }
+        	2349 = { remove_core = ACO }
+		2348 = {
+			secede_province = BUE
+		}
+        	2348 = { add_core = BUE }
+        	2348 = { remove_core = ACO }
+		2351 = {
+			secede_province = BUE
+		}
+        	2351 = { remove_core = ACO }
+        	2351 = { add_core = BUE }
+		2352 = {
+			secede_province = BUE
+		}
+        	2352 = { remove_core = ACO }
+        	2352 = { add_core = BUE }
+		2350 = {
+			secede_province = BUE
+		}
+		2355 = {
+			secede_province = BUE
+		}
+        	2355 = { remove_core = ACO }
+			
+		BUE = { capital = 2348 }
+	}
+	option = {
+		name = "EVTOPTB112822"
+		set_country_flag = we_won
+		2349 = {
+			secede_province = BUE
+		}
+        	2349 = { add_core = BUE }
+        	2349 = { remove_core = ACO }
+		2348 = {
+			secede_province = BUE
+		}
+        	2348 = { add_core = BUE }
+        	2348 = { remove_core = ACO }
+		2351 = {
+			secede_province = BUE
+		}
+        	2351 = { remove_core = ACO }
+        	2351 = { add_core = BUE }
+		2352 = {
+			secede_province = BUE
+		}
+        	2352 = { remove_core = ACO }
+        	2352 = { add_core = BUE }
+		2350 = {
+			secede_province = BUE
+			remove_core = ACO
+			add_core = BUE
+		}
+		2355 = {
+			secede_province = BUE
+			add_core = BUE
+		}
+        	2355 = { remove_core = ACO }
+		create_vassal = ERI
+		change_tag_no_core_switch = BUE
+		capital = 2348
+	}
+}
+#Eri is annexed
+country_event = {
+
+	id = 112830 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ERI
+		NOT = { exists = ACO }
+		ACO = {
+		has_global_flag = eri_wants_independence
+		}
+		ERI = {
+			has_country_flag = we_won
+		}
+		war = no
+		year = 1852
+	}
+		mean_time_to_happen = {
+
+		days = 0
+		}
+
+
+	title = "EVTNAME112830"
+	desc = "EVTDESC112830"
+	picture = "coalitionanti"
+
+	option = {
+		name = "EVTOPTA112830"
+		change_tag = ACO
+		ACO = {
+			capital = 2360
+		}
+		set_country_flag = avoid_arg
+	}
+}
+#Aco gana
+country_event = {
+
+	id = 112823 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ACO
+		NOT = { has_country_flag = avoid_arg }
+		ACO = {
+		has_global_flag = eri_wants_independence
+		}
+		NOT = {
+			exists = ERI
+			has_country_flag = we_won_aco
+			ERI = {
+				has_country_flag = we_won
+			}
+		}
+		war = no
+		year = 1852
+	}
+		mean_time_to_happen = {
+
+		months = 2
+		}
+
+
+	title = "EVTNAME112823"
+	desc = "EVTDESC112823"
+	picture = "coalitionanti"
+
+	option = {
+		name = "EVTOPTA112823"
+		set_country_flag = we_won_aco
+			ACO = { all_core = { add_core = ARG
+						remove_core = ACO } }
+
+			COR = { all_core = { add_core = ARG
+						remove_core = COR } }
+
+			ERI = { all_core = { add_core = ARG
+						remove_core = ERI } }	
+		change_tag = ARG
+		ARG = { capital = 2348}
+		create_alliance = URU
+                relation = {
+                    who = URU
+                    value = 200
+                }
+	}
+}
+#Guerra de unificación final
+country_event = {
+
+	id = 112824 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ACO
+
+		exists = BUE
+
+		NOT = {
+			has_country_flag = argentina_pelea
+		}
+		year = 1861
+	}
+		mean_time_to_happen = {
+
+		months = 2
+		}
+
+
+	title = "EVTNAME112824"
+	desc = "EVTDESC112824"
+	picture = "pavon"
+
+	option = {
+		name = "EVTOPTA112824"
+		set_country_flag = argentina_pelea
+		war = {
+			target = BUE
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = civil_war
+			}	
+		}
+	}
+	option = {
+		name = "EVTOPTB112824"
+		set_country_flag = argentina_pelea
+		change_tag_no_core_switch = BUE
+		ACO = {
+			war = {
+				target = BUE
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+			
+				defender_goal = {
+					casus_belli = civil_war
+				}
+			}	
+		}
+	}
+}
+#Aco gana
+country_event = {
+
+	id = 112825 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ACO
+		NOT = {
+		exists = BUE
+		}
+		ACO = {
+		has_country_flag = argentina_pelea
+		}
+		NOT = {
+			has_country_flag = unidos_somos_mas_fuertes
+		}
+		war = no
+	}
+		mean_time_to_happen = {
+
+		months = 2
+		}
+
+
+	title = "EVTNAME112825"
+	desc = "EVTDESC112825"
+	picture = "pavon"
+
+	option = {
+		name = "EVTOPTA112825"
+		change_tag = ARG
+			ACO = { all_core = { add_core = ARG
+						remove_core = ACO } }
+
+			COR = { all_core = { add_core = ARG
+						remove_core = COR } }
+
+			ERI = { all_core = { add_core = ARG
+						remove_core = ERI } }
+
+			BUE = { all_core = { add_core = ARG
+						remove_core = BUE } }
+		ARG = {
+			capital = 2348
+		}
+		create_alliance = URU
+                relation = {
+                    who = URU
+                    value = 200
+                }
+	}
+}
+#Aco gana
+country_event = {
+
+	id = 112826 
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = BUE
+		NOT = {
+		exists = ACO
+		}
+		ACO = {
+		has_country_flag = argentina_pelea
+		}
+		NOT = {
+			has_country_flag = unidos_somos_mas_fuertes
+		}
+		war = no
+	}
+		mean_time_to_happen = {
+
+		days = 0
+		}
+
+
+	title = "EVTNAME112825"
+	desc = "EVTDESC112825"
+	picture = "pavon"
+
+	option = {
+		name = "EVTOPTA112825"
+		change_tag = ARG
+			ACO = { all_core = { add_core = ARG
+						remove_core = ACO } }
+
+			COR = { all_core = { add_core = ARG
+						remove_core = COR } }
+
+			ERI = { all_core = { add_core = ARG
+						remove_core = ERI } }	
+		ARG = {
+			capital = 2348
+		}
+		create_alliance = URU
+                relation = {
+                    who = URU
+                    value = 200
+                }
+	}
+}

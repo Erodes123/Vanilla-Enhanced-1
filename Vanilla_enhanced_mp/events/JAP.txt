@@ -1,0 +1,49 @@
+#Boshin War
+country_event = {
+	id = 112929
+	title = "EVTNAME112929"
+	desc = "EVTDESC112929"
+	picture = "revolutionnn"
+	major = yes 
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA112929"
+		release_vassal = JAP
+                set_country_flag = boshin_war_has_happened
+		war = {
+			target = JAP
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = civil_war
+			}	
+		}
+	}
+}
+#Japenese Hokaido
+country_event = {
+	id = 112930
+	title = "EVTNAME112930"
+	desc = "EVTDESC112930"
+	
+	trigger = {
+		owns = 1649
+		owns = 1657
+		NOT = {
+				has_country_flag = hokkaido_is_ours
+		}
+	}
+
+	mean_time_to_happen = { months = 2 }
+
+	option = {
+		name = "EVTOPTA112930"
+		set_country_flag = hokkaido_is_ours
+			1643 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 }	
+			1644 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 }
+	}
+}

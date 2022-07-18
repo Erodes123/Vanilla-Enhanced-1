@@ -1,0 +1,222 @@
+political_decisions = {
+	form_la_plata_2 = {
+		picture = laplata
+		potential = {
+			OR = {
+				tag = ARG
+				tag = PRG
+				tag = URU
+				tag = BIG
+				tag = ACO
+				tag = ERI
+				tag = COR
+			}
+
+			NOT = {
+				exists = AGE
+			}
+		}	
+		allow = {
+			war = no
+			COR = {
+				OR = {
+					NOT = { exists = COR }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			ERI = {
+				OR = {
+					NOT = { exists = ERI }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			ACO = {
+				OR = {
+					NOT = { exists = ACO }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			ARG = {
+				OR = {
+					NOT = { exists = ARG }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			PRG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			URU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+						OR = {
+						tag = URU
+						tag = PRG
+						tag = ARG
+						tag = ACO
+						tag = ERI
+						tag = COR }
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			URU = { all_core = { add_core = AGE } }
+			ACO = { all_core = { add_core = AGE } }
+			ERI = { all_core = { add_core = AGE } }
+			COR = { all_core = { add_core = AGE } }
+			PRG = { all_core = { add_core = AGE } }	
+			ARG = { all_core = { add_core = AGE } }	
+			BOL = { all_core = { add_core = AGE } }	
+			ACN = { all_core = { add_core = AGE } }
+			PEU = { all_core = { remove_core = AGE } }	
+			change_tag = AGE
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rioplatense_rio_grande_do_sul = {
+		picture = riogrande
+		potential = {
+			tag = AGE
+			NOT = {
+				has_country_flag = 
+age_will_be_completed
+			}
+		}
+		
+		allow = {
+			invention = national_fraternity
+			owns = 2314
+			owns = 2313
+			owns = 2319
+			owns = 2321
+			owns = 2315
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = 5
+			2467 = {
+				add_core = AGE
+			}
+			2464 = {
+				add_core = AGE
+			}
+			2466 = {
+				add_core = AGE
+			}
+			2465 = {
+				add_core = AGE
+			}
+			2463 = {
+				add_core = AGE
+			}
+			2461 = {
+				add_core = AGE
+			}
+			2459 = {
+				add_core = AGE
+			}
+			2462 = {
+				add_core = AGE
+			}
+			set_country_flag = age_will_be_completed
+		}
+	}	
+	rioplatense_cono_sur = {
+		picture = capchile
+		potential = {
+			tag = AGE
+			NOT = {
+				has_country_flag = 
+age_will_be_completed
+			}
+		}
+		
+		allow = {
+			invention = national_fraternity
+			owns = 2314
+			owns = 2313
+			owns = 2319
+			owns = 2321
+			owns = 2315
+			owns = 2464
+			owns = 2463
+			owns = 2461
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = 5
+			CHL = { all_core = { add_core = AGE } }	
+			set_country_flag = age_will_be_completed
+		}
+	}	
+}

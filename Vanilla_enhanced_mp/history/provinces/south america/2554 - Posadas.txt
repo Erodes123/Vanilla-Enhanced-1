@@ -1,0 +1,6 @@
+owner = COR
+controller = COR
+add_core = PRG
+add_core = COR
+trade_goods = cattle
+life_rating = 30

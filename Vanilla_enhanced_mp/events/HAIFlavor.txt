@@ -1,0 +1,288 @@
+#Concordat With The Vatican
+country_event = {
+
+	id = 45100
+
+	trigger = {
+		tag = HAI
+		year = 1860
+		exists = PAP
+		NOT = {
+			year = 1863
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1861
+		}
+		
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1862
+		}
+	}
+
+	title = "EVTNAME45100"
+	desc = "EVTDESC45100"
+	picture = "pope"
+
+	option = {
+		name = "EVTOPTA45100" 
+		prestige = 5
+		relation = { who = PAP value = 50 }
+		clergymen = {
+			militancy = -3
+		}
+	}
+}
+#Dominican war of independence
+country_event = {
+
+	id = 103400
+
+	title = "EVTNAME103400"
+	desc = "EVTDESC103400"
+	major = yes
+	
+	trigger = {
+		tag = HAI
+		year = 1844
+		NOT = {
+			has_global_flag = dominican_revolution_has_happened
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA103400"
+		any_pop = {
+			consciousness = 4
+			militancy = 2
+		}
+		diplomatic_influence = {
+				who = USA
+				value = -400
+		}
+		2214 = {
+			secede_province = DOM
+		}
+		2216 = {
+			secede_province = DOM
+		}
+		DOM = {
+			capital = 2214
+			leadership = 80
+
+			diplomatic_influence = {
+				who = USA
+				value = 400
+			}
+		}
+		diplomatic_influence = {
+				who = USA
+				value = -400
+		}
+		war = {
+			target = DOM
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = dominican_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB103400"
+		war_exhaustion = 40
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		diplomatic_influence = {
+				who = USA
+				value = -400
+		}
+		2214 = {
+			secede_province = DOM
+		}
+		2216 = {
+			secede_province = DOM
+		}
+		DOM = {
+			capital = 2214
+			leadership = 80
+			diplomatic_influence = {
+				who = USA
+				value = 400
+			}
+		}
+		capital = 2214
+		
+		change_tag_no_core_switch = DOM
+
+		HAI = {
+			war = {
+				target = DOM
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+		set_global_flag = dominican_revolution_has_happened
+	}
+}
+
+#Killing of Haitians
+country_event = {
+	id = 103410
+	title = "EVTNAME103410" #Haitian genocide
+	desc = "EVTDESC103410"
+	picture = "revolutionnn"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DOM
+		war_with = HAI
+		any_owned_province = {
+			country_units_in_province = HAI
+
+		}
+	mean_time_to_happen = {
+		days = 0
+		}
+	option = {
+		name = "EVT103410OPT"
+		HAI = { country_event = 103411 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+    id = 103411
+    title = "EVTNAME103411" #Haitian genocide -- to HAI
+    desc = "EVTDESC103411"
+    major = yes
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT103411OPTA"
+        war_exhaustion = 40
+        prestige = -20
+        end_war = DOM
+        DOM = {
+            any_owned = {
+                limit = { is_core = HAI }
+                remove_core = HAI
+            }
+            country_event = 103412
+        }
+        ai_chance = {
+            factor = 100
+        }
+    }
+
+    option = {
+        name = "EVT103411OPTB"
+        war_exhaustion = 60
+        badboy = 5
+        DOM = {
+            any_owned = {
+                limit = { is_core = HAI }
+                remove_core = HAI
+		}
+	country_event = 103413 }
+        }
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+country_event = {
+    id = 103412
+    title = "EVTNAME103412" #The Treaties of Velasco
+    desc = "EVTDESC103412"
+	picture = "revolutionnn"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT103412OPTA"
+        any_country = {
+            limit = {
+                alliance_with = HAI
+                war_with = DOM
+            }
+            end_war = DOM
+        }
+        prestige = 10
+        relation = { who = HAI value = 400 }
+    }
+}
+country_event = {
+    id = 103413
+    title = "EVTNAME103413" #Mexico Ignores the Treaties
+    desc = "EVTDESC103413"
+	picture = "revolutionnn"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT103413OPTA"
+        war_exhaustion = -20
+        USA = { country_event = 103414 }
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
+
+country_event = {
+    id = 103414
+    title = "EVTNAME103414" #The Texan Diplomat
+    desc = "EVTDESC103414"
+	picture = "constantinople_conference"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT103414OPTA"
+        diplomatic_influence = { who = FROM value = 200 }
+        relation = { who = FROM value = 50 }
+        relation = { who = HAI value = -50 }
+        create_alliance = FROM
+        leave_alliance = HAI
+		war = {
+			target = HAI
+			attacker_goal = {
+				casus_belli = humiliate
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+        ai_chance = { factor = 100 }
+    }
+}
+
+
+

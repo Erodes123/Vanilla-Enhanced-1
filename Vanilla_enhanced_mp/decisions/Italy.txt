@@ -1,0 +1,728 @@
+political_decisions = {
+	cavours_diplomacy = {
+		potential = {
+			OR = {
+				AND = { 
+					tag = ITA
+					NOT = { exists = SAR }
+				}
+				AND = { 
+					tag = SAR
+					NOT = { exists = ITA }
+				}
+			}
+			NOT = {
+				has_country_flag = cavour_has_done_his
+			}
+			owns = 465
+			owns = 466
+			owns = 472
+			FRA = {
+				exists = yes
+				is_greater_power = yes
+			}
+		}
+		allow = {
+			relation = {
+				who = FRA
+				value = 150
+			}
+			owns = 726
+			owns = 727
+			owns = 728
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -10
+			relation = {
+				who = FRA
+				value = 50
+			}
+			726 = {
+				add_core = SAR
+			}
+			727 = {
+				add_core = SAR
+			}
+			728 = {
+				add_core = SAR
+			}
+			465 = {
+				remove_core = ITA
+				remove_core = SAR
+				add_core = FRA
+				secede_province = FRA
+			}
+			466 = {
+				remove_core = ITA
+				remove_core = SAR
+				add_core = FRA
+				secede_province = FRA
+			}
+			472 = {
+				remove_core = ITA
+				remove_core = SAR
+				add_core = FRA
+				secede_province = FRA
+			}
+			set_country_flag = cavour_has_done_his
+		}
+	}
+	
+	award_order_of_st_francis = {
+		potential = {
+			tag = SIC
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = order_awarded
+			}
+		}
+		
+		allow = {
+			prestige = 25
+		}
+		
+		effect = {
+			years_of_research = 0.02
+			prestige = 2
+			set_country_flag = order_awarded
+		}
+	}
+	
+	statuto_albertino = {
+		potential = {
+			tag = SAR
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = get_your_statuto_albertino_here
+			}
+		}
+		
+		allow = {
+			average_militancy = 3
+		}
+		
+		effect = {
+			any_pop = {
+				militancy = -2
+			}
+			prestige = 5
+			set_country_flag = get_your_statuto_albertino_here
+		}
+	}
+	build_vittoriano = {
+		potential = {
+			tag = ITA
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = vittoriano_built
+			}
+		}
+		
+		allow = {
+			realism = 1
+		}
+		
+		effect = {
+			prestige = 5
+			any_pop = {
+				militancy = -1
+			}
+			set_country_flag = vittoriano_built
+		}
+	}
+	the_case_of_edgardo_mortara = {
+		potential = {
+			tag = PAP
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = edgardo_mortara
+			}
+			year = 1858
+			owns = 741
+		}
+		allow = {
+			idealism = 1
+		}
+		effect = {
+			prestige = 15
+			badboy = 1
+			any_greater_power = {
+				relation = {
+					value = -20
+					who = THIS
+				}
+			}
+			set_country_flag = edgardo_mortara
+		}
+	}
+	the_first_vatican_council = {
+		potential = {
+			tag = PAP
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = first_vatican_council_held
+			}
+		}
+		
+		allow = {
+			empiricism = 1
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			any_country = {
+				limit = {
+					religion = catholic
+				}
+				relation = {
+					who = THIS
+					value = 10
+				}
+			}
+			set_country_flag = first_vatican_council_held
+		}
+	}
+	law_of_guarantees = {
+		potential = {
+			tag = ITA
+			NOT = {
+				capital = 749
+			}
+		}
+		
+		allow = {
+			owns = 749
+		}
+		
+		effect = {
+			capital = 749
+			prestige = 5
+			badboy = -2
+		}
+	}
+
+	italian_venetia = {
+		potential = {
+			tag = ITA
+			NOT = {
+				has_country_flag = italian_venetia
+			}
+		}
+		
+		allow = {
+			OR = {
+				invention = national_fraternity
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			set_country_flag = italian_venetia
+			729 = {
+				add_core = ITA
+			}
+			730 = {
+				add_core = ITA
+			}
+			731 = {
+				add_core = ITA
+			}
+			732 = {
+				add_core = ITA
+			}
+			733 = {
+				add_core = ITA
+			}
+		}
+	}
+
+
+	Conquest_of_the_adriatic = {
+		potential = {
+			tag = ITA
+			has_country_flag = italian_adriatic
+			NOT = { has_country_flag = italian_conquest_of_the_adriatic }
+
+		}
+		
+		allow = {
+			mass_politics = 1
+			has_country_flag = italian_adriatic
+			owns = 729
+		}
+		effect = {
+			set_country_flag = italian_conquest_of_the_adriatic
+			780 = {
+				add_core = ITA
+			}
+			781 = {
+				add_core = ITA
+			}
+			782 = {
+				add_core = ITA
+			}
+			774 = {
+				add_core = ITA
+			}
+			prestige = 5
+		}
+	}
+
+	italia_irredenta = {
+		potential = {
+			tag = ITA
+			NOT = {
+				has_country_flag = italia_ulterior
+			}
+		}
+		
+		allow = {
+			owns = 729
+		}
+		
+		effect = {
+			set_country_flag = italia_ulterior
+			734 = {
+				add_core = ITA
+			}
+			735 = {
+				add_core = ITA
+			}
+			769 = {
+				add_core = ITA
+			}
+			770 = {
+				add_core = ITA
+			}
+			778 = {
+				add_core = ITA
+			}
+			736 = {
+				add_core = ITA
+			}
+			737 = {
+				add_core = ITA
+			}
+		}
+	}
+	Annexation_of_albania = {
+		potential = {
+			tag = ITA
+            		government = fascist_dictatorship
+			has_country_flag = italian_adriatic
+			NOT = { has_country_flag = annexation_of_albania }
+
+		}
+		
+		allow = {
+			has_country_flag = italian_adriatic
+		}
+		effect = {
+			set_country_flag = annexation_of_albania
+			ALB = { all_core = { add_core = ITA } }
+			prestige = 5
+		}
+	}
+        #independence
+	italian_war_of_independence = {
+		potential = {
+			tag = SAR
+			NOT = {
+				has_country_flag = italian_war_of_independence
+			}
+			LOM = { exists = yes
+					war_with = AUS }
+		}
+		
+		allow = {
+			AUS = { has_country_flag = venetian_revolution_has_happened }
+		}
+		
+		effect = {
+			set_country_flag = italian_war_of_independence
+			726 = { secede_province = SAR }
+			726 = { add_core = SAR }
+			728 = { add_core = SAR }
+			727 = { add_core = SAR }
+		any_country = {
+			limit = {
+				alliance_with = AUS
+			}
+			leave_alliance = AUS
+		}
+		war = {
+			target = AUS
+			attacker_goal = {
+				casus_belli = humiliate
+			}
+			defender_goal = {
+				casus_belli = acquire_state
+					state_province_id = 726
+			}
+			call_ally = no
+		}		
+			prestige = 2
+			AUS = { badboy = -10 }
+		}
+	}
+    italian_call_to_union = {
+        picture = form_italy
+        potential = {
+	    tag = SAR
+            NOT = {
+                exists = ITA
+                has_global_flag = italian_call_to_union
+                has_global_flag = garibaldi_redshirts
+            }
+        }
+
+        allow = {
+            war = no
+            OR = {
+                nationalism_n_imperialism = 1
+                exists = GER
+                AND = {
+                    exists = AUS
+                    AUS = {
+                        is_greater_power = no
+                        is_secondary_power = no
+                    }
+                }
+                AND = {
+                    exists = KUK
+                    KUK = {
+                        is_greater_power = no
+                        is_secondary_power = no
+                    }
+                }
+				is_greater_power = yes
+            }
+        }
+
+        effect = {
+            set_global_flag = italian_call_to_union
+            set_country_flag = made_the_call_to_union
+            prestige = 20
+            badboy = 10
+            AUS_726 = { add_core = THIS }
+            PAP_741 = { add_core = THIS }
+            TUS_744 = { add_core = THIS }
+            738 = { add_core = THIS }
+            739 = { add_core = THIS }
+            740 = { add_core = THIS }
+            746 = { add_core = THIS }
+            THIS = { inherit = MOD }
+            THIS = { inherit = TUS }
+            THIS = { inherit = PAR }
+            THIS = { inherit = MOD }
+            THIS = { inherit = LUC }
+            PAP = {
+			741 = {
+				secede_province = SAR
+			}
+			742 = {
+				secede_province = SAR
+			}
+			743 = {
+				secede_province = SAR
+			}
+		}
+            FRA = {
+                diplomatic_influence = { who = PAP value = -200 }
+                diplomatic_influence = { who = SIC value = -200 }
+            }
+            any_country = {
+                limit = {
+                    is_culture_group = THIS
+                    NOT = { tag = THIS }
+                    NOT = { has_country_flag = post_colonial_country }
+                }
+                any_pop = {
+                    limit = {
+                        OR = {
+                            has_pop_culture = north_italian
+                            has_pop_culture = south_italian
+                        }
+                    }
+                    consciousness = 2
+                }
+                relation = {
+                    who = THIS
+                    value = -50
+                }
+            }
+        }
+    }
+
+    perfect_fusion = {
+        picture = perfect_fusion
+        potential = {
+            tag = SAR
+            NOT = { has_country_flag = perfect_fusion }
+        }
+
+        allow = {
+            state_n_government = 1
+            OR = {
+                government = hms_government
+                government = prussian_constitutionalism
+            }
+            OR = {
+                average_militancy = 2
+                has_country_flag = liberal_revolution_in_progress
+                has_country_flag = liberal_revolution_fired
+                has_country_flag = had_liberal_revolution
+            }
+        }
+
+        effect = {
+            add_accepted_culture = south_italian
+            any_pop = { consciousness = 3 militancy = -9 }
+            set_country_flag = perfect_fusion
+        }
+
+        ai_will_do = { factor = 1 }
+    	}
+###Italian expansion path mare nostrum###
+	Mediterranean_islands = {
+		potential = {
+			tag = ITA
+			has_country_flag = mare_nostrum
+			NOT = { has_country_flag = italian_conquest_of_the_mediterranean }
+
+		}
+		
+		allow = {
+			has_country_flag = mare_nostrum
+		}
+		effect = {
+			set_country_flag = italian_conquest_of_the_mediterranean
+			473 = {
+				add_core = ITA
+			}
+			502 = {
+				add_core = ITA
+			}
+			501 = {
+				add_core = ITA
+			}
+			500 = {
+				add_core = ITA
+			}
+			499 = {
+				add_core = ITA
+			}
+			498 = {
+				add_core = ITA
+			}
+			847 = {
+				add_core = ITA
+			}
+			848 = {
+				add_core = ITA
+			}
+			845 = {
+				add_core = ITA
+			}
+			843 = {
+				add_core = ITA
+			}
+			844 = {
+				add_core = ITA
+			}
+			846 = {
+				add_core = ITA
+			}
+			856 = {
+				add_core = ITA
+			}
+			855 = {
+				add_core = ITA
+			}
+			857 = {
+				add_core = ITA
+			}
+			prestige = 5
+		}
+	}
+	old_italian_territories = {
+		potential = {
+			tag = ITA
+			has_country_flag = italian_conquest_of_the_mediterranean
+			has_country_flag = mare_nostrum
+			NOT = { has_country_flag = italian_conquest_of_the_mediterraneann }
+
+		}
+		
+		allow = {
+			has_country_flag = mare_nostrum
+			has_country_flag = italian_conquest_of_the_mediterranean
+			owns = 854
+			owns = 473
+			owns = 502
+			owns = 848
+			owns = 855
+		}
+		effect = {
+			set_country_flag = italian_conquest_of_the_mediterraneann
+			781 = {
+				add_core = ITA
+			}
+			780 = {
+				add_core = ITA
+			}
+			2582 = {
+				add_core = ITA
+			}
+			827 = {
+				add_core = ITA
+			}
+			842 = {
+				add_core = ITA
+			}
+			840 = {
+				add_core = ITA
+			}
+			841 = {
+				add_core = ITA
+			}
+			839 = {
+				add_core = ITA
+			}
+			870 = {
+				add_core = ITA
+			}
+			869 = {
+				add_core = ITA
+			}
+			871 = {
+				add_core = ITA
+			}
+			872 = {
+				add_core = ITA
+			}
+			874 = {
+				add_core = ITA
+			}
+			875 = {
+				add_core = ITA
+			}
+			895 = {
+				add_core = ITA
+			}
+			503 = {
+				add_core = ITA
+			}
+			504 = {
+				add_core = ITA
+			}
+			505 = {
+				add_core = ITA
+			}
+			add_accepted_culture = greek
+			prestige = 5
+		}
+	}
+	north_african_lands = {
+		potential = {
+			tag = ITA
+			has_country_flag = italian_conquest_of_the_mediterraneann
+			has_country_flag = mare_nostrum
+			NOT = { has_country_flag = italian_conquest_of_the_mediterraneannn }
+
+		}
+		
+		allow = {
+			has_country_flag = mare_nostrum
+			has_country_flag = italian_conquest_of_the_mediterraneann
+			owns = 895
+			owns = 872
+			owns = 842
+			owns = 2582
+			owns = 854
+		}
+		effect = {
+			set_country_flag = italian_conquest_of_the_mediterraneannn
+			TUN = { all_core = { add_core = ITA } }
+			TRI = { all_core = { add_core = ITA } }
+			SIR = { all_core = { add_core = ITA } }
+			LEB = { all_core = { add_core = ITA } }
+			prestige = 5
+		}
+	}
+###Italian expansion path focus on the balkans###
+	italian_conquest_of_montenegro = {
+		potential = {
+			tag = ITA
+			has_country_flag = focus_on_the_balkans
+			NOT = { has_country_flag = italian_conquest_of_montenegro }
+
+		}
+		
+		allow = {
+			has_country_flag = focus_on_the_balkans
+		}
+		effect = {
+			set_country_flag = italian_conquest_of_montenegro
+			MON = { all_core = { add_core = ITA } }
+			prestige = 5
+		}
+	}
+	italian_conquest_of_albania_2 = {
+		potential = {
+			tag = ITA
+			owns = 2582
+			owns = 2583
+			owns = 2569
+			owns = 2577
+			has_country_flag = focus_on_the_balkans
+			has_country_flag = italian_conquest_of_montenegro
+			NOT = { has_country_flag = italian_conquest_of_albania }
+		}
+		
+		allow = {
+			owns = 2582
+			owns = 2583
+			owns = 2569
+			owns = 2577
+			has_country_flag = focus_on_the_balkans
+			has_country_flag = italian_conquest_of_montenegro
+		}
+		effect = {
+			set_country_flag = italian_conquest_of_albania
+			ALB = { all_core = { add_core = ITA } }
+			prestige = 5
+		}
+	}
+	italian_conquest_of_greece = {
+		potential = {
+			tag = ITA
+			owns = 2582
+			owns = 2583
+			owns = 2569
+			owns = 2577
+			owns = 849
+			has_country_flag = focus_on_the_balkans
+			has_country_flag = italian_conquest_of_montenegro
+			NOT = { has_country_flag = italian_conquest_of_greece }
+		}
+		
+		allow = {
+			owns = 2582
+			owns = 2583
+			owns = 2569
+			owns = 2577
+			owns = 849
+			has_country_flag = focus_on_the_balkans
+			has_country_flag = italian_conquest_of_montenegro
+		}
+		effect = {
+			set_country_flag = italian_conquest_of_greece
+			GRE = { all_core = { add_core = ITA } }
+			prestige = 5
+		}
+	}
+}

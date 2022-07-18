@@ -1,0 +1,35 @@
+#Romanian independence
+country_event = {
+
+	id = 1032010
+	title = "EVTNAME103201"
+	desc = "EVTDESC1032010"
+	major = yes
+	
+	trigger = { 
+		tag = ROM
+		exists = ROM
+		NOT = { 
+			has_global_flag = romania_independent
+			}
+		OR = { AND = { 
+			818 = { controlled_by = RUS }
+			828 = { controlled_by = RUS } } 
+		AUS = {
+			has_country_flag = austria_gains_bosnia
+		}
+		KUK = {
+			has_country_flag = austria_gains_bosnia }
+		year = 1890
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA103201"
+		TUR = {
+			release_vassal = ROM
+		}
+	set_global_flag = romania_independent
+	}
+}

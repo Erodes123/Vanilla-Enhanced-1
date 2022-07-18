@@ -1,0 +1,176 @@
+political_decisions = {
+	form_benelux = {
+		picture = low_countries
+		potential = {
+			OR = {
+				tag = LUX
+				tag = BEL
+				tag = NET
+			}
+			NOT = {
+				exists = BNX
+			}
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			BEL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			NET = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			LUX = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = BEL
+						tag = NET
+						tag = LUX
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			BEL = { all_core = { add_core = BNX } }	
+			LUX = { all_core = { add_core = BNX } }	
+			NET = { all_core = { add_core = BNX } }				
+			change_tag = BNX
+			add_accepted_culture = wallonian
+
+			add_accepted_culture = dutch
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	Accept_picards_bnx = {
+		potential = {
+				tag = BNX
+			revolution_n_counterrevolution = 1
+		}
+		allow = {
+			war = no
+		BNX = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			prestige = 5
+			add_accepted_culture = picard
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	
+    end_the_javanese_sultanates = {
+        picture = map_java
+        potential = {
+            tag = NET
+            JAV = {
+                vassal_of = THIS
+                exists = yes
+                civilized = no
+                }
+            NOT = { has_country_flag = javanese_integrated }
+        }
+
+        allow = {
+            war = no
+            nationalism_n_imperialism = 1
+        }
+
+        effect = {
+            set_country_flag = javanese_integrated
+            JAV = { tech_school = developing_tech_school }
+			inherit = JAV
+            badboy = 1
+        }
+
+        ai_will_do = {
+            factor = 1
+            modifier = { factor = 0 badboy = 0.95 }
+        }
+    }
+
+    the_short_declaration = {
+        picture = moluccan_map
+        potential = {
+            tag = NET
+            SRI = { vassal_of = THIS exists = yes civilized = no }
+            NOT = { has_country_flag = tidore_integrated }
+        }
+
+        allow = {
+            war = no
+            nationalism_n_imperialism = 1
+            OR = {
+                SRI = { vassal_of = THIS exists = yes civilized = no }
+            }
+        }
+
+        effect = {
+            set_country_flag = tidore_integrated
+            badboy = 2
+            random_country = {
+                limit = { exists = yes tag = SRI vassal_of = THIS civilized = no }
+                any_pop = { consciousness = 3 militancy = 1 }
+                tech_school = developing_tech_school
+                annex_to = THIS
+            }
+			inherit = SRI
+            }
+
+        ai_will_do = {
+            factor = 1
+            modifier = { factor = 0 badboy = 0.9 }
+        }
+    }
+}

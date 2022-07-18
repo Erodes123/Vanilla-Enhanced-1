@@ -1,0 +1,8 @@
+owner = FTO
+controller = FTO
+add_core = FTO
+add_core = SEG
+add_core = FUT
+add_core = KAA
+trade_goods = wool
+life_rating = 15

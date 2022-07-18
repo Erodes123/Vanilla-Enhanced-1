@@ -1,0 +1,403 @@
+#USCA disolution - Nicaragua
+country_event = {
+
+	id = 104000
+	title = "EVTNAME104000"
+	desc = "EVTDESC104000"
+	major = yes
+	
+	trigger = {
+		tag = UCA
+		year = 1838
+		NOT = { 
+			has_global_flag = nicaraguan_revolution_has_happened
+			in_sphere = SPA
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA104000"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = NIC
+			}
+			secede_province = NIC
+		}
+		war = {
+			target = NIC
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = nicaraguan_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB104000"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = NIC
+			}
+			secede_province = NIC
+		}
+		
+		change_tag_no_core_switch = NIC
+		UCA = {
+			war = {
+				target = NIC
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = nicaraguan_revolution_has_happened
+	}
+}
+#Costa Rica leaves
+country_event = {
+
+	id = 104001
+	title = "EVTNAME104001"
+	desc = "EVTDESC104001"
+	major = yes
+	
+	trigger = {
+		tag = UCA
+		year = 1838
+		NOT = { 
+			has_global_flag = costarican_revolution_has_happened
+			in_sphere = SPA
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA104001"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = COS
+			}
+			secede_province = COS
+		}
+		war = {
+			target = COS
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = costarican_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB104001"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = COS
+			}
+			secede_province = COS
+		}
+		
+		change_tag_no_core_switch = COS
+		UCA = {
+			war = {
+				target = COS
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = costarican_revolution_has_happened
+	}
+}
+#Honduras leaves
+country_event = {
+
+	id = 104002
+	title = "EVTNAME104002"
+	desc = "EVTDESC104002"
+	major = yes
+	
+	trigger = {
+		tag = UCA
+		year = 1838
+		NOT = { 
+			has_global_flag = honduran_revolution_has_happened
+			in_sphere = SPA
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA104002"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = HON
+				NOT = {
+					province_id = 2191
+					province_id = 2192
+				}
+			}
+			secede_province = HON
+		}
+		war = {
+			target = HON
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = honduran_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB104002"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = HON
+				NOT = {
+					province_id = 2191
+					province_id = 2192
+				}
+			}
+			secede_province = HON
+		}
+		
+		change_tag_no_core_switch = HON
+		UCA = {
+			war = {
+				target = HON
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = honduran_revolution_has_happened
+	}
+}
+#El Salvador leaves
+country_event = {
+
+	id = 104003
+	title = "EVTNAME104003"
+	desc = "EVTDESC104003"
+	major = yes
+	
+	trigger = {
+		tag = UCA
+		year = 1838
+		NOT = { 
+			has_global_flag = salvadorian_revolution_has_happened
+			in_sphere = SPA
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA104003"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = ELS
+				NOT = {
+					province_id = 2194
+					province_id = 2195
+					province_id = 2193
+					province_id = 2196
+				}
+			}
+			secede_province = ELS
+		}
+		war = {
+			target = ELS
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = salvadorian_revolution_has_happened
+	}
+	
+	option = {
+		name = "EVTOPTB104003"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+		any_owned = {
+			limit = {
+				is_core = ELS
+				NOT = {
+					province_id = 2194
+					province_id = 2195
+					province_id = 2193
+					province_id = 2196
+				}
+			}
+			secede_province = ELS
+		}
+		
+		change_tag_no_core_switch = ELS
+		UCA = {
+			war = {
+				target = ELS
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+		}
+		war_exhaustion = 40
+		set_global_flag = salvadorian_revolution_has_happened
+	}
+}
+
+#Time to admit the failure -ELS
+country_event = {
+	id = 104020
+	title = "EVTNAME104020" #Haitian genocide
+	desc = "EVTDESC104020"
+
+	fire_only_once = yes
+
+
+	trigger = {
+		tag = ELS
+		war_with = UCA
+		any_owned_province = {
+			country_units_in_province = UCA
+
+		} }
+	mean_time_to_happen = {
+		days = 0
+		}
+
+	option = {
+		name = "EVT1040100OPT"
+		UCA = { country_event = 104011 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+    id = 104011
+    title = "EVTNAME104011" #Thay have to admit they cannot win
+    desc = "EVTDESC104011"
+    major = yes
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT104011OPTA"
+        war_exhaustion = 40
+        prestige = -20
+        end_war = ELS
+        end_war = HON
+        end_war = NIC
+        end_war = COS
+        NIC = {
+            country_event = 104012
+        }
+        ai_chance = {
+            factor = 100
+        }
+    }
+    option = {
+        name = "EVT104011OPTB"
+        war_exhaustion = 60
+        badboy = 5
+	consciousness = 2
+	militancy = 2
+        }
+        ai_chance = {
+            factor = 0
+    }
+}
+
+country_event = {
+    id = 104012
+    title = "EVTNAME44842" #The Treaties of Guatepeor
+    desc = "EVTDESC44842"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT44842OPTA"
+        any_country = {
+            limit = {
+                alliance_with = UCA
+                war_with = ELS
+                war_with = COS
+                war_with = NIC
+                war_with = HON
+            }
+        end_war = ELS
+        end_war = COS
+        end_war = NIC
+        end_war = HON
+        }
+        prestige = 5
+        relation = { who = GUA value = 400 }
+    }
+}

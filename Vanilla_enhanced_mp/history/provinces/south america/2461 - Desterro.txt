@@ -1,0 +1,6 @@
+owner = JUR
+controller = JUR
+add_core = JUR
+add_core = BRZ
+trade_goods = cattle
+life_rating = 35

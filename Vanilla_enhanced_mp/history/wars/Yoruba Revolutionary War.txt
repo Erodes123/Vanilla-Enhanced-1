@@ -1,0 +1,30 @@
+name = "Yoruba Revolutionary War"
+
+1835.10.2 = {
+	add_attacker = SOK
+	add_defender = OYO
+	add_defender = BEN
+	add_defender = WRI
+	
+	# actor
+	# receiver
+	# casus_belli - cb type
+	# country - 3rd party
+	# state_province_id - target state capital
+	war_goal = {
+			casus_belli = acquire_core_state
+			state_province_id = 1927
+		actor = OYO
+		receiver = SOK
+	}
+	war_goal = {
+			casus_belli = demand_reperations 
+		actor = SOK
+		receiver = OYO
+	}
+}
+
+1836.4.21 = {
+	rem_attacker = BRZ
+	rem_defender = RGS
+}

@@ -1,0 +1,163 @@
+political_decisions = {
+	form_Magreb = {
+		potential = {
+			OR = {
+				tag = ALD
+				tag = TUN
+				tag = MOR
+				tag = TRI
+			}
+		year = 1840
+			NOT = {
+				exists = MGB
+			}
+		}	
+		allow = {
+			war = no
+
+        	1705 = { owned_by = THIS }
+        	1708 = { owned_by = THIS }
+			TUN = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			MOR = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					OR = {
+					tag = ALD
+					tag = TUN
+					tag = MOR }
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			ALD = { all_core = { add_core = MGB } }
+			MOR = { all_core = { add_core = MGB } }	
+			TUN = { all_core = { add_core = MGB } }	
+			TRI = { all_core = { add_core = MGB } }	
+			change_tag = MGB
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_al-andalus = {
+		potential = {
+			is_greater_power = yes
+				tag = MGB
+				exists = MGB
+
+			NOT = {
+				has_country_flag = italian_andalus
+			}
+		}	
+		allow = {
+			revolution_n_counterrevolution = 1
+			war = no
+        	1700 = { owned_by = THIS }
+        	512 = { owned_by = THIS }
+        	513 = { owned_by = THIS }
+		}
+
+		effect = {
+			prestige = 10
+			MGB = { all_core = { add_core = AAN } }
+			SPA_512 = { add_core = AAN }
+			SPA_512 = { add_core = AAN }
+			change_tag = AAN
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	al-andalusian_spain = {
+		potential = {
+			tag = AAN
+			NOT = {
+				has_country_flag = italian_andalus
+			has_country_flag = aan_will_be_completed
+			}
+		}
+		
+		allow = {
+			invention = national_fraternity
+        	512 = { owned_by = THIS }
+        	513 = { owned_by = THIS }
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = 5
+			SPA_484 = {
+				add_core = AAN
+			}
+			SPA_503 = {
+				add_core = AAN
+			}
+			SPA_487 = {
+				add_core = AAN
+			}
+			set_country_flag = aan_will_be_completed
+			set_country_flag = spanish_andalus
+		}
+	}
+	al-andalusian_italy = {
+		potential = {
+			tag = AAN
+			NOT = {
+				has_country_flag = spanish_andalus
+			has_country_flag = aan_will_be_completed
+			}
+		}
+		
+		allow = {
+			invention = national_fraternity
+        	512 = { owned_by = THIS }
+        	513 = { owned_by = THIS }
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = 5
+			SIC_763 = {
+				add_core = AAN
+			}
+			SIC_754 = {
+				add_core = AAN
+			}
+			SPA_487 = {
+				add_core = AAN
+			}
+			set_country_flag = aan_will_be_completed
+			set_country_flag = italian_andalus
+		}
+	}
+}

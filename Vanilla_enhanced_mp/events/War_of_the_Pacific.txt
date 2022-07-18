@@ -1,0 +1,221 @@
+#Ask peacefully if they want to secede our reclamations
+country_event = {
+	id = 112890
+	title = "EVTNAME112890" 
+	desc = "EVTDESC112890"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CHL
+		year = 1879
+		BOL = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = {
+		name = "EVT112890OPTA"
+			2305 = { add_core = CHL }
+			2309 = { add_core = CHL }
+			2307 = { add_core = CHL }
+			2308 = { add_core = CHL }
+			2578 = { add_core = CHL }
+		BOL = { country_event = 112891 }
+		PEU = { country_event = 112894 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 112891
+	title = "EVTNAME112891"
+	desc = "EVTDESC112891"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTB112891"
+		CHL = { country_event = 112892 }		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVTOPTA112891"
+		2305 = { secede_province = CHL }
+		2309 = { secede_province = CHL }
+		2505 = { remove_core = BOL }
+		2509 = { remove_core = BOL }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 112894
+	title = "EVTNAME112891"
+	desc = "EVTDESC112891"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTB112891"
+		CHL = { country_event = 112895 }		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVTOPTA112891"
+		2307 = { secede_province = CHL }
+		2308 = { secede_province = CHL }
+		2578 = { remove_core = CHL }
+		2507 = { remove_core = PEU }
+		2508 = { remove_core = PEU }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 112892
+	title = "EVTNAME112892"
+	desc = "EVTDESC112892"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTB112892"
+		USA = {
+		diplomatic_influence = {
+			who = BOL
+			value = -400
+		}
+		relation = {
+			who = BOL
+			value = -200
+		}
+		diplomatic_influence = {
+			who = PEU
+			value = -400
+		}
+		relation = {
+			who = PEU
+			value = -200
+		} }
+
+		SPA = {
+		diplomatic_influence = {
+			who = BOL
+			value = -400
+		}
+		relation = {
+			who = BOL
+			value = -200
+		}
+		diplomatic_influence = {
+			who = PEU
+			value = -400
+		}
+		relation = {
+			who = PEU
+			value = -200
+		} }
+
+		FRA = {
+		diplomatic_influence = {
+			who = BOL
+			value = -400
+		}
+		relation = {
+			who = BOL
+			value = -200
+		}
+		diplomatic_influence = {
+			who = PEU
+			value = -400
+		}
+		relation = {
+			who = PEU
+			value = -200
+		} }
+		war = {
+			target = BOL
+			attacker_goal = {
+					casus_belli = acquire_core_state
+					state_province_id = 2305
+			}
+			
+			defender_goal = {
+				casus_belli = demand_reperations
+			}
+		}
+	}
+}
+country_event = {
+	id = 112895
+	title = "EVTNAME112892"
+	desc = "EVTDESC112892"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTB112892"
+		war = {
+			target = PEU
+			attacker_goal = {
+					casus_belli = acquire_core_state
+					state_province_id = 2307 }
+			attacker_goal = {
+					casus_belli = acquire_core_state
+					state_province_id = 2578 
+			}
+			
+			defender_goal = {
+				casus_belli = demand_reperations
+			}
+		}
+	}
+}
+country_event = {
+	id = 112896
+	title = "EVTNAME112896"
+	desc = "EVTDESC112896"
+	picture = "expansion"
+	
+	trigger = {
+			CHL = { owns = 2304 } }
+	
+	option = {
+		name = "EVTOPTB112896"
+		2304 = { secede_province = PEU }
+		2303 = { secede_province = PEU }
+		3109 = { secede_province = PEU }
+	}
+}
+country_event = {
+	id = 112897
+	title = "EVTNAME112897"
+	desc = "EVTDESC112897"
+	picture = "expansion"
+	
+	trigger = {
+			CHL = { owns = 2578 ]
+			year = 1908
+	
+	option = {
+		name = "EVTOPTB112897"
+		2578 = { secede_province = PEU }
+		2578 = { remove_core = CHL }
+		2308 = { remove_core = PEU }
+		2307 = { remove_core = PEU }
+	}
+}

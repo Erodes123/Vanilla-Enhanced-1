@@ -1,0 +1,114 @@
+political_decisions = {
+	scadinavian_karelia = {
+		potential = {
+			tag = SCA	
+			owns = 339
+			owns = 341
+			NOT = {
+			has_country_flag = scandinavian_karelian }
+		}
+	
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+	
+		effect = {
+			set_country_flag = scandinavian_karelian
+			any_pop = {
+				militancy = -0.5
+			}
+			RUS_339 = { 
+				add_core = SCA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	scadinavian_east_baltic = {
+		potential = {
+			tag = SCA	
+			owns = 339
+			owns = 341
+			owns = 984
+			NOT = {
+			has_country_flag = scadinavian_east_baltic
+			has_country_flag = scadinavian_west_baltic
+			has_country_flag = scadinavian_scotland } }
+	
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+	
+		effect = {
+			set_country_flag = scadinavian_east_baltic
+			any_pop = {
+				militancy = -0.5
+			}
+			RUS_339 = { 
+				add_core = SCA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	scadinavian_west_baltic = {
+		potential = {
+			tag = SCA	
+			owns = 339
+			owns = 341
+			owns = 984
+			NOT = {
+			has_country_flag = scadinavian_east_baltic
+			has_country_flag = scadinavian_west_baltic
+			has_country_flag = scadinavian_scotland }
+		}
+	
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+	
+		effect = {
+			set_country_flag = scadinavian_west_baltic
+			any_pop = {
+				militancy = -0.5
+			}
+			RUS_339 = { 
+				add_core = SCA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	scadinavian_scotland = {
+		potential = {
+			tag = SCA	
+			owns = 339
+			owns = 341
+			owns = 984
+			NOT = {
+			has_country_flag = scadinavian_east_baltic
+			has_country_flag = scadinavian_west_baltic
+			has_country_flag = scadinavian_scotland }
+		}
+	
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+	
+		effect = {
+			set_country_flag = scadinavian_scotland
+			any_pop = {
+				militancy = -0.5
+			}
+			RUS_339 = { 
+				add_core = SCA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

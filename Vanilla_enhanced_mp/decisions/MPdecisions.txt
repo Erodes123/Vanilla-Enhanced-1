@@ -1,0 +1,131 @@
+political_decisions = {
+	land_of_opportunity = {
+		picture = liberty_enlightening_the_world
+		potential = {
+			OR = { 
+			THIS = { capital_scope = { continent = north_america } }
+			THIS = { capital_scope = { continent = south_america } } }
+			NOT = { has_country_flag = land_of_opportunity
+					tag = USA }
+		}
+		
+		allow = {
+			war = no
+			government = democracy
+			ruling_party_ideology = liberal
+		}
+		
+		effect = {
+			set_country_flag = land_of_opportunity
+			add_country_modifier = {
+				name = land_of_opportunity
+				duration = 1250
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1 }
+	}
+	MP_options = {
+		picture = klink
+		alert = no
+		potential = {
+			ai = no
+			NOT = { has_country_flag = see }
+		}
+		
+		allow = { 
+			NOT = { has_country_flag = see } 
+			ai = no
+		}
+		effect = {
+			set_country_flag = see
+		}
+
+	}
+	MP_options_unsee = {
+		picture = klink
+		alert = no
+		potential = {
+			ai = no
+			has_country_flag = see 
+		}
+		
+		allow = { 
+			has_country_flag = see 
+			ai = no
+		}
+		effect = {
+			clr_country_flag = see
+		}
+
+	}
+
+	will_receive = {
+		picture = grant
+		alert = no
+		potential = {
+		civilized = yes
+			ai = no
+			NOT = { has_country_flag = will_receive_grants }
+			has_country_flag = see
+		}
+		
+		allow = { 
+			NOT = { has_country_flag = will_receive_grants } 
+			ai = no
+		}
+		effect = {
+			country_event = {id = 190000 days = 0}
+		}
+
+	}
+
+	will_give = {
+		alert = no
+		civilized = yes
+		picture = grant
+		potential = {
+			has_country_flag = see
+			ai = no
+			NOT = { has_country_flag = will_give_grants }
+			}
+
+		allow = { NOT = { has_country_flag = will_give_grants } }
+		effect = {
+			set_country_flag = will_give_grants
+		}
+	}
+
+
+	will_not_give = {
+		picture = grant
+		alert = no
+		potential = {
+			has_country_flag = see
+			ai = no
+			has_country_flag = will_give_grants
+		}
+		
+		allow = { 
+			ai = no
+			has_country_flag = will_give_grants }
+		effect = {
+			clr_country_flag = will_give_grants 
+			}
+	}
+	release_vassals = {
+	alert = no
+	potential = {
+		ai = no
+		num_of_vassals = 1
+		has_country_flag = see
+		
+	}
+	allow = {
+	}
+	effect = {
+		THIS = { country_event = 9130600 days = 0 }
+	}
+  }
+}

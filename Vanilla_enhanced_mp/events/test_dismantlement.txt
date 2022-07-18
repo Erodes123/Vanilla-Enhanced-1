@@ -1,0 +1,47 @@
+#KUK se vuelve AUS
+country_event = {
+	id = 112956
+	title = "EVTNAME112956"
+	desc = "EVTDESC112956"
+	picture = "constantinople_conference"
+	
+	trigger = { tag = KUK
+			has_country_flag = dismantlement_accepted
+		NOT = { owns = 641
+			owns = 633 }
+			owns = 619 }
+	
+	option = {
+		name = "EVTOPTA112956"
+			AUS = { inherit = KUK } }
+		HUN = { all_core = { remove_core = AUS } }
+
+		POL = { all_core = { remove_core = AUS } }
+		ROM = { all_core = { remove_core = AUS } }
+		BOH = { all_core = { remove_core = AUS } }
+		SLO = { all_core = { remove_core = AUS } }
+		RSM = { all_core = { remove_core = AUS } }
+
+		CRO = { all_core = { remove_core = AUS } }
+
+		ai_chance = {
+			factor = 100
+	}
+}
+#Mandatos anexados
+country_event = {
+	id = 112962
+	title = "EVTNAME102955"
+	desc = "EVTDESC102955"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100008"
+		FROM = { inherit = THIS } }
+
+		ai_chance = {
+			factor = 100
+	}
+}

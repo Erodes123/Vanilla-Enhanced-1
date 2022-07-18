@@ -1,0 +1,303 @@
+#Ask peacefully if they can stop their union
+country_event = {
+	id = 112870
+	title = "EVTNAME112870" 
+	desc = "EVTDESC112870"
+	picture = "conferencee"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CHL
+		year = 1836
+		ACN = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = {
+		name = "EVT112870OPTA"
+		ACN = { country_event = 112871 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 112871
+	title = "EVTNAME112871"
+	desc = "EVTDESC112871"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTB112871"
+		CHL = { country_event = 112872 }		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVTOPTA112871"
+		release_vassal = PEU
+		change_tag = BOL
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 112872
+	title = "EVTNAME112872"
+	desc = "EVTDESC112872"
+	picture = "expansion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTB112872"
+
+        casus_belli = {
+            target = ACN
+            type = cut_down_to_size
+            months = 12
+        }
+       ACN = { casus_belli = {
+            target = CHL
+            type = demand_reperations
+            months = 12
+        } }
+		ACN = { release_vassal = PEU
+			leave_alliance = PEU }
+		relation = {
+			who = ACO
+			value = 300
+		}
+		war = {
+			target = ACN
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+			defender_goal = {
+				casus_belli = demand_reperations
+			}
+		}
+		ACO = { add_core = 2315
+			add_core = 2370
+		}
+		ACO = {
+			war = {
+				target = ACN
+				attacker_goal = {
+					casus_belli = acquire_core_state
+					state_province_id = 2370
+				}
+			call_ally = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = 112873
+	title = "EVTNAME112873"
+	desc = "EVTDESC112873"
+	picture = "expansion"
+	
+	Trigger = {
+			tag = PEU
+			ACN = { war_with = ACO }
+			NOT = { has_country_flag = free_peru }
+		}
+
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = "EVTOPTB112873"
+		set_country_flag = free_peru
+	}
+}
+
+country_event = {
+	id = 112881
+	title = "EVTNAME112881"
+	desc = "EVTDESC112881"
+	picture = "expansion"
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ACN
+		PEU = { has_country_flag = free_peru } }
+
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+	name = "EVTOPTB112881"
+        casus_belli = {
+            target = PEU
+            type = make_puppet
+            months = 12
+        }
+		THIS = {
+			war = {
+				target = PEU
+				attacker_goal = {
+					casus_belli = make_puppet
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+				call_ally = no
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 112874
+	title = "EVTNAME112874"
+	desc = "EVTDESC112874"
+	picture = "expansion"
+	
+	trigger = {
+			tag = ACN
+			war = no
+			PEU = { NOT = { vassal_of = ACN }
+			has_country_flag = free_peru }
+			NOT = { has_country_flag = union_alas }
+		}
+
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = "EVTOPTB112874"
+			relation = {
+				who = PEU
+				value = 400
+			}
+	change_tag = BOL
+	ACN = { all_core = { add_core = THIS } }
+	THIS = { all_core = { remove_core = ACN } }
+	}
+}
+country_event = {
+	id = 112875
+	title = "EVTNAME112875"
+	desc = "EVTDESC112875"
+	picture = "expansion"
+	
+	trigger = {
+			tag = ACN
+			war = no
+			PEU = { vassal_of = ACN
+				has_country_flag = free_peru }
+		}
+
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = "EVTOPTB112875"
+			inherit = PEU
+			set_country_flag = union_alas
+			BOL = { all_core = { add_core = THIS } }
+			PEU = { all_core = { add_core = THIS } }
+	}
+}
+#Fix borders Chaco
+country_event = {
+	id = 112876
+	title = "EVTNAME112876"
+	desc = "EVTDESC112876"
+	picture = "conferencee"
+	
+	trigger = {
+		tag = ACO
+		NOT = {
+				has_country_flag = tarija_is_organized }
+		BOL = { exists = yes }
+		owns = 2370
+		owns = 2315
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 2 }
+	option = {
+		name = "EVTOPTA112876"
+		set_country_flag = Chaco_is_organized
+			2315 = { remove_core = ACO }
+			2315 = { remove_core = ARG }	
+			2370 = { remove_core = BOL }
+			2368 = { remove_core = BOL }
+			2375 = { remove_core = BOL }
+			2315 = { secede_province = BOL }
+			prestige = 5
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = {
+		name = "EVTOPTA112876"
+	}
+}
+#Fix borders Chaco
+country_event = {
+	id = 112877
+	title = "EVTNAME112877"
+	desc = "EVTDESC112877"
+	picture = "conferencee"
+	
+	trigger = {
+		tag = BRZ
+		year = 1850
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 2 }
+	option = {
+		name = "EVTOPTA112877"
+		set_country_flag = acre_is_organized
+			2549 = { add_core = BRZ }
+			2420 = { add_core = BRZ }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+#Misiones Paraguay
+country_event = {
+	id = 112878
+	title = "EVTNAME112878"
+	desc = "EVTDESC112878"
+	picture = "corrientes"
+	
+	trigger = {
+		tag = PRG
+		year = 1841
+		NOT = {
+				has_country_flag = misiones_is_organized }
+		owns = 2339
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 2 }
+	option = {
+		name = "EVTOPTA112878"
+		set_country_flag = misiones_is_organized
+		BRZ = {	relation = {
+			who = URU
+			value = 200
+		} }
+		COR = {
+			2554 = { secede_province = PRG } }
+			prestige = 2
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}

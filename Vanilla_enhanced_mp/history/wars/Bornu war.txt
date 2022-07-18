@@ -1,0 +1,28 @@
+name = "Bornu war"
+
+1835.10.2 = {
+	add_attacker = SOK
+	add_defender = BOR
+	
+	# actor
+	# receiver
+	# casus_belli - cb type
+	# country - 3rd party
+	# state_province_id - target state capital
+	war_goal = {
+			casus_belli = acquire_core_state
+			state_province_id = 1951
+		actor = SOK
+		receiver = BOR
+	}
+	war_goal = {
+			casus_belli = status_quo
+		actor = BOR
+		receiver = SOK
+	}
+}
+
+1836.4.21 = {
+	rem_attacker = BRZ
+	rem_defender = RGS
+}

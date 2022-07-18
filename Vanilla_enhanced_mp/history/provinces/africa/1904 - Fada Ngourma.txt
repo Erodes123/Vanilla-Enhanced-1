@@ -1,0 +1,8 @@
+owner = MOS
+controller = MOS
+add_core = MOS
+add_core = SEG
+add_core = DND
+trade_goods = grain
+trade_goods = grain
+life_rating = 15

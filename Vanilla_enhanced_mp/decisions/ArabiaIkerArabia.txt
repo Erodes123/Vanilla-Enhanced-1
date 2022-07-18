@@ -1,0 +1,52 @@
+political_decisions = {
+	Arabia_the_true_islamic_state = {
+		picture = yemensana
+		potential = {
+			tag = ARA
+			exists = TUR
+			is_greater_power = yes
+			NOT = { has_country_flag = accept_tur }
+		}	
+		allow = {
+			year = 1836
+			war = no
+			ARA = {
+				exists = yes
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			add_accepted_culture = turkish
+			set_country_flag = accept_tur
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	Arabia_thiqq = {
+		picture = yemensana
+		potential = {
+			tag = ARA
+			is_greater_power = yes
+			NOT = { has_country_flag = arabthing }
+		}	
+		allow = {
+			year = 1850
+			war = no
+			SPA = {
+				in_sphere = ARA
+			}
+			is_greater_power = yes
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = arabthing
+			any_owned_province = { limit = { is_core = SPA } add_core = ARA }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,357 @@
+#Events from 955182 to 955191 used
+#The Congo Conference
+country_event = {
+    id = 955182
+    title = "EVTNAME955182"
+    desc = "EVTDESC955182"
+    picture = "congothingy"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT955182OPTA" #Vote for them
+        relation = { who = FROM value = 25 }
+        diplomatic_influence = { who = FROM value = 25 }
+        FROM = { change_variable = { which = yes_to_congo value = 1 } }
+        set_country_flag = yes_to_congo
+
+        ai_chance = {
+            factor = 0.7
+            modifier = { factor = 2 OR = { FROM = { in_sphere = THIS } relation = { who = FROM value = 150 } } }
+            modifier = { factor = 1.1 relation = { who = FROM value = 100 } }
+            modifier = { factor = 0.7 NOT = { relation = { who = FROM value = -50 } } }
+            modifier = { factor = 0.4 NOT = { relation = { who = FROM value = -100 } } }
+        }
+    }
+
+    option = {
+        name = "EVT955182OPTB" #Don't vote for them
+        relation = { who = FROM value = -25 }
+        diplomatic_influence = { who = FROM value = -25 }
+        FROM = { change_variable = { which = no_to_congo value = 1 } }
+
+        ai_chance = {
+            factor = 0.25
+            modifier = { factor = 0.1 OR = { FROM = { in_sphere = THIS } relation = { who = FROM value = 150 } } }
+            modifier = { factor = 1.25 NOT = { relation = { who = FROM value = -50 } } }
+            modifier = { factor = 1.5 NOT = { relation = { who = FROM value = -100 } } }
+        }
+    }
+
+    option = {
+        name = "EVT955182OPTC" #Abstain
+        FROM = { change_variable = { which = abstained_to_congo value = 1 } }
+
+        ai_chance = { factor = 0.05 }
+    }
+}
+
+
+#The Congo Conference - Positive result
+country_event = {
+    id = 955183
+    title = "EVTNAME955183"
+    desc = "EVTDESC955183"
+    major = yes
+
+    trigger = {
+        OR = {
+            check_variable = { which = yes_to_congo value = 3.99 }
+            AND = {
+                check_variable = { which = yes_to_congo value = 2.99 }
+                NOT = { check_variable = { which = no_to_congo value = 2.99 } }
+            }
+        }
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = { months = 1 }
+
+    option = {
+        name = "EVT955183OPTA"
+        set_country_flag = congo_is_ours
+        1982 = { add_core = CNG }
+        1983 = { add_core = CNG }
+        1985 = { add_core = CNG }
+        BEL_1984 = { add_core = CNG }
+        BEL_1987 = { add_core = CNG }
+        BEL_1990 = { add_core = CNG }
+        BEL_1977 = { add_core = CNG }
+        BEL_1992 = { add_core = CNG }
+		1983 = {
+			secede_province = THIS
+		}
+		1982 = {
+			secede_province = THIS
+		}
+		1985 = {
+			secede_province = THIS
+		}
+
+        any_country = {
+            any_owned_province = { is_core = CNG } 
+
+		1983 = {
+			secede_province = CNG
+		}
+		1982 = {
+			secede_province = CNG
+		}
+		1985 = {
+			secede_province = CNG
+		}
+
+	}
+	create_vassal = CNG
+    }
+}
+#The Congo Conference - Negative result
+country_event = {
+    id = 955184
+    title = "EVTNAME955184"
+    desc = "EVTDESC955184"
+    major = yes
+
+    trigger = {
+        OR = {
+            check_variable = { which = no_to_congo value = 3.99 }
+            AND = {
+                check_variable = { which = no_to_congo value = 2.99 }
+                NOT = { check_variable = { which = yes_to_congo value = 2.99 } }
+            }
+            check_variable = { which = abstained_to_congo value = 3.99 }
+        }
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = { months = 1 }
+
+    option = {
+        name = "EVT955184OPTA"
+    }
+}
+
+#Congo gets the rest of its cores - Belgium
+country_event = {
+	id = 955185
+	title = "EVTNAME955185"
+	desc = "EVTDESC955185"
+    picture = "congothingy"
+
+	fire_only_once = yes
+
+        mean_time_to_happen = { months = 1 }
+	
+	trigger = {
+		exists = CNG
+		CNG = {
+			vassal_of = THIS
+		}
+		year = 1872
+            	has_global_flag = called_congo_conference
+	}
+	option = {
+		name = "EVTOPT955185"
+			CNG = {
+				country_event = { id=955187 days=0 }
+			}
+	}
+}
+#Congo gets the rest of its cores
+country_event = {
+	id = 955187
+	title = "EVTNAME955187"
+	desc = "EVTDESC955187"
+    picture = "congothingy"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT955187"
+		BEL_1977 = {
+			secede_province = CNG
+		}
+		BEL_1984 = {
+			secede_province = CNG
+		}
+		BEL_1987 = {
+			secede_province = CNG
+		}
+		BEL_1990 = {
+			secede_province = CNG
+		}
+		BEL_1992 = {
+			secede_province = CNG
+		}	
+	}
+}
+#Congo gets the rest of its coresgp
+country_event = {
+	id = 9551870
+	title = "EVTNAME955187"
+	desc = "EVTDESC955187"
+    picture = "congothingy"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		THIS = { OR = { is_greater_power = yes
+						is_secondary_power = yes } }
+		CNG = {
+			exists = no
+		}
+		owns = 1982
+            	NOT = { has_global_flag = congo_is_ours }
+				1984 = { empty = yes }
+	}
+
+	option = {
+		name = "EVTOPT955187"
+		CNG = { country_event = 95518701 }
+			CNG = { set_country_flag = yummy }
+	}
+}
+country_event = {
+	id = 95518701
+	title = "EVTNAME955187"
+	desc = "EVTDESC955187"
+    picture = "congothingy"
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT955187"
+		BEL_1984 = {
+			secede_province = CNG
+		}
+		BEL_1987 = {
+			secede_province = CNG
+		}
+		BEL_1990 = {
+			secede_province = CNG
+		}
+		BEL_1992 = {
+			secede_province = CNG
+		}
+		set_country_flag = yummy	
+	}
+}
+country_event = {
+	id = 95518700
+	title = "Annexation of Congo"
+	desc = "The Great Powers have allowed us to stay with all the land of the Congo"
+    picture = "congothingy"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		THIS = { OR = { is_greater_power = yes
+						is_secondary_power = yes } }
+		CNG = {
+			exists = yes
+		}
+		owns = 1982
+            	NOT = { has_global_flag = congo_is_ours }
+            	CNG = { has_country_flag = yummy }
+				CNG = { owns = 1984 }
+	}
+
+	option = {
+		name = "EVTOPT955187"
+		inherit = CNG
+			CNG = { clr_country_flag = yummy }
+	}
+}
+# We have done the worse to Congo
+country_event = {
+	id = 955186
+	title = "EVTNAME14670"
+	desc = "EVTDESC14670"
+	news = yes
+	news_desc_long = "EVTDESC14670_NEWS_LONG"
+	news_desc_medium = "EVTDESC14670_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC14670_NEWS_SHORT"
+	major = yes
+	
+	trigger = {
+		biologism = 1
+		prestige = 10
+		CNG = { 
+			vassal_of = THIS
+		}
+	}
+
+        mean_time_to_happen = { months = 1 }
+	
+	
+	option = {
+		name = "EVTOPTB14670"
+		badboy = 5
+		prestige = -5
+		set_country_flag = We_are_perverse_and_the_world_now_knows_it
+		
+	}
+}
+#slow eating of Africa
+country_event = {
+
+	id = 117001
+	title = "EVTNAME117000"
+	desc = "EVTDESC117000"
+	
+	trigger = { year = 19000000 }
+	
+		option = {
+		name = "EVTOPTB117000"
+		THIS = { add_casus_belli = {
+				target = FROM
+				type = establish_protectorate_casus_belli
+				months = 15 } }
+		THIS = { add_casus_belli = {
+				target = FROM
+				type = demand_concession_casus_belli
+				months = 15 } }
+		THIS = { add_casus_belli = {
+				target = FROM
+				type = take_capital
+				months = 15 } }
+		} 
+	
+	option = {
+		name = "EVTOPTA117000"
+		FROM = { inherit = THIS }
+		ai_chance = {
+			factor = 0 }
+	}
+}
+country_event = {
+
+	id = 1170010
+	title = "EVTNAME117000"
+	desc = "EVTDESC117000"
+	major = yes
+	
+	trigger = { year = 19000000 }
+	
+		option = {
+		name = "EVTOPTB117000"
+		THIS = { add_casus_belli = {
+				target = FROM
+				type = establish_protectorate_casus_belli
+				months = 15 }
+		}
+		FRA = { war = {
+			target = SOK
+			attacker_goal = {
+				casus_belli = establish_protectorate_casus_belli
+			}
+			defender_goal = {
+				casus_belli = status_quo }
+			}
+		}
+	}
+}

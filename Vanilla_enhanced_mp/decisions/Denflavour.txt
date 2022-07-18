@@ -1,0 +1,81 @@
+political_decisions = {
+	form_north_sea_empire = {
+		picture = northsea
+		potential = {
+			tag = DEN
+			NOT = {
+				exists = NSE
+			}
+			nationalism_n_imperialism = 1
+		}	
+		allow = {
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+			war = no
+			SCO = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			DEN = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			NOR = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = SCO
+						tag = DEN
+						tag = NOR
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			SCO = { all_core = { add_core = NSE } }	
+			DEN = { all_core = { add_core = NSE } }	
+			NOR = { all_core = { add_core = NSE } }				
+			change_tag = NSE
+			add_accepted_culture = british
+			add_accepted_culture = norwegian
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}

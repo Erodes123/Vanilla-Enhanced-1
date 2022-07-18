@@ -1,0 +1,98 @@
+#########################################################################
+# 			DISABLE CRISIS					#
+#########################################################################
+
+country_event = {
+	id = 913270
+	title = "EVTNAME913270"
+	desc = "EVTDESC913270"
+	picture = upper_house
+
+	trigger = {	ai = no
+			year = 1836
+			NOT = {
+		has_global_flag = disable_crisis
+		has_global_flag = enable_crisis
+		year = 1837 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = {
+		name = "EVTOPTA913270"
+		set_global_flag = enable_crisis
+		any_country = { treasury = 10000 }		
+		THIS = { treasury = 10000 }
+	}
+
+	option = {
+		name = "EVTOPTB913270"
+		set_global_flag = disable_crisis
+		any_country = { treasury = 10000 }
+		THIS = { treasury = 10000 }
+	}
+		
+}
+
+country_event = {
+	id = 913280
+	title = "Crisis Cooldown"
+
+	trigger = {
+		tag = JAN
+		has_global_flag = disable_crisis
+		NOT = { has_country_modifier = monthly_timer }
+		NOT = { year = 1870 }
+	}
+
+	option = {
+		add_country_modifier = { name = monthly_timer duration = 20 }
+		any_country = {
+			any_owned = {
+				state_scope = {
+					flashpoint_tension = -100
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 913290
+	title = "Crises Enabled"
+	desc = "Crises have been enabled"
+	major = yes
+
+	trigger = {
+		tag = JAN
+		has_global_flag = enable_crisis
+		NOT = { has_global_flag = disable_crisis }
+		NOT = { has_country_flag = crises_enabled }
+	}
+
+	option = {
+		set_country_flag = crises_enabled
+	}
+}
+
+country_event = {
+	id = 913291
+	title = "Crises Enabled again"
+	desc = "Crises have been enabled"
+	major = yes
+
+	trigger = {
+		tag = JAN
+		year = 1870
+		has_global_flag = disable_crisis
+		NOT = { has_country_flag = crises_enabled }
+	}
+
+	fire_only_once = yes
+
+	option = {
+		clr_global_flag = disable_crisis
+	}
+}

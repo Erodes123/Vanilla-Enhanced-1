@@ -1,0 +1,259 @@
+####Conquista del Chaco####
+
+#Argentinian Chaco
+country_event = {
+	id = 112836
+	title = "EVTNAME112836"
+	desc = "EVTDESC112836"
+	picture = "chaco"
+	
+	trigger = {
+		year = 1862
+		owns = 2376
+		war = no
+		NOT = {
+				has_country_flag = Chaco_is_ours
+		}
+	}
+
+	mean_time_to_happen = { months = 2 }
+
+	fire_only_once = yes
+
+	option = {
+		name = "EVTOPTA106000"
+		set_country_flag = Chaco_is_ours
+			2364 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = ARG }	
+			2365 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = ARG }
+			2372 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = ARG }
+			2377 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = ARG }
+			2362 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = ARG }
+	}
+}
+
+#Paraguayan Chaco
+country_event = {
+	id = 112837
+	title = "EVTNAME112837"
+	desc = "EVTDESC112837"
+	picture = "chaco"
+	
+	trigger = {
+		year = 1862
+		NOT = {
+				has_country_flag = Chaco_is_ours_prg}
+		owns = 2339
+	}
+
+	mean_time_to_happen = { months = 4 }
+	fire_only_once = yes
+	option = {
+		name = "EVTOPTA112837"
+		set_country_flag = Chaco_is_ours_prg
+			2338 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = PRG add_core = BOL }	
+			2337 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = PRG add_core = BOL }
+			2367 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = PRG add_core = ARG  }
+			2366 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = PRG add_core = ARG  }	
+	}
+}
+
+#Fix borders Chaco
+country_event = {
+	id = 112838
+	title = "EVTNAME112838"
+	desc = "EVTDESC112838"
+	picture = "chaco"
+	
+	trigger = {
+		tag = ARG
+		NOT = {
+				has_country_flag = chaco_is_organized}
+		owns = 2364
+		owns = 2367
+		owns = 2554
+	}
+
+	mean_time_to_happen = { months = 2 }
+	fire_only_once = yes
+
+	option = {
+		name = "EVTOPTA112838"
+		set_country_flag = chaco_is_organized
+			2367 = { remove_core = PRG }	
+			2366 = { remove_core = PRG }
+			2554 = { remove_core = PRG }	
+	}
+}
+
+####COnquista del desierto####
+#Argentinian first part
+country_event = {
+	id = 112839
+	title = "EVTNAME112839"
+	desc = "EVTDESC112839"
+	picture = "conquistadeldesi"
+	
+	trigger = {
+		year = 1881
+		NOT = {
+				has_country_flag = the_north_of_patagonia_is_ours}
+		owns = 2389
+		owns = 2352
+	}
+
+	mean_time_to_happen = { months = 6 }
+	option = {
+		name = "EVTOPTA112839"
+		set_country_flag = the_north_of_patagonia_is_ours
+			2391 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }	
+			2395 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
+			2393 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
+			2354 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
+			2353 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }	
+	}
+}
+
+#Argentinian second part
+country_event = {
+	id = 112840
+	title = "EVTNAME112839"
+	desc = "EVTDESC112840"
+	picture = "conquistadeldesi"
+	
+	trigger = {
+		year = 1882
+		NOT = {
+				has_country_flag = mid_patagonia_is_ours}
+		owns = 2391
+	}
+
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+	option = {
+		name = "EVTOPTA112840"
+		set_country_flag = mid_patagonia_is_ours
+			2394 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }		
+	}
+}
+
+#Argentinian last part
+country_event = {
+	id = 112841
+	title = "EVTNAME112839"
+	desc = "EVTDESC112841"
+	picture = "conquistadeldesi"
+	
+	trigger = {
+		year = 1883
+		NOT = {
+				has_country_flag = the_south_of_patagonia_is_ours}
+		owns = 2391
+	}
+
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+	option = {
+		name = "EVTOPTA112841"
+		set_country_flag = the_south_of_patagonia_is_ours
+			2392 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }	
+			2396 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
+			2397 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
+			2398 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
+			2399 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }	
+	}
+}
+####Ocupación de la Araucanía####
+
+#Punta Arenas
+country_event = {
+	id = 112842
+	title = "EVTNAME112842"
+	desc = "EVTDESC112842"
+	picture = "araucania"
+	
+	trigger = {
+		owns = 2325
+		year = 1843
+		NOT = {
+				has_country_flag = punta_arenas_is_ours}
+	}
+
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+	option = {
+		name = "EVTOPTA112842"
+		set_country_flag = punta_arenas_is_ours
+			2334 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = CHL }		
+	}
+}
+
+####Connect Chile
+country_event = {
+	id = 112843
+	title = "EVTNAME112842"
+	desc = "EVTDESC112843"
+	picture = "araucania"
+	
+	trigger = {
+		owns = 2325
+		year = 1881
+		NOT = {
+				has_country_flag = middle_chile_is_ours}
+	}
+
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+	option = {
+		name = "EVTOPTA112843"
+		set_country_flag = middle_chile_is_ours
+			2329 = { secede_province = THIS any_pop = { literacy = -0.99 } add_core = CHL}
+			2333 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = CHL}		
+	}
+}
+
+####South Chile
+country_event = {
+	id = 112844
+	title = "EVTNAME112842"
+	desc = "EVTDESC112844"
+	picture = "araucania"
+	
+	trigger = {
+		owns = 2334
+		year = 1883
+		NOT = {
+				has_country_flag = south_chile_is_ours}
+	}
+
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+	option = {
+		name = "EVTOPTA112843"
+		set_country_flag = south_chile_is_ours
+			2335 = { secede_province = THIS any_pop = { literacy = -0.99 } add_core = CHL}
+			2400 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = CHL add_core = ARG}		
+	}
+}
+
+#Fix borders Araucanía
+country_event = {
+	id = 112845
+	title = "EVTNAME112845"
+	desc = "EVTDESC112845"
+	picture = "araucania"
+	
+	trigger = {
+		NOT = {
+				has_country_flag = south_is_organized}
+		owns = 2400
+		owns = 2335
+	}
+
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+	option = {
+		name = "EVTOPTA112845"
+		set_country_flag = south_is_organized
+			2400 = { secede_province = ARG remove_core = CHL }	 	
+	}
+}

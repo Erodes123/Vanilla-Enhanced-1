@@ -1,0 +1,66 @@
+political_decisions = {
+	form_Portugal-Brazil = {
+		picture = porbra
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = BRZ
+				tag = POR
+			}
+			NOT = {
+				exists = UPB
+			}
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			BRZ = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			POR = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = BRZ
+						tag = POR 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			POR = { all_core = { add_core = UPB } }	
+			BRZ = { all_core = { add_core = UPB } }				
+			change_tag = UPB
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}

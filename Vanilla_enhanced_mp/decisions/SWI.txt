@@ -1,0 +1,171 @@
+political_decisions = {
+	declare_republic_of_neuchatel = {
+		potential = {
+			tag = SWI
+			owns = 608
+			608 = {
+				is_core = PRU
+			}
+		}
+		allow = {
+			prestige = 1
+			romanticism = 1
+		}
+		effect = {
+			prestige = 5
+			608 = {
+				remove_core = PRU
+				remove_core = NGF
+				remove_core = GER
+			}
+			relation = {
+				who = PRU
+				value = 20
+			}
+		}
+	}
+	call_geneva_convention = {
+		potential = {
+			tag = SWI
+			owns = 607
+			NOT = {
+				has_global_flag = geneva_convention_held
+			}
+		}
+		
+		allow = {
+			any_greater_power = {
+				war_exhaustion = 5
+			}
+			empiricism = 1
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = signed_the_geneva_convention
+				duration = -1
+			}
+			set_global_flag = geneva_convention_held
+			prestige = 10
+		}
+	}
+	
+	sign_the_geneva_convention = {
+		potential = {
+			civilized = yes
+			has_global_flag = geneva_convention_held
+			NOT = {
+				has_country_modifier = signed_the_geneva_convention
+			}
+		}
+		
+		allow = {
+			NOT = {
+				badboy = 1
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = signed_the_geneva_convention
+				duration = -1
+			}
+			badboy = -1
+		}
+	}
+	
+	build_gotthard_tunnel = {
+		potential = {
+			tag = SWI
+			owns = 606
+			NOT = {
+				has_country_flag = gotthard_tunnel_built
+			}
+		}
+		
+		allow = {
+			invention = machine_tools
+		}
+		
+		effect = {
+			606 = {
+				infrastructure = 4
+			}
+			prestige = 5
+			set_country_flag = gotthard_tunnel_built
+		}
+	}
+    declare_neutrality = {
+        potential = {
+            tag = SWI
+            NOT = {
+                has_country_modifier = neutrality_modifier
+                has_country_flag = abandoned_neutrality
+                has_country_flag = neutrality_violated
+            }
+        }
+        allow = {
+		any_owned_province = { is_core = THIS }
+            NOT = { badboy = 1 }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = neutrality_modifier
+                duration = -1
+            }
+        }
+
+        ai_will_do = {
+            factor = 1
+		}
+	}
+
+    violate_neutrality = {
+        picture = declare_neutrality
+        alert = no
+        potential = {
+            ai = no
+            SWI = {
+                neighbour = THIS
+                has_country_modifier = neutrality_modifier
+            }
+        }
+
+        allow = {
+            SWI = { has_country_modifier = neutrality_modifier }
+            war_policy = jingoism
+            NOT = {
+                is_sphere_leader_of = SWI
+                truce_with = SWI
+                alliance_with = SWI
+            }
+        }
+
+        effect = {
+            badboy = 25
+            SWI = {
+                set_country_flag = neutrality_violated
+                remove_country_modifier = neutrality_modifier
+                relation = { who = THIS value = -200 }
+            }
+            diplomatic_influence = { who = SWI value = -200 }
+            any_country = {
+                limit = {
+                    OR = {
+                        alliance_with = SWI
+                        is_sphere_leader_of = SWI
+                        relation = { who = SWI value = 50 }
+                    }
+                }
+                leave_alliance = THIS
+                relation = { who = THIS value = -200 }
+                casus_belli = {
+                    target = THIS
+                    type = cut_down_to_size
+                    months = 60
+                }
+            }
+        }
+    }
+}

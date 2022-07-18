@@ -1,0 +1,119 @@
+political_decisions = {
+	Holy_Roman_Empire = {
+		potential = {
+			OR = {
+				tag = AUS
+			}
+			is_greater_power = yes
+			primary_culture = south_german
+			NOT = {
+				exists = GER
+			}
+		}	
+		allow = {
+			war = no
+			GER = {
+				all_core = {
+					OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						NOT = {
+							culture = south_german
+							culture = north_german
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					primary_culture = south_german
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+					primary_culture = north_german
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			any_owned = {
+				limit = {
+					OR = {
+						culture = south_german
+						culture = north_german
+						province_id = 412
+					}
+					is_core = THIS
+				}
+				add_core = HRE
+			}
+				change_tag = HRE
+			GER = { all_core = { add_core = HRE } }	
+			add_accepted_culture = czech
+			add_accepted_culture = north_german
+			add_accepted_culture = slovene
+		any_owned = {
+			limit = {
+				is_core = HUN
+				NOT = {
+					province_id = 774
+					province_id = 773
+					province_id = 772
+					province_id = 775
+					province_id = 771
+					province_id = 775
+					province_id = 776
+					province_id = 777
+					province_id = 779
+					province_id = 793
+				}
+			}
+			secede_province = HUN
+		}
+		any_owned = {
+			limit = {
+				is_core = GLO
+				NOT = {
+					province_id = 2584
+				}
+			}
+			secede_province = GLO
+		}
+		any_owned = {
+			limit = {
+				is_core = BKN
+			}
+			secede_province = BKN
+		}
+		any_owned = {
+			limit = {
+				is_core = RSM
+			}
+			secede_province = RSM
+		}
+		any_owned = {
+			limit = {
+				is_core = CRO
+			}
+			secede_province = CRO
+		}
+		any_owned = {
+			limit = {
+				is_core = MON
+			}
+			secede_province = MON
+		}
+		ai_will_do = {
+			factor = 1 }
+		}
+	}
+}

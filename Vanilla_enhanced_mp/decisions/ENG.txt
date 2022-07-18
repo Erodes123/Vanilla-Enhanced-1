@@ -1,0 +1,452 @@
+political_decisions = {
+	Annexation_of_egypt = {
+		picture = african_land
+		potential = {
+			THIS = { capital_scope = { continent = europe } }
+				NOT = { tag = TUR tag = RUS } 
+			year = 1873
+			EGY = {
+				in_sphere = THIS
+			}
+			exists = EGY
+			NOT = {
+				has_country_flag = anexation_of_egypt
+			}
+		}
+		
+		allow = {
+			exists = EGY
+				NOT = { tag = TUR tag = RUS } 
+			is_greater_power = yes
+			THIS = { capital_scope = { continent = europe } }
+			EGY = {
+				in_sphere = THIS
+			}
+		}
+		
+		effect = {
+			set_country_flag = anexation_of_egypt
+			inherit = EGY
+			prestige = 20
+			badboy = 10
+		}
+	}
+        #South Africa
+	British_Africa = {
+		picture = african_land
+		potential = {
+			tag = ENG
+			NOT = {
+				has_country_flag = sa_is_ours
+			}
+		}
+		
+		allow = {
+			year = 1870
+		owns = 2558
+		}
+		
+		effect = {
+			set_country_flag = sa_is_ours
+			2088 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2094 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			2095 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }			
+			prestige = 2
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					badboy = 15
+				}
+			}
+		}
+	}
+
+	english_zululand = {
+		picture = african_land
+		potential = {
+			tag = ENG
+			NOT = {
+				has_country_flag = bri_zulu
+			}
+			ZUL = { exists = yes }
+		}
+		
+		allow = {
+			year = 1848
+		}
+		
+		effect = {
+
+        casus_belli = {
+            target = ZUL
+            type = establish_protectorate_casus_belli
+            months = 12
+        }
+		war = {
+			target = ZUL
+			attacker_goal = {
+				casus_belli = establish_protectorate_casus_belli
+			} 
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}	
+			set_country_flag = bri_zulu 	
+			prestige = 2
+			badboy = -8
+		}
+	}
+	Territory_of_oregon = {
+		picture = oregontreaty
+		potential = {
+			tag = ENG
+			owns = 78
+			NOT = {
+				has_country_flag = Territory_of_oregon
+			}
+			
+		}
+		
+		allow = {
+			NOT = {
+				war_with = USA
+			}
+		}
+		
+		effect = {
+			relation = {
+				who = USA
+				value = 100
+			}
+			78 = {
+				secede_province = USA
+			}
+			81 = { secede_province = USA any_pop = { literacy = -0.3 } life_rating = 5 }	
+			82 = { secede_province = USA any_pop = { literacy = -0.3 } life_rating = 5 }
+			83 = { secede_province = USA any_pop = { literacy = -0.3 } life_rating = 5 }
+			92 = { secede_province = USA any_pop = { literacy = -0.3 } life_rating = 5 }
+			91 = { secede_province = USA any_pop = { literacy = -0.3 } life_rating = 5 }
+			93 = { secede_province = USA }
+			80 = { secede_province = USA }
+			79 = { secede_province = USA }
+			badboy = -2
+			prestige = 20
+			USA = { country_event = 114060 }
+			set_country_flag = Territory_of_oregon
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					badboy = 0.2
+				}
+			}
+		}
+	}
+
+
+	ionian_islands_question = {
+		potential = {
+			tag = ENG
+			ION = {
+				vassal_of = ENG
+			}
+			ION = { ai = yes }
+			NOT = {
+				truce_with = GRE
+			}			
+		}
+
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+		}
+
+		effect = {
+			relation = {
+				who = GRE
+				value = 50
+			}
+			diplomatic_influence = {
+				who = GRE
+				value = 50
+			}
+			prestige = 10
+			badboy = -4
+			GRE = {
+				inherit = ION
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					AND = {
+						year = 1864 
+						month = 4
+					}
+				}
+			}
+			modifier = {
+				factor = 1			
+				relation = {
+					who = GRE
+					value = 0
+				}
+			}
+		}
+	}
+	repeal_the_corn_laws = {
+		potential = {
+			tag = ENG
+			NOT = {
+				has_country_flag = corn_laws_repealed_flag
+			}
+		}
+		allow = {
+			average_militancy = 2
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = corn_laws_repealed
+				duration = 3650
+			}
+			any_pop = {
+				militancy = -1
+				consciousness = 1
+			}
+			set_country_flag = corn_laws_repealed_flag
+		}
+	}
+	crown_empress_of_india = {
+		news = yes
+		news_desc_long = "empress_of_india_NEWS_LONG"
+		news_desc_medium = "empress_of_india_NEWS_MEDIUM"
+		news_desc_short = "empress_of_india_NEWS_SHORT"
+		potential = {
+			tag = ENG
+			OR = {
+				government = hms_government
+				government = prussian_constitutionalism
+				government = absolute_monarchy
+			}
+			NOT = {
+				has_country_flag = empress_of_india
+			}
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+			prestige = 40
+			owns = 1305
+			owns = 1311
+			owns = 1257
+			owns = 1291
+			owns = 1236
+			owns = 1297
+			owns = 1227
+		}
+		effect = {
+			prestige = 20
+			any_pop = {
+				militancy = -1
+			}
+			set_country_flag = empress_of_india
+		}
+	}
+
+	found_the_bbc = {
+		potential = {
+			tag = ENG
+			year = 1900
+			NOT = {
+				has_country_flag = we_are_live_from_london
+			}
+		}
+
+		allow = {
+			invention = national_radio_networks
+		}
+
+		effect = {
+			any_country = {
+				relation = {
+					who = THIS
+					value = 5
+				}
+			}
+			any_pop = {
+				militancy = -0.5
+			}
+			prestige = 10
+			set_country_flag = we_are_live_from_london
+		}
+	}
+	the_scotland_yard = {
+		potential = {
+			tag = ENG
+			NOT = {
+				has_country_flag = elementary_my_dear_watson # I know, he never says it in the books, yadiyadi.
+			}
+		}
+
+		allow = {
+			realism = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = the_yard
+				duration = -1
+			}
+			set_country_flag = elementary_my_dear_watson
+		}
+	}
+
+	rhodesia_charter = {
+		potential = {
+			tag = ENG
+			owns = 2068
+			owns = 2069
+			owns = 2070
+			owns = 2071
+			owns = 2072
+			owns = 2073
+			owns = 2635
+			NOT = {
+				has_country_flag = ian_would_be_proud
+			}
+		}
+
+		allow = {
+			invention = mission_to_civilize
+		}
+
+		effect = {
+			prestige = 10
+			2068 = {
+				change_province_name = "Salisbury"
+				state_scope = {
+					change_region_name = "Southern Rhodesia"
+					any_owned = {
+						add_core = RHO
+					}
+				}
+			}
+			set_country_flag = ian_would_be_proud
+		}
+	}
+	aden_protectorate = {
+		picture = yemensana
+		potential = {
+			tag = ENG
+			YEM = {
+				ai = yes
+				civilized = no
+			}
+			NOT = { has_country_flag = created_aden_protectorate }
+		}
+		
+		allow = {
+			war = no
+			YEM = {
+				war = no
+				in_sphere = THIS
+				owns = 1412
+			}
+			year = 1839
+		}
+		
+		effect = {
+			set_country_flag = created_aden_protectorate
+			prestige = 5
+			inherit = YEM
+            random_owned = {
+                limit = {
+                    NOT = { is_core = THIS }
+                    NOT = { any_core = { primary_culture = THIS } }
+                    province_id = 1178
+                    TUR = { exists = yes owns = 1151 } }
+                secede_province = TUR }
+            
+            random_owned = {
+                limit = { 
+                    NOT = { is_core = THIS }
+                    NOT = { any_core = { primary_culture = THIS } }
+                    province_id = 1179
+                    TUR = { exists = yes owns = 1151 } }
+                secede_province = TUR }
+            
+            random_owned = {
+                limit = {
+                    NOT = { is_core = THIS }
+                    NOT = { any_core = { primary_culture = THIS } }
+                    province_id = 1180
+                    TUR = { exists = yes owns = 1151 } }
+                secede_province = TUR }
+				
+			YEM = { all_core = { secede_province = YEM }
+            YEM = { 1412 = { secede_province = ENG } }
+			prestige = 20
+			badboy = 5
+			THIS = { create_vassal = YEM }
+        }
+	}
+		secure_malaya = {
+		picture = map_malaysia
+		potential = {
+			civilized = yes
+			owns = 2575
+			1389 = {
+				owner = {
+					neighbour = THIS
+					civilized = no
+					ai = yes
+				}
+				any_neighbor_province = { owned_by = THIS }
+			}
+			NOT = { has_global_flag = malaya_secured }
+		}
+
+		allow = {
+			revolution_n_counterrevolution = 1
+			war = no
+		}
+
+		effect = {
+			set_global_flag = malaya_secured
+			prestige = 5
+			1389 = { secede_province = THIS }
+			1391 = { secede_province = THIS }
+		}
+	}
+	
+	Purcharse_of_the_gold_coast{
+		potential = {
+			tag = ENG
+			NOT = { has_country_flag = treaty_of_gold }
+			owns = 1908
+		}
+
+		allow = {
+		year = 1868
+	        money = 100000
+		NET = { owns = 1909 } 
+		}
+
+		effect = {
+			set_country_flag = treaty_of_gold
+			NET = { country_event = 11402090 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,367 @@
+political_decisions = {
+	treaty_of_guadalupe_hidalgo = {
+		potential = {
+			tag = USA
+			has_country_flag = hasmanifestdestiny
+			NOT = { has_country_flag = treaty_of_guadalupe_hidalgo }
+			MEX = { is_greater_power = no }
+		}
+
+		allow = {
+			exists = MEX
+			OR = { AND = { 
+				war_score = 70
+				war_with = MEX }
+				AND = { 
+				MEX = { war_exhaustion = 70 }
+				war_with = MEX }
+				MEX = {
+					all_core = {
+						OR = {
+							owned_by = USA
+							controlled_by = USA
+							NOT = { is_core = USA }
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = treaty_of_guadalupe_hidalgo
+			MEX = { country_event = 44825 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	Gadsden_Purcharse = {
+		potential = {
+			tag = USA
+			has_country_flag = hasmanifestdestiny
+			NOT = { has_country_flag = la_mesilla }
+			MEX = { is_greater_power = no }
+		}
+
+		allow = {
+		year = 1856
+		has_country_flag = treaty_of_guadalupe_hidalgo
+		owns = 101
+		owns = 105
+		money = 100000
+		exists = MEX
+		}
+
+		effect = {
+			set_country_flag = la_mesilla
+			MEX = { country_event = 448300 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	Annexation_of_Mexico = {
+		potential = {
+			tag = USA
+			has_country_flag = hasmanifestdestiny
+			NOT = { has_country_flag = annexation_of_mex
+					has_country_flag = treaty_of_guadalupe_hidalgo }
+			MEX = { is_greater_power = no }
+			war_with = MEX
+			2172 = { controlled_by = USA }
+			NOT = { year = 1851 }
+		}
+
+		allow = {
+				2172 = { controlled_by = USA }
+				MEX = {
+					all_core = {
+						OR = {
+							owned_by = USA
+							controlled_by = USA
+							NOT = { is_core = USA }
+						}
+					}
+				}
+			money = 10000
+		}
+
+		effect = {
+			set_country_flag = annexation_of_mex
+			inherit = MEX
+			badboy = 35
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	refute_manifest_destiny = {
+		potential = {
+			tag = MEX
+			USA = {
+				has_country_flag = hasmanifestdestiny
+			}
+			NOT = { has_country_flag = refute_manifest_destiny }
+		}
+		allow = {
+			owns = 133
+			owns = 101
+			war = no
+		}
+		effect = {
+			set_country_flag = refute_manifest_destiny
+			relation = {
+				who = USA
+				value = -250
+			}
+			any_pop = {
+				consciousness = -2
+			}
+			TEX_132 = {
+				remove_core = USA
+			}
+			MEX_103 = {
+				remove_core = USA
+			}
+			MEX_85 = {
+				remove_core = USA
+			}
+			MEX_100 = {
+				remove_core = USA
+			}
+			MEX_95 = {
+				remove_core = USA
+			}
+			MEX_97 = {
+				remove_core = USA
+			}
+			110 = {
+				remove_core = USA
+			}
+			108 = {
+				remove_core = USA
+			}
+			128 = {
+				remove_core = USA
+			}
+			129 = {
+				remove_core = USA
+			}
+			109 = {
+				remove_core = USA
+			}
+			107 = {
+				remove_core = USA
+			}
+			prestige = 20
+		}
+	}
+	claim_luisiana = {
+		picture = louisiana
+		potential = { 
+			tag = MEX 
+			has_country_flag = refute_manifest_destiny
+			NOT = { has_country_flag = MEXlouisiana
+					has_country_flag = MEXcentralamerica  }
+		}
+		allow = { 
+			has_country_flag = refute_manifest_destiny }
+		effect = { 
+				USA_78 = { add_core = MEX }
+				USA_91 = { add_core = MEX }
+				USA_111 = { add_core = MEX }
+				USA_116 = { add_core = MEX }
+				USA_118 = { add_core = MEX }
+				USA_121 = { add_core = MEX }
+				USA_126	= { add_core = MEX }
+				USA_124	= { add_core = MEX }
+				USA_148	= { add_core = MEX }
+				USA_151 = { add_core = MEX }
+				USA_158	= { add_core = MEX }
+				USA_81 = { add_core = MEX }
+				USA_106	= { add_core = MEX }
+				USA_129	= { add_core = MEX }
+				USA_144	= { add_core = MEX }
+				USA_139	= { add_core = MEX }
+				
+				set_country_flag = MEXlouisiana	
+		}
+	}
+	Claim_centralamerica = {
+		picture = louisiana
+		potential = { 
+			tag = MEX 
+			has_country_flag = refute_manifest_destiny
+			NOT = {
+				has_country_flag =  MEXcentralamerica
+			}
+		}
+		allow = { 
+			war = no
+		}
+		
+		effect = {
+			NIC = {
+				all_core = {
+					add_core = THIS
+				}
+			}
+
+			HON = {
+				all_core = {
+					add_core = THIS
+				}
+			}
+
+			ELS = {
+				all_core = {
+					add_core = THIS
+				}
+			}
+
+			GUA = {
+				all_core = {
+					add_core = THIS
+				}
+			}
+
+			COS = {
+				all_core = {
+					add_core = THIS
+				}
+			}	
+			set_country_flag = MEXcentralamerica
+		} }
+    accept_mayan = {
+        potential = {
+            tag = MEX       
+            NOT= { accepted_culture = mayan}
+        }
+        allow = {
+            war = no
+            ideological_thought = 1
+            owns = 2186
+            owns = 2185
+            owns = 2188
+            owns = 2189
+            owns = 2190
+            is_secondary_power = yes
+        }
+        effect = {
+            add_accepted_culture = mayan
+            prestige = 5
+        }
+    }
+	acquire_cuba = {
+        picture = cuba_decision
+		potential = {
+			tag = MEX
+			NOT = { accepted_culture = caribeno } 
+		}
+		allow = {
+			owns = 2209
+			war = no
+			war_policy = jingoism
+            is_greater_power = yes
+		}
+		effect = {
+			CUB = {
+				all_core = {
+					add_core = THIS
+				}
+			}
+			add_accepted_culture = caribeno
+			prestige = 20
+		}
+	}
+	
+	claim_oregon_country = {
+	potential = {
+		tag = MEX
+		has_country_flag = refute_manifest_destiny
+		NOT = { has_country_flag = oregon_claimed_mex }
+	}
+	
+	allow = {
+		war = no
+		rank = 10
+	}
+	
+	effect = {
+		set_country_flag = oregon_claimed_mex
+		badboy = 5
+		USA_78 = { add_core = MEX }
+		USA_81 = { add_core = MEX }
+		USA_91 = { add_core = MEX }
+	}
+	
+	claim_philippines = {
+		potential = {
+			has_country_flag = no_us_cores
+			tag =  MEX
+			NOT = { has_country_flag = philippines_claimed_mex }
+		}
+		
+		allow = {
+			war = no
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = philippines_claimed_mex
+			badboy = 8
+			PHL = { all_core = { add_core = MEX } }
+		}
+	}
+	
+	claim_florida = {
+		potential = {
+			tag = MEX
+			NOT = { has_country_flag = florida_claimed }
+			has_country_flag = refute_manifest_destiny
+		}
+		
+		allow = {
+			war = no
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = florida_claimed
+			USA_200 = { add_core = MEX }
+			197 = { add_core = MEX }
+			194 = { add_core = MEX }
+		}
+	}
+	
+	remove_us_cores = {
+		potential = {
+			has_country_flag = oregon_claimed_mex
+			has_country_flag = MEXlouisiana
+			has_country_flag = florida_claimed
+			tag = MEX
+		}
+		
+		allow = {
+			war = no
+			NOT = { truce_with = USA }
+		}
+		
+		effect = {
+			set_country_flag = no_us_cores
+			all_core = {
+				limit = {
+					OR = {
+						is_core = USA
+						is core = CSA
+					}
+				}
+				remove_core = USA
+				remove_core = CSA
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+country_event = {
+	id = 112910
+	title = "EVTNAME112910"
+	desc = "EVTDESC112910"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA112910"
+		set_global_flag = sokoto_is_ours
+			1934 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 5 }	
+			1935 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 5 }
+			1933 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 5 }
+			1932 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 5 }
+			1931 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 5 }
+			1928 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 5 }
+			1929 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 5 }
+			1926 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 15 }
+			1924 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 15 }
+			1925 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 15 }
+			1930 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 15 }
+			1936 = { secede_province = SOK any_pop = { literacy = -0.99 } life_rating = 15 }	
+	}
+}
+country_event = {
+	id = 112911
+	title = "EVTNAME112911"
+	desc = "EVTDESC112911"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA112911"
+		set_global_flag = sokoto_is_ours
+		war = {
+			target = SOK
+			attacker_goal = {
+				casus_belli = establish_protectorate_casus_belli
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}	
+	}
+}

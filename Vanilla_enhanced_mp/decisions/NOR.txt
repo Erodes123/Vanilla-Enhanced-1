@@ -1,0 +1,23 @@
+political_decisions = {
+	Rename_Christiania = {
+		potential = {
+			tag = NOR
+			owns = 313
+			NOT = {
+				has_country_flag = oslo_renamed
+			}
+		}
+		
+		allow = {
+			mass_culture_n_the_avant_garde = 1
+		}
+		
+		effect = {
+			prestige = 5
+			313 = {
+				change_province_name = "Oslo"
+			}
+			set_country_flag = oslo_renamed
+		}
+	}
+}

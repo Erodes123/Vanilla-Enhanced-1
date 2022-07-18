@@ -1,0 +1,11 @@
+
+add_core = EGY
+add_core = TUR
+add_core = JRD
+trade_goods = grain
+life_rating = 20
+
+1861.1.1 = {
+	controller = TUR 
+	owner = TUR
+}

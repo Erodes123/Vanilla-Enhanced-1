@@ -1,0 +1,203 @@
+#French Saigon
+country_event = {
+
+	id = 110000
+	title = "EVTNAME110000"
+	desc = "EVTDESC110000"
+	picture = "french_saigon"
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		year = 1851	
+		1380 = { owner = { limit = { civilized = no } } }
+	option = {
+		name = "EVTOPTA110000"
+		1380 = { owner = { country_event = { id = 110001 days = 4 } } 
+		}
+	}
+}
+#Secede Saigon
+country_event = {
+
+	id = 110001
+	title = "EVTNAME110000"
+	desc = "EVTDESC110001"
+	major = yes
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA110001"
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		1380 = {
+			secede_province = FRA
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "EVTOPTA110001"
+		add_casus_belli = {
+				target = FRA
+				type = demand_concession_casus_belli
+				months = 100
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+#request cochinchina
+country_event = {
+
+	id = 110002
+	title = "EVTNAME110003"
+	desc = "EVTDESC110002"
+	picture = "french_saigon"
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		nationalism_n_imperialism = 1
+		owns = 1380
+		OR = {
+			year = 1867
+		}
+		1381 = { owner = { limit = { civilized = no } } }
+
+	
+	option = {
+		name = "EVTOPTA110002"
+		1381 = { owner = { country_event = { id = 110003 days = 4 } } 
+	}
+}
+}
+#Secede Cochinchina
+country_event = {
+
+	id = 110003
+	title = "EVTNAME110003"
+	desc = "EVTDESC110003"
+	major = yes
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA110003"
+		FRA = {
+		set_country_flag = cochinchina_is_french_now
+			}
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		1381 = {
+			secede_province = FROM
+		}
+		1382 = {
+			secede_province = FROM
+		}
+		1383 = {
+			secede_province = FROM
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		name = "EVTOPTA110001"
+		add_casus_belli = {
+				target = FRA
+				type = demand_concession_casus_belli
+				months = 100
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#Lao and cambodian lands in Siam
+country_event = {
+
+	id = 110004
+	title = "EVTNAME110004"
+	desc = "EVTDESC110004"
+	picture = "french_saigon"
+
+	fire_only_once = yes
+	
+	trigger = {
+		nationalism_n_imperialism = 1
+		owns = 1380
+		owns = 1375
+		owns = 1369
+		owns = 1364
+		invention = sociology
+	}
+
+	
+	option = {
+		name = "EVTOPTA110004"
+		SIA = {
+			country_event = { id=110005 days = 4 }
+		}
+	}
+}
+#Secede or war
+country_event = {
+
+	id = 110005
+	title = "EVTNAME110005"
+	desc = "EVTDESC110005"
+	major = yes
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA110005"
+		any_pop = {
+			consciousness = 2
+		}
+		1360 = {
+			secede_province = FROM
+		}
+		1357 = {
+			secede_province = FROM
+		}
+		1361 = {
+			secede_province = FROM
+		}
+		1363 = {
+			secede_province = FROM
+		}
+		1366 = {
+			secede_province = FROM
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = {
+		name = "EVTOPTA110001"
+		add_casus_belli = {
+				target = FROM
+				type = demand_concession_casus_belli
+				months = 100
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}

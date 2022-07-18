@@ -1,0 +1,16 @@
+army = {
+	name = "Army of Benin"
+	location = 1928
+	regiment = {
+		name= "1.Fulbe"
+		type = irregular
+		home = 1928
+	}
+
+	regiment = {
+		name= "2.Fulbe"
+		type = cavalry
+		home = 1928
+	}
+}
+

@@ -1,0 +1,8 @@
+owner = AUS
+controller = AUS
+add_core = BKN
+add_core = MOL
+add_core = ROM
+add_core = RUT
+trade_goods = cattle
+life_rating = 35

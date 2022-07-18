@@ -1,0 +1,254 @@
+#Secede The Levant
+country_event = {
+	tag = EGY
+	id = 103101
+	title = "EVTNAME103101"
+	desc = "EVTDESC103101"
+	
+	fire_only_once = yes
+	
+	trigger = { 
+			tag = TUR
+			894 = { controlled_by = TUR }
+			917 = { controlled_by = TUR }
+			has_global_flag = oriental_crisis
+			OR = { is_greater_power = yes
+					is_secondary_power = yes } }
+
+	
+	option = {
+		name = "EVTOPTA103101"
+		set_country_flag = nosiosi
+		end_war = EGY
+		create_vassal = EGY
+		any_pop = {
+			consciousness = 2
+			militancy = 1
+		}
+		848 = {
+			secede_province = TUR
+		}
+		847 = {
+			secede_province = TUR
+		}
+		TUR = {
+			inherit = HDJ
+		}
+		EGY = { any_owned = {
+			limit = {
+				is_core = TUR
+				}
+			secede_province = TUR }
+	}
+		EGY_903 = { remove_core = EGY } 
+        	EGY_897 = { remove_core = EGY } 
+        	EGY_915 = { remove_core = EGY } 
+        	EGY_921 = { remove_core = EGY } 
+		EGY_910 = { remove_core = EGY } 
+        	1156 = { remove_core = EGY } 
+        	894 = { remove_core = EGY } 
+        	896 = { remove_core = EGY } #Chania
+        	898 = { remove_core = EGY } #Iraklion
+	}
+	option = {
+		name = "This will not end until Egypt ceases to exist"
+	}
+}
+#Anexation_of_Egypt
+country_event = {
+
+	id = 103102
+	title = "EVTNAME103102"
+	desc = "EVTDESC103102"
+	major = yes
+	
+	fire_only_once = yes
+	
+	trigger = { 
+			tag = TUR
+			894 = { controlled_by = TUR }
+			917 = { controlled_by = TUR }
+			1745 = { controlled_by = TUR }
+			1770 = { controlled_by = TUR }
+			has_global_flag = oriental_crisis
+			OR = { is_greater_power = yes
+					is_secondary_power = yes }
+			NOT = { has_country_flag = nosiosi }
+			exists = EGY }
+
+	option = {
+		name = "EVTOPTA103102"
+		set_global_flag = annexation_of_Egypt
+		end_war = EGY
+		TUR = {
+			inherit = EGY
+		}
+		TUR = {
+			inherit = HDJ
+		}
+	}
+}
+#egipto thiqq
+country_event = {
+	id = 106000
+	title = "EVTNAME106000"
+	desc = "EVTDESC106000"
+	picture = "colonizationnnn"
+	
+	trigger = {
+		tag = EGY
+		year = 1870
+		EGY = { exists = yes }
+		NOT = {
+			year = 1871
+				has_global_flag = sudan_is_ours }
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_global_flag = sudan_is_ours
+			1841 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 5 }	
+			1842 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 5 } 
+			1758 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 15 }
+			2564 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 15 }
+			1838 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 15 }
+			1839 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 15 }
+			2564 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 15 }
+			1844 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 15 }
+			1845 = { secede_province = EGY any_pop = { literacy = -0.99 } life_rating = 15 }
+			1846 = {
+				add_core = THIS
+			}
+			1842 = {
+				add_core = THIS
+			}
+			1843 = {
+				add_core = THIS
+			}
+			1844 = {
+				add_core = THIS
+			}
+			1845 = {
+				add_core = THIS
+			}
+			1846 = {
+				add_core = THIS
+			}
+			1847 = {
+				add_core = THIS
+			}
+			1758 = {
+				add_core = THIS
+			}
+			2564 = {
+				add_core = THIS
+			}
+			1838 = {
+				add_core = THIS
+			}
+			1839 = {
+				add_core = THIS
+			}	
+	}
+}
+#zanzibar thiqq
+country_event = {
+	id = 106010
+	title = "EVTNAME1060010"
+	desc = "EVTDESC1060010"
+	picture = "colonizationnnn"
+	
+	trigger = {
+		tag = ZAN
+		ZAN = { exists = yes }
+		year = 1870
+		NOT = {
+			year = 1871
+				has_country_flag = kilwa_is_ours}
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_country_flag = kilwa_is_ours
+			2033 = { secede_province = ZAN any_pop = { literacy = -0.99 } life_rating = 5 }	
+			2039 = { secede_province = ZAN any_pop = { literacy = -0.99 } life_rating = 5 }	
+	}
+}
+
+#Mali thiqq
+country_event = {
+	id = 4060300
+	title = "EVTNAME106000"
+	desc = "EVTDESC106000"
+	picture = "colonizationnnn"
+	
+	trigger = {
+		tag = MLE
+		exists = yes
+		NOT = {
+				has_global_flag = mali_is_ours
+				year = 1870}
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_global_flag = mali_is_ours
+			1893 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}	
+			1896 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1895 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1897 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1892 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1894 = { add_core = THIS}	
+			1909 = { add_core = THIS}
+			1908 = { add_core = THIS}
+			1918 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}}
+			1933 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1934 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1912 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1913 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 add_core = THIS}
+			1935 = { secede_province = THIS life_rating = 15 add_core = THIS}
+	}
+	
+#Mali thiqq 2
+country_event = {
+	id = 5060300
+	title = "EVTNAME106000"
+	desc = "EVTDESC106000"
+	picture = "colonizationnnn"
+	
+	trigger = {
+		tag = MLE
+		exists = yes
+		1893 = { empty = no }
+		1892 = { empty = no }
+		1914 = { empty = no }
+		NOT = {
+				has_global_flag = mali_is_ours }
+	}
+	option = {
+		name = "EVTOPTA106000"
+		set_global_flag = mali_is_ours
+			1893 = { add_core = THIS }	
+			1896 = { add_core = THIS }
+			1895 = { add_core = THIS }
+			1900 = { add_core = THIS }
+			1898 = { add_core = THIS }
+			1899 = { add_core = THIS }
+			1897 = { add_core = THIS }
+			1892 = { add_core = THIS }
+			1894 = { add_core = THIS }	
+			1909 = { add_core = THIS }
+			1908 = { add_core = THIS }
+			1918 = { add_core = THIS }
+			1917 = { add_core = THIS }
+			1914 = { add_core = THIS }
+			1923 = { add_core = THIS }
+			1926 = { add_core = THIS }
+			1924 = { add_core = THIS }	
+			1925 = { add_core = THIS }
+			1929 = { add_core = THIS }
+			1928 = { add_core = THIS }
+			1931 = { add_core = THIS }
+			1932 = { add_core = THIS }
+			1933 = { add_core = THIS }
+			1934 = { add_core = THIS }
+			1935 = { add_core = THIS }
+	}
+}

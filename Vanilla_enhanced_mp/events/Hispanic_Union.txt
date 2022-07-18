@@ -1,0 +1,112 @@
+#Mexico
+country_event = {
+
+	id = 114050
+	title = "EVTNAME112931"
+	desc = "EVTDESC112931"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA112931"
+		set_country_flag = annexed_by_russia
+		HIS = { release_vassal = THIS
+			inherit = THIS }
+		ai_chance = {
+			factor = 100 }
+	}
+}
+#Colombia
+country_event = {
+
+	id = 114051
+	title = "EVTNAME112931"
+	desc = "EVTDESC112931"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA112931"
+		set_country_flag = annexed_by_russia
+		HIS = { release_vassal = THIS
+			inherit = THIS }
+		ai_chance = {
+			factor = 100 }
+	}
+}
+#Peru
+country_event = {
+
+	id = 114052
+	title = "EVTNAME112931"
+	desc = "EVTDESC112931"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA112931"
+		set_country_flag = annexed_by_russia
+		HIS = { release_vassal = THIS
+			inherit = THIS }
+		ai_chance = {
+			factor = 100 }
+	}
+}
+#Argentina
+country_event = {
+
+	id = 114053
+	title = "EVTNAME112931"
+	desc = "EVTDESC112931"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA112931"
+		set_country_flag = annexed_by_russia
+		HIS = { release_vassal = THIS
+			inherit = THIS }
+		ai_chance = {
+			factor = 100 }
+	}
+}
+
+#Hispanic slow eating of America
+country_event = {
+
+	id = 117000
+	title = "EVTNAME117000"
+	desc = "EVTDESC117000"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA117000"
+		set_country_flag = annexed_by_russia
+		HIS = { release_vassal = THIS
+			inherit = THIS }
+		ai_chance = {
+			factor = 100 }
+	}
+	
+	option = {
+		name = "EVTOPTB117000"
+		set_country_flag = annexed_by_russia
+		HIS = { 		add_casus_belli = {
+				target = THIS
+				type = conquest
+				months = 15 }
+				diplomatic_influence = {
+			who = THIS
+			value = -400
+			}
+		} }
+		ai_chance = {
+			factor = 100 
+	}
+}

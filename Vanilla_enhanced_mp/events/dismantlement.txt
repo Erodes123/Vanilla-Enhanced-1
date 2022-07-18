@@ -1,0 +1,155 @@
+#Initiation (GP with Mass Politics declares war on another GP)
+country_event = {
+
+    id = 960000
+    title = "EVTNAME96000" #War is Upon Us
+    desc = "EVTDESC96000"
+    picture = "greatwar"
+
+    trigger = {
+        war = yes
+        OR = {
+            has_country_flag = dismantle_declared
+            is_greater_power = yes
+            AND = {
+                any_greater_power = {
+                    has_country_flag = in_great_war
+                    alliance_with = THIS
+                }
+                any_greater_power = {
+                    has_country_flag = in_great_war
+                    war_with = THIS
+                }
+            }
+        }
+        OR = {
+            has_country_flag = coalition_member
+            mass_politics = 1
+            any_greater_power = {
+                has_country_flag = in_great_war
+                war_with = THIS
+            }
+        }
+        NOT = { has_country_modifier = great_war }
+        NOT = { has_country_flag = in_great_war }
+        any_greater_power = {
+            war_with = THIS
+            has_country_flag = in_great_war
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVTOPTA96000" #We shall be victorious!
+        set_country_flag = in_great_war
+        war_exhaustion = -20
+        any_pop = {
+            militancy = -3
+            dominant_issue = {
+                factor = 0.05
+                value = jingoism
+            }
+        }
+        add_country_modifier = {
+            name = great_war
+            duration = 913
+        }
+    }
+}
+country_event = {
+
+    id = 1130020
+    title = "EVTNAME113000" #War is Upon Us
+    desc = "EVTDESC113000"
+    picture = "greatwar"
+
+	is_triggered_only = yes
+
+
+    option = {
+        name = "EVTOPTA113000" #We shall be victorious!
+        set_country_flag = dismantlement_mandate
+        war_exhaustion = -20
+        any_pop = {
+            militancy = -3
+            dominant_issue = {
+                factor = 0.05
+                value = jingoism
+            }
+        }
+        FROM = {
+            country_event = 1130021
+        }
+    }
+}
+country_event = {
+
+    id = 1130021
+    title = "EVTNAME113001" #War is Upon Us
+    desc = "EVTDESC113001"
+    picture = "greatwar"
+
+	is_triggered_only = yes
+
+
+    option = {
+        name = "EVTOPTA113001" #We shall be victorious!
+        set_country_flag = dismantling_mandate_god
+        war_exhaustion = -20
+        any_pop = {
+            militancy = -3
+            dominant_issue = {
+                factor = 0.05
+                value = jingoism
+            }
+        }
+    }
+}
+country_event = {
+
+    id = 113000
+    title = "EVTNAME113001" #War is Upon Us
+    desc = "EVTDESC113001"
+    picture = "greatwar"
+
+	is_triggered_only = yes
+
+
+    option = {
+        name = "EVTOPTA113000" #We shall be victorious!
+        set_country_flag = dismantlement_accepted
+		FROM = { country_event = 1130010 }
+        any_pop = {
+            militancy = -3
+            dominant_issue = {
+                factor = 0.05
+                value = jingoism
+            }
+        }
+    }
+}
+country_event = {
+
+    id = 1130010
+    title = "EVTNAME113001" #War is Upon Us
+    desc = "EVTDESC113001"
+    picture = "greatwar"
+
+	is_triggered_only = yes
+
+
+    option = {
+        name = "EVTOPTA113000" #We shall be victorious!
+        set_country_flag = dismantling_power
+        any_pop = {
+            militancy = -3
+            dominant_issue = {
+                factor = 0.05
+                value = jingoism
+            }
+        }
+    }
+}

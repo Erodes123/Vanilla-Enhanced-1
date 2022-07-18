@@ -1,0 +1,129 @@
+political_decisions = {
+
+	unite_the_principalities = {
+		potential = {
+			tag = WAL 
+		NOT = { tag = BRO } }
+			
+		allow = {
+		OR = {
+			nationalism_n_imperialism = 1	
+			AND = { ia = no 
+					year = 1850 } } }
+
+		effect = {
+			treasury = 10000
+			change_tag = ROM
+			inherit = WAL
+			inherit = MOL
+			ruling_party_ideology = liberal
+			nationalvalue = nv_liberty
+			government = hms_government
+			political_reform = wealth_voting
+			WAL_665 = {
+				add_core = ROM
+			}
+			MOL_673 = {
+				add_core = ROM
+			}
+			AUS_654 = {
+				add_core = ROM
+			}
+			AUS_657 = {
+				add_core = ROM
+			}
+			TUR_674 = {
+				add_core = ROM
+			}
+			AUS_647 = {
+				add_core = ROM
+			}
+			RUS_676 = {
+				add_core = ROM
+			}
+			ROM = {
+				all_core = { 
+					remove_core = WAL
+					remove_core = MOL 
+				}
+			}
+			RUS = {
+				any_owned = {
+					remove_core = WAL
+					remove_core = MOL 
+				}
+			}
+			TUR = {
+				any_owned = {
+					remove_core = WAL
+					remove_core = MOL 
+				}
+			}
+			AUS = {
+				any_owned = {
+					remove_core = WAL
+					remove_core = MOL 
+				}
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	move_capital_to_bucharest = {
+		potential = {
+			tag = ROM
+			NOT = { has_country_flag = we_shall_make_it_beautiful }
+			664 = { owned_by = THIS }
+			NOT = { 
+				664 = { is_capital = yes }
+			}		
+		}
+
+		allow = {
+			war = no
+			
+		}
+
+		effect = {
+			set_country_flag = we_shall_make_it_beautiful
+			prestige = 2
+			capital = 664
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	Romanian_Transnistria = {
+		potential = {
+		OR = {
+			tag = ROM
+			tag = BRO }
+			NOT = {
+				has_country_flag = 
+rom_gets_its_final_form
+			}
+		}
+		
+		allow = {
+			mass_politics = 1
+            		government = fascist_dictatorship
+			owns = 664
+			owns = 651
+			owns = 676
+			owns = 670
+			owns = 656
+		}
+		
+		effect = {
+			set_country_flag = rom_gets_its_final_form
+			RUS_969 = { 
+				add_core = THIS
+			}
+			prestige = 2
+			badboy = 2
+			}
+		}
+	}
+}

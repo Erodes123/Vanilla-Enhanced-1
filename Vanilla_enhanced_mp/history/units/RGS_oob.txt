@@ -1,0 +1,25 @@
+army = {
+	name = "Armies of Rio do sul"
+	location = 2463
+	regiment = {
+		name= "1.regiment"
+		type = infantry
+		home = 2463
+	}
+	regiment = {
+		name= "1.regiment"
+		type = infantry
+		home = 2463
+	}
+	regiment = {
+		name= "1.regiment"
+		type = artillery
+		home = 2464
+	}
+	regiment = {
+		name= "1.regiment"
+		type = artillery
+		home = 2465
+	}
+}
+

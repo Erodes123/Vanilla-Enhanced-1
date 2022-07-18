@@ -1,0 +1,321 @@
+##Dismantlement for any country that is not in the list. Won't have any cores removed.
+country_event = {
+	id = 112955
+	title = "EVTNAME102955"
+	desc = "EVTDESC102955"
+	picture = "constantinople_conference"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100008"
+	any_owned = { limit = { owned_by = THIS }
+			TRI = { all_core = { secede_province = TRI } }
+			ALD = { all_core = { secede_province = ALD } }
+			TUN = { all_core = { secede_province = TUN } }
+			MOR = { all_core = { secede_province = MOR } }
+			NAM = { all_core = { secede_province = NAM } }
+			SAM = { all_core = { secede_province = SAM } }
+			INM = { all_core = { secede_province = INM } }
+			OCM = { all_core = { secede_province = OCM } }
+			MAM = { all_core = { secede_province = MAM } }
+			ICM = { all_core = { secede_province = ICM } }
+			LNS = { all_core = { secede_province = LNS } }
+			SIR = { all_core = { secede_province = SIR } }
+			IRQ = { all_core = { secede_province = IRQ } }
+			ELB = { all_core = { secede_province = ELB } }
+			JRD = { all_core = { secede_province = JRD } }
+			ISR = { all_core = { secede_province = ISR } }
+			ETH = { all_core = { secede_province = JRD } }
+			EGY = { all_core = { secede_province = ISR } }}
+        any_country = {
+            limit = {
+                OR = {
+                    civilized = yes
+                    tag = JAP
+                }
+                any_core = { owned_by = THIS }
+                exists = no
+                OR = {
+                    is_cultural_union = no
+                    tag = ROM
+                }
+                NOT = {
+                    AND = {
+                        is_primary_culture = THIS
+                        culture_has_union_tag = yes
+                    }
+                }
+                NOT = { has_country_flag = post_colonial_country }
+            }
+            all_core = {
+                limit = {
+                    is_core = THIS
+                    state_scope = {
+                        NOT = { any_owned_province = { is_capital = yes } }
+                    }
+                }
+                remove_core = THIS
+            }
+            country_event = 96012
+        }
+
+        any_country = {
+            limit = {
+                any_core = { owned_by = THIS }
+                exists = no
+                is_cultural_union = no
+                is_primary_culture = THIS
+                culture_has_union_tag = yes
+            }
+            random = {
+                chance = 50
+                country_event = 96018
+            }
+        }
+
+		ai_chance = {
+			factor = 100 }
+	} 
+}
+# Countries gaining independence as a result of dismantling
+country_event = {
+
+    id = 96012
+    title = "EVTNAME96012"
+    desc = "EVTDESC96012"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA96031" #Great
+        FROM = {
+            any_state = {
+                limit = {
+                    any_owned_province = { is_core = THIS }
+                    NOT = { any_owned_province = { is_capital = yes } }
+                }
+                any_owned = {
+                    limit = { is_core = THIS }
+                    secede_province = THIS
+                }
+            }
+        }
+        random_owned = {
+            limit = {
+                owner = { num_of_cities = 20 }
+            }
+            owner = {
+                any_neighbor_country = {
+                    limit = {
+                        any_core = { owned_by = THIS }
+                        NOT = { tag = FROM }
+                        NOT = { alliance_with = FROM }
+                    }
+                    country_event = 96022
+                }
+            }
+            any_country = {
+                limit = {
+                    exists = no
+                    is_cultural_union = no
+                    NOT = { is_culture_group = FROM }
+                    NOT = {
+                        THIS = { is_cultural_union = yes }
+                        is_culture_group = THIS
+                    }
+                    any_core = { owned_by = THIS }
+                }
+                country_event = 96012
+            }
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    truce_with = FROM
+                    AND = {
+                        has_country_flag = coalition_member
+                    }
+                }
+                is_greater_power = yes
+            }
+            diplomatic_influence = {
+                who = THIS
+                value = 100
+            }
+            relation = {
+                who = THIS
+                value = 100
+            }
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    truce_with = FROM
+                    AND = {
+                        has_country_flag = coalition_member
+                    }
+                }
+                is_greater_power = no
+            }
+            relation = {
+                who = THIS
+                value = 100
+            }
+        }
+        FROM = {
+            diplomatic_influence = {
+                who = THIS
+                value = -200
+            }
+            relation = {
+                who = THIS
+                value = -100
+            }
+        }
+        set_country_flag = newly_released_nation
+    }
+}
+   country_event = {
+    id = 96018
+    title = "EVTNAME96018"
+    desc = "EVTDESC96018"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA96031" #Great
+        FROM = {
+            any_state = {
+                limit = {
+                    NOT = { any_owned_province = { is_capital = yes } }
+                    any_owned_province = {
+                        is_core = THIS
+                        is_colonial = yes
+                    }
+                }
+                any_owned = {
+                    limit = { is_core = THIS }
+                    secede_province = THIS
+                }
+            }
+            any_state = {
+                limit = {
+                    NOT = { any_owned_province = { is_capital = yes } }
+                    any_owned_province = {
+                        is_core = THIS
+                        is_colonial = no
+                        OR = {
+                            THIS = {
+                                NOT = { primary_culture = FROM }
+                            }
+                            any_neighbor_province = {
+                                NOT = { owned_by = FROM }
+                            }
+                        }
+                    }
+                }
+                any_owned = {
+                    limit = { is_core = THIS }
+                    secede_province = THIS
+                }
+            }
+        }
+        random_owned = {
+            limit = {
+                owner = { num_of_cities = 20 }
+            }
+            any_country = {
+                limit = {
+                    neighbour = THIS
+                    any_core = { owned_by = THIS }
+                    NOT = { tag = FROM }
+                    NOT = { alliance_with = FROM }
+                }
+                country_event = 96022
+            }
+            any_country = {
+                limit = {
+                    exists = no
+                    is_cultural_union = no
+                    NOT = { is_culture_group = FROM }
+                    any_core = { owned_by = THIS }
+                }
+                country_event = 96012
+            }
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    truce_with = FROM
+                    AND = {
+                        has_country_flag = coalition_member
+                    }
+                }
+                is_greater_power = yes
+            }
+            diplomatic_influence = {
+                who = THIS
+                value = 100
+            }
+            relation = {
+                who = THIS
+                value = 100
+            }
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    truce_with = FROM
+                    AND = {
+                        has_country_flag = coalition_member
+                    }
+                }
+                is_greater_power = no
+            }
+            relation = {
+                who = THIS
+                value = 100
+            }
+        }
+        FROM = {
+            diplomatic_influence = {
+                who = THIS
+                value = -200
+            }
+            relation = {
+                who = THIS
+                value = -100
+            }
+        }
+    }
+}
+country_event = {
+
+    id = 96022
+    title = "EVTNAME96013" #The Breakup of $FROMCOUNTRY$
+    desc = "EVTDESC96022"
+    picture = "treaty"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA96031" #Wonderful!
+        FROM = {
+            random_state = {
+                limit = {
+                    NOT = { any_owned_province = { is_capital = yes } }
+                    any_owned_province = {
+                        is_core = THIS
+                        any_neighbor_province = { owned_by = THIS }
+                    }
+                }
+                any_owned = {
+                    limit = { is_core = THIS }
+                    secede_province = THIS
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,445 @@
+political_decisions = {
+    total_war_in_rio_grao = {
+        alert = yes
+        picture = begin_line_of_advantage
+        potential = {
+            NOT = { has_country_modifier = small_country_draft }
+            NOT = { has_country_flag = rgs_draft_happened }
+            tag = GRP
+        }
+
+        allow = {
+            war_with = BRZ
+        }
+
+        effect = {
+            iron = 10
+            wool = 10
+            timber = 25
+            small_arms = 10
+            leadership = 20
+            add_country_modifier = {
+                name = small_country_draft
+                duration = 30
+            }
+            set_country_flag = rgs_draft_happened
+        }
+        ai_will_do = { factor = 1 }
+    }
+    total_war_in_rio_grande_sul = {
+        alert = yes
+        picture = begin_line_of_advantage
+        potential = {
+            NOT = { has_country_modifier = small_country_draft }
+            NOT = { has_country_flag = rgs_draft_happened }
+            tag = RGS
+        }
+
+        allow = {
+            war_with = BRZ
+        }
+
+        effect = {
+            iron = 10
+            wool = 10
+            timber = 25
+            small_arms = 10
+            leadership = 20
+            add_country_modifier = {
+                name = small_country_draft
+                duration = 30
+            }
+            set_country_flag = rgs_draft_happened
+        }
+        ai_will_do = { factor = 1 }
+    }
+    total_war_in_Catharinense_republic = {
+        alert = yes
+        picture = begin_line_of_advantage
+        potential = {
+            NOT = { has_country_modifier = small_country_draft }
+            NOT = { has_country_flag = jur_draft_happened }
+            tag = JUR
+        }
+
+        allow = {
+            war_with = BRZ
+        }
+
+        effect = {
+            iron = 10
+            wool = 10
+            timber = 25
+            small_arms = 10
+            leadership = 20
+            add_country_modifier = {
+                name = small_country_draft
+                duration = 30
+            }
+            set_country_flag = jur_draft_happened
+        }
+        ai_will_do = { factor = 1 }
+    }
+
+    total_war_in_entre_rios = {
+        alert = yes
+        picture = begin_line_of_advantage
+        potential = {
+            NOT = { has_country_modifier = small_country_draft }
+            NOT = { has_country_flag = eri_draft_happened }
+            tag = ERI
+        }
+
+        allow = {
+            war_with = ACO
+        }
+
+        effect = {
+            iron = 10
+            wool = 10
+            timber = 25
+            small_arms = 50
+            leadership = 20
+            add_country_modifier = {
+                name = small_country_draft
+                duration = 30
+            }
+            set_country_flag = eri_draft_happened
+        }
+        ai_will_do = { factor = 1 }
+    }
+
+	annex_Dominican_Republic = {
+		potential = {
+			is_greater_power = yes
+				tag = GCO
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			DOM = {
+			in_sphere = THIS }
+			}
+		
+		effect = {
+			prestige = 15
+			inherit = DOM
+			DOM = { all_core = { add_core = GCO } }	
+			add_accepted_culture = caribeno
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	annex_Cuba = {
+		potential = {
+			is_greater_power = yes
+				tag = GCO
+				exists = CUB
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			CUB = {
+			in_sphere = THIS }
+			}
+		
+		effect = {
+			prestige = 15
+			inherit = CUB
+			CUB = { all_core = { add_core = GCO } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	patria_grande = {
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = GCO
+				tag = ACN
+				tag = AGE
+			}
+			NOT = {
+				exists = PAT
+			}
+			nationalism_n_imperialism = 1
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			VNZ = {
+				all_core = { 
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					province_id = 2243
+					province_id = 2242
+					}
+				}
+			}
+			CLM = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			CHL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			PEU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BOL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BIG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ARG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ACO = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ERI = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			COR = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			URU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ECU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			PRG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = ACN
+						tag = GCO
+						tag = AGE
+						tag = VNZ
+						tag = CLM
+						tag = ECU
+						tag = CHL
+						tag = BOL
+						tag = PEU
+						tag = BIG
+						tag = ARG
+						tag = ACO
+						tag = ERI
+						tag = COR
+						tag = URU
+						tag = PRG
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			VNZ = { all_core = { add_core = PAT } }	
+			CLM = { all_core = { add_core = PAT } }	
+			ECU = { all_core = { add_core = PAT } }
+			PEU = { all_core = { add_core = PAT } }	
+			CHL = { all_core = { add_core = PAT } }	
+			BOL = { all_core = { add_core = PAT } }
+			ARG = { all_core = { add_core = PAT } }	
+			ACO = { all_core = { add_core = PAT } }	
+			ERI = { all_core = { add_core = PAT } }
+			COR = { all_core = { add_core = PAT } }	
+			URU = { all_core = { add_core = PAT } }	
+			ACN = { all_core = { add_core = PAT } }				
+			change_tag = PAT
+			add_accepted_culture = north_andinean
+			add_accepted_culture = south_andinean
+			add_accepted_culture = platinean
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	   total_war_in_argentina = {
+        alert = yes
+        picture = begin_line_of_advantage
+        potential = {
+			NOT = { year = 1870 } 
+            NOT = { has_country_modifier = small_country_draft }
+            NOT = { has_country_flag = rgs_draft_happened_1 }
+            OR = { tag = ACO
+					tag = ARG
+					tag = ERI }
+            war_with = BRZ
+        }
+        allow = {
+            war_with = BRZ
+        }
+
+        effect = {
+			set_country_flag = rgs_draft_happened_1
+            iron = 10
+            wool = 10
+            timber = 25
+            small_arms = 10
+            leadership = 20
+            add_country_modifier = {
+                name = small_country_draft
+                duration = 1000
+            }
+        }
+        ai_will_do = { factor = 1 }
+    }
+	   total_war_in_argentina_2 = {
+        alert = yes
+        picture = begin_line_of_advantage
+        potential = {
+			NOT = { year = 1870 } 
+            NOT = { has_country_modifier = small_country_draft }
+            NOT = { has_country_flag = rgs_draft_happened_2 }
+            OR = { tag = ACO
+					tag = ARG
+					tag = ERI }
+            war_with = BRZ
+			ai = no
+        }
+        allow = {
+            war_with = BRZ
+        }
+
+        effect = {
+			set_country_flag = rgs_draft_happened_2
+            iron = 10
+            wool = 10
+            timber = 25
+            small_arms = 10
+            leadership = 20
+            add_country_modifier = {
+                name = small_country_draft
+                duration = 1000
+            }
+        }
+        ai_will_do = { factor = 1 }
+    }
+}

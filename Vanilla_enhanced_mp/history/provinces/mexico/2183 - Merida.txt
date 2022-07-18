@@ -1,0 +1,5 @@
+owner = MEXcontroller = MEX
+add_core = MEX
+add_core = MRD
+trade_goods = grain
+life_rating = 30

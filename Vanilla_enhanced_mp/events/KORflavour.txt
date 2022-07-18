@@ -1,0 +1,218 @@
+#Korean vassal and annexation
+#Donghak rebellion
+country_event = {
+
+    id = 110046
+    title = "EVTNAME110046"
+    desc = "EVTDESC110046"
+	major = yes
+
+    trigger = {
+        tag = KOR
+	JAP = {
+            is_greater_power = yes
+		}
+		average_militancy = 4
+        war = no
+        is_disarmed = no
+        NOT = {
+            government = democracy
+            government = proletarian_dictatorship
+            truce_with = JAP
+        }
+        CHI = {
+            civilized = no
+        }
+		vassal_of = CHI
+    }
+
+    fire_only_once = yes
+    mean_time_to_happen = { months = 2 }
+
+    option = {
+    name = "EVT110046OPTA"
+        set_country_flag = donghak_rebellion
+        JAP = { country_event = 110040 }
+        any_pop = {
+            scaled_militancy = {
+                issue = jingoism
+                factor = 4
+            }
+        }
+        ai_chance = {
+            factor = 1
+        }
+    }
+}
+
+country_event = {
+
+    id = 110040
+    title = "EVTNAME110040"
+    desc = "EVTDESC110040"
+    picture = "korea"
+
+    is_triggered_only = yes
+
+    option = {
+    name = "EVT110040OPTA"
+        set_country_flag = freedom_of_korea_or_no
+        CHI = { country_event = 110041 }
+        any_pop = {
+            scaled_militancy = {
+                issue = jingoism
+                factor = -4
+            }
+        }
+        ai_chance = {
+            factor = 1
+        }
+    }
+
+    option = {
+    name = "EVT110040OPTB"
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+country_event = {
+    id = 110041
+    title = "EVTNAME110041" #Initial Chinese response
+    desc = "EVTDESC110041"
+    picture = "korea"
+
+    is_triggered_only = yes
+
+    option = {
+    name = "EVT110041OPTA"
+        prestige = -10
+        JAP = { country_event = 110042 }
+        ai_chance = {
+            factor = 0
+        }
+    }
+
+    option = {
+    name = "EVT110041OPTB"
+        prestige = 5
+        JAP = { country_event = 110043 }
+        ai_chance = {
+            factor = 0.15
+            modifier = {
+                factor = 0.8
+                TUR = { military_score = FROM }
+            }
+            modifier = {
+                factor = 1
+            }
+        }
+    }
+}
+country_event = {
+    id = 110042
+    title = "EVTNAME110042"
+    desc = "EVTDESC110042"
+    picture = "korea"
+
+    is_triggered_only = yes
+
+    option = {
+    name = "EVT110042OPTA"
+		CHI = {
+		release_vassal = KOR }
+		diplomatic_influence = {
+			who = KOR
+			value = 400
+		}
+	}
+}
+country_event = {
+    id = 110043
+    title = "EVTNAME110043"
+    desc = "EVTDESC110043"
+    picture = "korea"
+
+    is_triggered_only = yes
+
+    option = {
+    name = "EVT110043OPTA"
+	set_country_flag = korea_is_ours
+
+        casus_belli = {
+            target = CHI
+            type = release_puppet
+            months = 12
+        }
+        war = {
+            target = CHI
+            attacker_goal = {
+                casus_belli = release_puppet
+                country = KOR
+            }
+	}
+    }
+}
+country_event = {
+
+    id = 110044
+    title = "EVTNAME110044"
+    desc = "EVTDESC110044"
+    picture = "korea"
+    news = yes
+
+	fire_only_once = yes
+
+    trigger = {
+
+	war = no
+	tag = JAP
+	KOR = {
+		in_sphere = JAP
+		}
+	NOT = {
+	KOR = {
+		vassal_of = CHI
+		}
+		}
+	}
+
+    mean_time_to_happen = { months = 2 }
+
+    option = {
+        name = "EVT110044OPTA"
+	JAP = {
+		create_vassal = KOR
+			}
+        ai_chance = { factor = 100 }
+        }
+    }
+#country_event = {
+
+#    id = 110045
+#    title = "EVTNAME110045"
+#    desc = "EVTDESC110045"
+#    picture = "korea"
+#    news = yes
+
+#	fire_only_once = yes
+
+
+#    mean_time_to_happen = { months = 2 }
+
+#    trigger = {
+
+#	war = no
+#	tag = JAP
+#	KOR = {
+#		vassal_of = JAP
+#		}
+#	}
+
+#    option = {
+#       name = "EVT110038OPTA"
+#	inherit = KOR
+#       }
+#        ai_chance = { factor = 100 }
+#    }
+#}

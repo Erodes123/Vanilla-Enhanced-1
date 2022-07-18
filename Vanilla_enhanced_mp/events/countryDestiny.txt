@@ -1,0 +1,147 @@
+#what Greece wants
+country_event = {
+
+	id = 110025
+	title = "EVTNAME110025"
+	desc = "EVTDESC110025"
+	picture = "greek_destiny"
+	
+	trigger = {
+		tag = GRE
+		owns = 832
+		NOT = { 
+			has_country_flag = our_destiny
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA110025"
+		set_country_flag = our_destiny
+		set_country_flag = anatolia_is_ours
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB110025"
+		set_country_flag = our_destiny
+		set_country_flag = remain_in_the_balkans
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#what Italy wants
+country_event = {
+
+	id = 114010
+	title = "EVTNAME114010"
+	desc = "EVTDESC114010"
+	
+	trigger = {
+		tag = ITA
+		owns = 735
+		NOT = { 
+			has_country_flag = our_destiny
+		}
+	}
+
+	
+	option = {
+		name = "EVTOPTA114010"
+		set_country_flag = our_destiny
+		set_country_flag = italian_adriatic
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB114010"
+		set_country_flag = our_destiny
+		set_country_flag = mare_nostrum
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVTOPTC114010"
+		set_country_flag = our_destiny
+		set_country_flag = focus_on_the_balkans
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#what Spain wants
+country_event = {
+
+	id = 114011
+	title = "EVTNAME114011"
+	desc = "EVTDESC114011"
+	
+	trigger = {
+		tag = SPA
+		NOT = { 
+			has_country_flag = our_destiny
+		}
+	}
+
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPTA114011"
+		set_country_flag = our_destiny
+		set_country_flag = historical_path
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB114011"
+		set_country_flag = our_destiny
+		set_country_flag = european_expansion
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVTOPTC114011"
+		set_country_flag = our_destiny
+		set_country_flag = regain_our_colonies
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#Prosperity
+country_event = {
+
+	id = 116011
+	title = "Prosperity"
+	desc = "Echoes of the wonderful life people have in our country have reached Europe, every time louder and louder. Having a chace to live a prosperous life, foreigners feel more attracted to live here"
+	
+	trigger = {
+		money = 500000
+		OR = { 
+			THIS = { capital_scope = { continent = north_america } }
+			THIS = { capital_scope = { continent = south_america } } }
+			NOT = { has_country_flag = prosperouslife
+					tag = USA }
+	}
+	
+	option = {
+		name = "We offer prosperity to those who seek for it."
+		set_country_flag = prosperouslife
+		add_country_modifier = {
+				name = prosperity
+				duration = 5000
+			}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

@@ -1,0 +1,304 @@
+#West Africa
+country_event = {
+	
+	id = 114000
+	title = "West Africa" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		MOR_1696 = {
+			secede_province = FROM
+		}
+		FRA_1775 = {
+			secede_province = FROM
+		}
+		FRA_1893 = {
+			secede_province = FROM
+		}
+		FRA_1783 = {
+			secede_province = FROM
+		}
+		FRA_1788 = {
+			secede_province = FROM
+		}
+		FRA_1879 = {
+			secede_province = FROM
+		}
+		FRA_1884 = {
+			secede_province = FROM
+		}
+		ENG_1887 = {
+			secede_province = FROM
+		}
+		FRA_1892 = {
+			secede_province = FROM
+		}
+		FRA_1907 = {
+			secede_province = FROM
+		}
+		FRA_1914 = {
+			secede_province = FROM
+		}
+		FRA_1901 = {
+			secede_province = FROM
+		}
+		FRA_1799 = {
+			secede_province = FROM
+		}
+		FRA_1803 = {
+			secede_province = FROM
+		}
+		FRA_1780 = {
+			secede_province = FROM
+		}
+		FRA_1893 = {
+			secede_province = FROM
+		}
+	}
+}
+#Central Sahara
+country_event = {
+	
+	id = 114001
+	title = "Central Sahara" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		FRA_1919 = {
+			secede_province = FROM
+		}
+		FRA_1923 = {
+			secede_province = FROM
+		}
+		FRA_1816 = {
+			secede_province = FROM
+		}
+		FRA_1930 = {
+			secede_province = FROM
+		}
+		FRA_1931 = {
+			secede_province = FROM
+		}
+		FRA_1937 = {
+			secede_province = FROM
+		}
+		FRA_1939 = {
+			secede_province = FROM
+		}
+		FRA_1927 = {
+			secede_province = FROM
+		}
+		FRA_1808 = {
+			secede_province = FROM
+		}
+		FRA_1813 = {
+			secede_province = FROM
+		}
+	}
+}
+#Central-East
+country_event = {
+	
+	id = 114002
+	title = "Central-East" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		SPA_1955 = {
+			secede_province = FROM
+		}
+		FRA_1972 = {
+			secede_province = FROM
+		}
+		ENG_1956 = {
+			secede_province = FROM
+		}
+		FRA_1978 = {
+			secede_province = FROM
+		}
+		FRA_1965 = {
+			secede_province = FROM
+		}
+		ENG_1960 = {
+			secede_province = FROM
+		}
+		ENG_1818 = {
+			secede_province = FROM
+		}
+		ENG_1825 = {
+			secede_province = FROM
+		}
+	}
+}
+#Horn of Africa
+country_event = {
+	
+	id = 114003
+	title = "Horn of Africa" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		ENG_1825 = {
+			secede_province = FROM
+		}
+		ENG_2024 = {
+			secede_province = FROM
+		}
+		ENG_2026 = {
+			secede_province = FROM
+		}
+		ENG_2019 = {
+			secede_province = FROM
+		}
+		ENG_2034 = {
+			secede_province = FROM
+		}
+		ENG_2029 = {
+			secede_province = FROM
+		}
+		ENG_2039 = {
+			secede_province = FROM
+		}
+		MAD_2117 = {
+			secede_province = FROM
+		}
+		MAD_2121 = {
+			secede_province = FROM
+		}
+		ENG_1868 = {
+			secede_province = FROM
+		}	
+	}
+}
+#Central Subsahara
+country_event = {
+	
+	id = 114004
+	title = "Central Subsahara" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		ENG_2016 = {
+			secede_province = FROM
+		}
+		ENG_2014 = {
+			secede_province = FROM
+		}
+		POR_2006 = {
+			secede_province = FROM
+		}
+		POR_1999 = {
+			secede_province = FROM
+		}
+		POR_2003 = {
+			secede_province = FROM
+		}
+		ENG_2066 = {
+			secede_province = FROM
+		}	
+	}
+}
+#South Subsahara
+country_event = {
+	
+	id = 114005
+	title = "South Subsahara" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		ENG_2068 = {
+			secede_province = FROM
+		}
+		ENG_2074 = {
+			secede_province = FROM
+		}
+		ENG_2078 = {
+			secede_province = FROM
+		}
+		ENG_2083 = {
+			secede_province = FROM
+		}	
+	}
+}
+#IndoChina
+country_event = {
+	
+	id = 114006
+	title = "IndoChina" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		SIA_1366 = {
+			secede_province = FROM
+		}
+		SIA_1392 = {
+			secede_province = FROM
+		}
+		SIA_1355 = {
+			secede_province = FROM
+		}
+		ANN_1383 = {
+			secede_province = FROM
+		}
+		ANN_1374 = {
+			secede_province = FROM
+		}
+		ANN_1371 = {
+			secede_province = FROM
+		}
+		LUA_1356 = {
+			secede_province = FROM
+		}	
+	}
+}
+#Caribe
+country_event = {
+	
+	id = 114007
+	title = "Caribe" #The Treaty of Guadalupe Hidalgo
+	desc = "We have been skimming over our instability with International debt, and now one of our debtors is asking for their money back"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		ENG_2228 = {
+			secede_province = FROM
+		}
+		ENG_2224 = {
+			secede_province = FROM
+		}
+		ENG_203 = {
+			secede_province = FROM
+		}	
+	}
+}

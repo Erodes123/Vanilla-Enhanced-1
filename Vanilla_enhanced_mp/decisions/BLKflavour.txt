@@ -1,0 +1,144 @@
+political_decisions = {
+	Balkan_federation = {
+		potential = balkann
+		potential = {
+			OR = {
+				tag = GEE
+				tag = YUG
+				tag = BRO
+			}
+			NOT = {
+				exists = BLK
+			}
+			nationalism_n_imperialism = 1
+		}	
+		allow = {
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+			war = no
+			SER = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			MON = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			CRO = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BOS = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BUL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ALB = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			GRE = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = SER
+						tag = MON
+						tag = BOS
+						tag = CRO
+						tag = ALB
+						tag = GRE
+						tag = BUL
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			SER = { all_core = { add_core = BLK } }	
+			MON = { all_core = { add_core = BLK } }	
+			BOS = { all_core = { add_core = BLK } }
+			CRO = { all_core = { add_core = BLK } }	
+			ALB = { all_core = { add_core = BLK } }	
+			GRE = { all_core = { add_core = BLK } }
+			BUL = { all_core = { add_core = BLK } }			
+			change_tag = BLK
+			add_accepted_culture = serb
+			add_accepted_culture = bulgarian
+			add_accepted_culture = croat
+			add_accepted_culture = greek
+			add_accepted_culture = albanian
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

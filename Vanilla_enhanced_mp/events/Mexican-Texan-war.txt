@@ -1,0 +1,107 @@
+#Killing of Haitians
+country_event = {
+	id = 1129300
+	title = "EVTNAME1129300" #Haitian genocide
+	desc = "EVTDESC1129300"
+	picture = "revolutionnn"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TEX
+		war_with = MEX
+		any_owned_province = {
+			country_units_in_province = MEX }
+
+		}
+	mean_time_to_happen = {
+		days = 20
+		}
+	option = {
+		name = "EVT1129300OPT"
+		MEX = { country_event = 1129310 days = 5 } 
+		ai_chance = {
+			factor = 100 
+		}
+	}
+}
+
+country_event = {
+    id = 1129310
+    title = "EVTNAME1129310" #Haitian genocide -- to HAI
+    desc = "EVTDESC1129300"
+    major = yes
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT1129310OPTA"
+        war_exhaustion = -20
+        prestige = -10
+        end_war = TEX
+        ai_chance = {
+            factor = 80
+        }
+    }
+
+    option = {
+        name = "EVT1129310OPTB"
+        war_exhaustion = 60
+        badboy = 3
+	TEX = {
+	country_event = 1129330 days = 5
+        }
+        ai_chance = {
+            factor = 20
+        }
+    }
+}
+country_event = {
+    id = 1129330
+    title = "EVTNAME1129330" #Mexico Ignores the Treaties
+    desc = "EVTDESC1129330"
+	picture = "revolutionnn"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT1129330OPTA"
+        war_exhaustion = -20
+        USA = { country_event = 1129340 }
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
+
+country_event = {
+    id = 1129340
+    title = "EVTNAME1129340" #The Texan Diplomat
+    desc = "EVTDESC1129340"
+	picture = "constantinople_conference"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT1129340OPTA"
+        diplomatic_influence = { who = FROM value = 200 }
+        relation = { who = FROM value = 50 }
+        relation = { who = MEX value = -50 }
+        create_alliance = FROM
+        leave_alliance = MEX
+		war = {
+			target = MEX
+			attacker_goal = {
+			casus_belli = humiliate
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+        ai_chance = { factor = 100 }
+    }
+}
+
+
+

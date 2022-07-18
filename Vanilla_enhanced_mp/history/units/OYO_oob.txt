@@ -1,0 +1,27 @@
+army = {
+	name = "Army of the Sultan of Oyo"
+	location = 1927
+	regiment = {
+		name= "1.Fulbe"
+		type = irregular
+		home = 1925
+	}
+
+	regiment = {
+		name= "2.Fulbe"
+		type = cavalry
+		home = 1925
+	}
+}
+
+army = {
+	name = "Army of the Emir of Ilorin"
+	location = 1926
+	regiment = {
+		name= "1. Yoruba"
+		type = cavalry
+		home = 1926
+	}
+
+}
+

@@ -1,0 +1,5 @@
+owner = Aco
+controller = ACO
+add_core = ACO
+trade_goods = cattle
+life_rating = 35

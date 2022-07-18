@@ -1,0 +1,28 @@
+#Gadsden purcharse
+country_event = {
+	
+	id = 11402090
+	title = "Purcharse of the Gold coast" #The Treaty of Guadalupe Hidalgo
+	desc = "The English want to stablish themselves as the dominant power in the region, and as to avoid war, the best option is to give up our trade post."
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We agree to their proposal."
+		set_country_flag = treaty_of_palau
+		prestige = 5
+		treasury = 100000
+		1909 = { secede_province = ENG }
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		name = "We refuse!"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

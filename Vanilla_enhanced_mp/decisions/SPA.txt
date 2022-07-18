@@ -1,0 +1,93 @@
+political_decisions = {
+#Western Sahara
+	western_sahara_is_ours = {
+		picture = african_land
+		potential = {
+			THIS = {
+				owns = 2136
+				}
+			NOT = {
+				has_global_flag = western_sahara_is_ours
+			}
+		}
+		
+		allow = {
+			year = 1870
+			THIS = {
+				owns = 2136
+			}
+		}
+		
+		effect = {
+			set_global_flag = western_sahara_is_ours
+			1773 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1774 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1973 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1696 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1695 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			prestige = 5
+		}
+	}
+	establish_la_guardia_civil = {
+		potential = {
+			tag = SPA
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = {
+				has_country_flag = guardia_civil_established
+			}
+		}
+		allow = {
+			NOT = {
+				num_of_revolts = 1
+			}
+			OR = {
+				average_militancy = 3
+				average_consciousness = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = la_guardia_civil
+				duration = -1
+			}
+			set_country_flag = guardia_civil_established
+		}
+	}
+
+	confiscations_of_mendizabal = {
+		potential = {
+			tag = SPA
+			NOT = {
+				has_country_flag = mendizabal_confiscated
+			}
+		}
+
+		allow = {
+			ideological_thought = 1
+		}
+
+		effect = {
+			treasury = 25000
+			prestige = 10
+			relation = {
+				who = PAP
+				value = -50
+			}
+			any_pop = {
+				scaled_militancy = {
+					ideology = conservative
+					factor = 4
+				}
+				dominant_issue = {
+					value = pro_atheism
+					factor = 0.15
+				}
+			}
+			set_country_flag = mendizabal_confiscated
+		}
+	}
+}

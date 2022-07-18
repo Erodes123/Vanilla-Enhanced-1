@@ -1,0 +1,1128 @@
+political_decisions = {
+	reconquista_mex = {
+		picture = reconquista_mex
+		potential = {
+			tag = SPA
+			has_country_flag = regain_our_colonies
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = { has_country_flag = mex_reconquista'd }
+		}
+		allow = {
+			MEX = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+									AND = {
+										in_sphere = THIS
+									}
+									vassal_of = THIS
+								}
+							}
+						}
+						is_core = TEX
+						is_core = USA
+						owned_by = TEX
+						owned_by = USA
+					}
+				}
+			}
+			NIC = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+										in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+						province_id = 2190
+					}
+				}
+			}
+			HON = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+										in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+						province_id = 2190
+					}
+				}
+			}
+			GUA = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+										in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+						province_id = 2190
+					}
+				}
+			}
+			ELS = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+										in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+						province_id = 2190
+					}
+				}
+			}
+			COS = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+										in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+						province_id = 2190
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = mex_reconquista'd
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = MEX
+							is_core = UCA
+							is_core = GUA
+							is_core = NIC
+							is_core = HON
+							is_core = ELS
+							is_core = COS
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			release = MEX
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						primary_culture = central_american
+						primary_culture = mayan
+					}
+				}
+				annex_to = THIS
+			}
+			UCA = { all_core = { add_core = MEX } }
+			NIC = { all_core = { add_core = MEX } }
+			HON = { all_core = { add_core = MEX } }
+			ELS = { all_core = { add_core = MEX } }
+			GUA = { all_core = { add_core = MEX } }
+			COS = { all_core = { add_core = MEX } }
+			any_owned = {
+				limit = { is_core = MEX }
+				secede_province = MEX
+			}
+			
+			create_vassal = MEX
+			MEX = { 
+				set_country_flag = spanish_vassal
+			government = absolute_monarchy	
+                        change_tag = MXS
+                        all_core = { add_core = MXS }
+			}
+                        UCA = { add_core = MXS }
+                        NIC = { add_core = MXS }
+                        GUA = { add_core = MXS }
+                        ELS = { add_core = MXS }
+                        HON = { add_core = MXS }
+                        COS = { add_core = MXS }
+		}
+	}
+
+	reconquista_gco = {
+		picture = reconquista_gco
+		potential = {
+			tag = SPA
+			has_country_flag = regain_our_colonies
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = { has_country_flag = gco_reconquista'd }
+		}
+		allow = {
+			CLM = {
+				all_core = {
+					owner = {
+						war = no
+						OR = {
+							tag = THIS
+							OR = {
+									in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+			}
+			ECU = {
+				all_core = {
+					owner = {
+						war = no
+						OR = {
+							tag = THIS
+							OR = {
+									in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+			}
+			VNZ = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+										in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+						province_id = 2243
+						province_id = 2242
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = gco_reconquista'd
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = CLM
+							is_core = ECU
+							is_core = VNZ
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			
+		
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					primary_culture = north_andean
+				}
+				annex_to = THIS
+			}
+			CLM = { all_core = { add_core = GCO } }
+			ECU = { all_core = { add_core = GCO } }
+			VNZ = { all_core = { add_core = GCO } }
+
+			release_vassal = GCO
+			GCO = {
+				set_country_flag = spanish_vassal
+				government = absolute_monarchy
+				change_tag = GCS
+			}
+		}
+	}
+
+	reconquista_pbc = {
+		picture = reconquista_pbc
+		potential = {
+			tag = SPA
+			has_country_flag = regain_our_colonies
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = { has_country_flag = pbs_reconquista'd }
+		}
+		allow = {
+			BOL = {
+				OR = {
+					NOT = { exists = BOL }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			ACN = {
+				OR = {
+					NOT = { exists = ACN }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			CHL = {
+				OR = {
+					NOT = { exists = CHL }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			PEU = {
+				OR = {
+					NOT = { exists = PEU }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = pbs_reconquista'd
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = PEU
+							is_core = BOL
+							is_core = CHL
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			
+		
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					primary_culture = south_andean
+				}
+				annex_to = THIS
+			}
+			PEU = { all_core = { add_core = PBS } }
+			BOL = { all_core = { add_core = PBS } }
+			CHL = { all_core = { add_core = PBS } }
+                        PEU = { all_core = { add_core = ACN } }
+			BOL = { all_core = { add_core = ACN } }
+			CHL = { all_core = { add_core = ACN } }
+
+			release_vassal = ACN
+			ACN = {
+				set_country_flag = spanish_vassal
+				government = absolute_monarchy
+				change_tag = PBS
+			
+			
+			}
+		}
+	}
+
+	reconquista_lpl = {
+		picture = reconquista_lpl
+		potential = {
+			tag = SPA
+			has_country_flag = regain_our_colonies
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = { has_country_flag = lpl_reconquista'd }
+		}
+		allow = {
+			PRG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+							}
+						}
+					}
+				}
+			}
+			URU = {
+				all_core = {
+					owner = {
+						war = no
+						OR = {
+							tag = THIS
+							OR = {
+									in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+			}
+			ARG = {
+				OR = {
+					NOT = { exists = ARG }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			ACO = {
+				OR = {
+					NOT = { exists = ACO }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			COR = {
+				OR = {
+					NOT = { exists = COR }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			ERI = {
+				OR = {
+					NOT = { exists = ERI }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			BUE = {
+				OR = {
+					NOT = { exists = BUE }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = lpl_reconquista'd
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = ACO
+							is_core = ARG
+							is_core = COR
+							is_core = ERI
+							is_core = PRG
+							is_core = BUE
+							is_core = URU
+						}
+						NOT = {
+							AND = {
+								owner = { tag = ACN }
+								state_id = 2315
+							}
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					primary_culture = platinean
+				}
+				annex_to = THIS
+			}
+			ACO = { all_core = { add_core = AGE } }
+			ARG = { all_core = { add_core = AGE } }
+			COR = { all_core = { add_core = AGE } }
+			ERI = { all_core = { add_core = AGE } }
+			PRG = { all_core = { add_core = AGE } }
+			BUE = { all_core = { add_core = AGE } }
+			URU = { all_core = { add_core = AGE } }
+                        ACO = { all_core = { add_core = LPL } }
+			ARG = { all_core = { add_core = LPL } }
+			COR = { all_core = { add_core = LPL } }
+			ERI = { all_core = { add_core = LPL } }
+			PRG = { all_core = { add_core = LPL } }
+			BUE = { all_core = { add_core = LPL } }
+			URU = { all_core = { add_core = LPL } }
+			release_vassal = LPL
+			LPL = {
+				set_country_flag = spanish_vassal
+				government = absolute_monarchy
+			}
+		}
+	}
+	
+#	annex_pbs = {
+#		picture = reconquista_pbs
+#		potential = {
+#			year = 1860
+#			tag = SPA
+#			has_country_flag = regain_our_colonies
+#			NOT = { has_country_flag = spanish_pbs }
+#			PBS = { vassal_of = THIS }
+#			OR = {
+#				government = absolute_monarchy
+#				government = prussian_constitutionalism
+#				government = hms_government
+#			}
+#			has_country_flag = pbs_reconquista'd
+#		}
+#		allow = { 
+#			PBS = { vassal_of = THIS } }
+#		effect = {
+#			set_country_flag = spanish_pbs
+#			inherit = PBS
+#		}
+#	}
+	
+#	annex_lpl = {
+#		picture = reconquista_pbs
+#		potential = {
+#			year = 1860
+#			tag = SPA
+#			has_country_flag = regain_our_colonies
+#			NOT = { has_country_flag = spanish_lpl }
+#			LPL = { vassal_of = THIS }
+#			OR = {
+#				government = absolute_monarchy
+#				government = prussian_constitutionalism
+#				government = hms_government
+#			}
+#			has_country_flag = lpl_reconquista'd
+#		}
+#		allow = { 
+#			LPL = { vassal_of = THIS } }
+#		effect = {
+#			set_country_flag = spanish_lpl
+#			inherit = LPL
+#		}
+#	}
+	
+#	annex_gcs = {
+#		picture = reconquista_pbs
+#		potential = {
+#			year = 1860
+#			tag = SPA
+#			has_country_flag = regain_our_colonies
+#			NOT = { has_country_flag = spanish_gcs }
+#			GCS = { vassal_of = THIS }
+#			OR = {
+#				government = absolute_monarchy
+#				government = prussian_constitutionalism
+#				government = hms_government
+#			}
+#			has_country_flag = gco_reconquista'd
+#		}
+#		allow = { 
+#			GCS = { vassal_of = THIS } }
+#		effect = {
+#			set_country_flag = spanish_gcs
+#			inherit = GCS
+#		}
+#	}
+
+#	annex_mxs = {
+#		picture = reconquista_pbs
+#		potential = {
+#			year = 1860
+#			tag = SPA
+#			has_country_flag = regain_our_colonies
+#			NOT = { has_country_flag = spanish_mxs }
+#			MXS = { vassal_of = THIS }
+#			OR = {
+#				government = absolute_monarchy
+#				government = prussian_constitutionalism
+#				government = hms_government
+#			}
+#			has_country_flag = mex_reconquista'd
+#		}
+#		allow = { 
+#			MXS = { vassal_of = THIS } }
+#		effect = {
+#			set_country_flag = spanish_mxs
+#			inherit = MXS
+#		}
+#	}
+	
+	Hispanic_Union2 = {
+		potential = {
+		                owns = 766
+						owns = 761
+						owns = 753
+						owns = 762
+			is_greater_power = yes
+			OR = {
+			
+				tag = SPA
+			}
+			NOT = {
+				exists = HIS
+                        
+			}
+			revolution_n_counterrevolution = 1
+		}	
+		allow = {
+			revolution_n_counterrevolution = 1
+                        has_country_flag = lpl_reconquista'd
+                        has_country_flag = pbc_reconquista'd
+                        has_country_flag = gco_reconquista'd
+                        has_country_flag = mex_reconquista'd
+						owns = 766
+						owns = 761
+						owns = 753
+						owns = 762
+			war = no
+			VNZ = {
+				OR = {
+					NOT = { exists = VNZ }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						province_id = 2242
+						province_id = 2243}
+					}
+				}
+			}
+			CLM = {
+				OR = {
+					NOT = { exists = CLM }
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+								}
+							}
+						}
+					}
+				}
+			}
+			CHL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			PEU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BOL = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			BIG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ARG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ACO = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ERI = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			COR = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			URU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ECU = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			PRG = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			
+			}
+			GUA = {
+				all_core = {
+					OR = {
+						owner = {
+							war = no
+							OR = {
+								tag = THIS
+								OR = {
+										in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+						province_id = 2190
+					}
+				}
+			}
+			MEX = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			NIC = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			HON = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			
+			}
+			ELS = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			COS = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = ACN
+						tag = GCO
+						tag = AGE
+						tag = VNZ
+						tag = CLM
+						tag = ECU
+						tag = CHL
+						tag = BOL
+						tag = PEU
+						tag = BIG
+						tag = ARG
+						tag = ACO
+						tag = ERI
+						tag = COR
+						tag = URU
+						tag = PRG
+						tag = SPA
+						tag = MEX
+						tag = NIC
+						tag = UCA
+						tag = ELS
+						tag = COS
+						tag = GUA
+						tag = HON
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			VNZ = { all_core = { add_core = HIS } }	
+			CLM = { all_core = { add_core = HIS } }	
+			ECU = { all_core = { add_core = HIS } }
+			VNZ = { all_core = { add_core = HIS } }	
+			CLM = { all_core = { add_core = HIS } }	
+			ECU = { all_core = { add_core = HIS } }
+			VNZ = { all_core = { add_core = HIS } }	
+			CLM = { all_core = { add_core = HIS } }	
+			ECU = { all_core = { add_core = HIS } }
+			VNZ = { all_core = { add_core = HIS } }	
+			CLM = { all_core = { add_core = HIS } }	
+			MEX = { all_core = { add_core = HIS } }
+            GUA = { all_core = { add_core = HIS } }	
+            HON = { all_core = { add_core = HIS } }	
+            ELS = { all_core = { add_core = HIS } }	
+            COS = { all_core = { add_core = HIS } }	
+            NIC = { all_core = { add_core = HIS } }	
+            UCA = { all_core = { add_core = HIS } }				
+			change_tag = HIS
+			add_accepted_culture = mexican
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	Hispanic_Union1 = {
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = SPA
+			}
+			NOT = {
+				exists = HIS
+                        
+			}
+			OR = { exists = PBS
+			exists = MXS
+			exists = GCS
+			exists = LPL }
+			year = 1860
+		}	
+		allow = {
+			nationalism_n_imperialism = 1
+						OR = { 
+                        has_country_flag = lpl_reconquista'd
+                        has_country_flag = pbs_reconquista'd
+                        has_country_flag = gco_reconquista'd
+                        has_country_flag = mex_reconquista'd }
+			war = no
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = MXS
+						tag = LPL
+						tag = GCS
+						tag = PBS
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				
+				annex_to = THIS
+			}		
+            LPL = { all_core = { add_core = HIS } }	
+            GCS = { all_core = { add_core = HIS } }	
+            MXS = { all_core = { add_core = HIS } }	
+            PBS = { all_core = { add_core = HIS } }	
+            change_tag = HIS			
+            PBS = { country_event =  114052  }	
+            MXS = { country_event =  114050  }	
+			GCS = { country_event =  114051  }	
+			LPL = { country_event =  114053  }	
+            			
+			add_accepted_culture = mexican
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	universityMEX = { 
+		picture = universidad_mexico 
+		
+		potential = { 
+		tag = HIS
+		rank = 16 
+		NOT = { has_country_flag = university_MEX }
+		}
+		
+		allow = { 
+		nationalism_n_imperialism = 1 
+		biologism = 1 
+		}
+		
+		effect = { 
+		set_country_flag = university_MEX 
+		any_pop = { 
+		literacy = 0.1
+			}
+		any_pop = { 
+		limit = { culture = mexican }
+		literacy = 0.05
+			}
+		social_reform = public 
+		scaled_militancy = {
+			issue = moralism
+			factor = 3
+			}
+		scaled_consciousness = {
+			issue = moralism
+			factor = 5
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+owner = ACN
+controller = ACN
+
+add_core = ACN
+trade_goods = wool
+life_rating = 30
