@@ -207,6 +207,7 @@ political_decisions = {
 			GLO = { all_core = { add_core = KUK } }
 			CRO = { all_core = { add_core = KUK } }
 			KRA = { all_core = { add_core = KUK } }
+			BOH = { all_core = { add_core = KUK } }
 		    	SER = { all_core = { remove_core = AUS } }
 		    	CRO = { all_core = { remove_core = AUS } }
 		    	BOS = { all_core = { remove_core = AUS } }
