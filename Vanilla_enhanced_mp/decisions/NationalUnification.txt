@@ -187,6 +187,7 @@ political_decisions = {
 				add_core = NGF
 			}			
 			change_tag = NGF
+			add_accepted_culture = south_german
 			FRA = {
 				country_event = { id=110073 days=0 }
 			}
